@@ -21,6 +21,7 @@ const goals = [
   "Emagrecimento saudável",
   "Nutrição comportamental",
   "Planejamento alimentar",
+  "Hipertrofia / Esportiva",
   "Outro"
 ];
 
