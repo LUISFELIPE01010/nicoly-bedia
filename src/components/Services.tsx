@@ -1,4 +1,4 @@
-import { Apple, Salad, Brain, Video, Heart, Leaf, Dumbbell, Zap } from 'lucide-react';
+import { Apple, Salad, Brain, Video, Heart, Dumbbell } from 'lucide-react';
 import { useState } from 'react';
 import ServiceModal from './ServiceModal';
 
