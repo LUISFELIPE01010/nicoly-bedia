@@ -49,7 +49,7 @@ const Results = () => {
           </div>
 
           <div className="mb-14 animate-on-scroll">
-            <Carousel className="w-full max-w-5xl mx-auto">
+            <Carousel className="w-full max-w-5xl mx-auto px-10 md:px-0">
               <CarouselContent>
                 {resultItems.map((item, index) => (
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
@@ -59,6 +59,8 @@ const Results = () => {
                           src={item.image}
                           alt={item.alt}
                           loading="lazy"
+                          width={400}
+                          height={224}
                           onError={(e) => {
                             e.currentTarget.src = '/placeholder.svg';
                           }}
@@ -87,8 +89,8 @@ const Results = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+              <CarouselPrevious className="left-0 md:-left-12" />
+              <CarouselNext className="right-0 md:-right-12" />
             </Carousel>
           </div>
 
