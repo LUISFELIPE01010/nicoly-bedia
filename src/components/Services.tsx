@@ -37,6 +37,18 @@ const Services = () => {
       modalContent: "Sei que a correria do dia a dia dificulta manter uma alimentação equilibrada. Por isso, crio planos alimentares práticos e flexíveis, adaptados aos seus horários, preferências e necessidades."
     },
     {
+      icon: Dumbbell,
+      title: "Nutrição para Hipertrofia",
+      description: "Ganhe massa muscular com um plano alimentar estratégico, alinhado ao seu treino e objetivos.",
+      modalContent: "Se o seu objetivo é ganhar massa muscular, a alimentação é tão importante quanto o treino! Vou montar um plano nutricional personalizado com a quantidade ideal de proteínas, carboidratos e gorduras para potencializar seus resultados na academia, sem dietas genéricas."
+    },
+    {
+      icon: Zap,
+      title: "Nutrição Esportiva",
+      description: "Maximize seu desempenho nos treinos e competições com uma alimentação pensada para alta performance.",
+      modalContent: "A nutrição esportiva vai além de comer bem — é sobre periodizar sua alimentação de acordo com seus treinos, otimizar a recuperação muscular, melhorar a disposição e alcançar o melhor desempenho possível. Seja você atleta ou praticante de atividade física, vou te ajudar a performar melhor!"
+    },
+    {
       icon: Video,
       title: "Consultas Online e Presenciais",
       description: "Flexibilidade total para caber na sua agenda e localização.",
