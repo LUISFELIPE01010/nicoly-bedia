@@ -11,30 +11,30 @@ const Quiz = () => {
 
   const questions = [
     {
-      question: "Qual é a sua principal queixa hoje?",
+      question: "Qual é o seu maior desafio hoje com a alimentação?",
       options: [
-        "Distensão abdominal e gases",
-        "Constipação ou diarreia frequente",
-        "Refluxo ou queimação",
-        "Não sei, mas sinto que algo não está bem"
+        "Não consigo manter uma alimentação equilibrada na rotina",
+        "Sinto culpa ou ansiedade ao comer",
+        "Quero emagrecer mas não sei por onde começar",
+        "Já fiz várias dietas e nenhuma funcionou"
       ]
     },
     {
-      question: "Como está sua relação com a comida?",
+      question: "Como você se sente em relação à comida?",
       options: [
-        "Sinto medo ou culpa ao comer certos alimentos",
-        "Como bem, mas tenho sintomas digestivos frequentes",
-        "Faço dietas restritivas e não vejo resultado",
+        "Tenho medo de engordar e restrinjo muitos alimentos",
+        "Como bem, mas quero melhorar minha disposição e saúde",
+        "Tenho compulsão alimentar e não consigo controlar",
         "Quero aprender a comer melhor sem neura"
       ]
     },
     {
-      question: "Qual sua maior dificuldade?",
+      question: "O que você busca em um acompanhamento nutricional?",
       options: [
-        "Identificar quais alimentos me fazem mal",
-        "Manter uma alimentação equilibrada na rotina",
-        "Lidar com a ansiedade e compulsão alimentar",
-        "Encontrar um profissional que me escute de verdade"
+        "Um plano alimentar prático que caiba na minha rotina",
+        "Ajuda para melhorar minha relação com a comida",
+        "Emagrecimento saudável e sustentável",
+        "Uma profissional que me escute e me entenda de verdade"
       ]
     }
   ];
@@ -57,25 +57,25 @@ const Quiz = () => {
   }, [answers, currentQuestion, questions.length, isTransitioning]);
 
   const getResult = useCallback(() => {
-    const giKeywords = ['distensão', 'constipação', 'diarreia', 'refluxo', 'gases', 'queimação', 'alimentos me fazem mal'];
-    const behavioralKeywords = ['medo', 'culpa', 'ansiedade', 'compulsão', 'restritivas', 'neura'];
+    const behavioralKeywords = ['culpa', 'ansiedade', 'compulsão', 'medo', 'restrinjo', 'relação'];
+    const weightKeywords = ['emagrecer', 'dietas', 'engordar', 'emagrecimento'];
     
     const answerText = answers.join(' ').toLowerCase();
     
-    if (giKeywords.some(keyword => answerText.includes(keyword))) {
+    if (behavioralKeywords.some(keyword => answerText.includes(keyword))) {
       return {
-        title: "Acompanhamento em Saúde Gastrointestinal 🌿",
-        description: "Baseado nas suas respostas, você se beneficiaria de um acompanhamento focado na investigação e tratamento dos seus sintomas digestivos, com um plano nutricional personalizado para restaurar o equilíbrio intestinal."
+        title: "Nutrição Comportamental é o seu caminho! 💚",
+        description: "Suas respostas mostram que trabalhar a relação com a comida é essencial pra você. Juntas, vamos construir uma alimentação sem culpa, sem restrições e com muito mais prazer e equilíbrio."
       };
-    } else if (behavioralKeywords.some(keyword => answerText.includes(keyword))) {
+    } else if (weightKeywords.some(keyword => answerText.includes(keyword))) {
       return {
-        title: "Nutrição Comportamental é o caminho! 💚",
-        description: "Suas respostas indicam que trabalhar a relação com a comida é essencial. Juntas, vamos construir uma alimentação sem culpa, sem restrições e com muito mais prazer e equilíbrio."
+        title: "Emagrecimento Saudável e Sustentável 🌿",
+        description: "Você busca emagrecer de forma saudável e definitiva. Vou te ajudar com um plano personalizado, sem dietas malucas, respeitando seu corpo e seus gostos."
       };
     } else {
       return {
-        title: "Nutrição Integrativa e Individualizada ✨",
-        description: "Você se beneficiaria de um acompanhamento completo que olha para o seu corpo como um todo — intestino, comportamento alimentar e bem-estar emocional."
+        title: "Reeducação Alimentar Personalizada ✨",
+        description: "Você se beneficiaria de um acompanhamento completo para reorganizar sua alimentação de forma prática, leve e que funcione na sua rotina."
       };
     }
   }, [answers]);
@@ -147,7 +147,7 @@ const Quiz = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-chrome-gold to-chrome-dark rounded-full mx-auto mb-4"></div>
           <p className="text-lg text-gray-rose/80">
-            Responda 3 perguntas rápidas e descubra o melhor caminho para a sua saúde
+            Responda 3 perguntas rápidas e descubra o melhor caminho para você
           </p>
         </div>
         

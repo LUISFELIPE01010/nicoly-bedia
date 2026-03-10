@@ -19,7 +19,7 @@ const Hero = () => {
       {/* Header */}
       <header className="w-full py-4 px-4 sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-chrome-light/30">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <img alt="Lethícia Nunes Nutricionista" className="h-16 md:h-20 object-contain" src="/lovable-uploads/ff2c0f19-5964-48d0-9b6b-09dcd048a74c.png" />
+          <span className="text-xl md:text-2xl font-bold text-chrome-dark">Nicoly Bédia</span>
           
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-6">
@@ -61,26 +61,26 @@ const Hero = () => {
           <div className="animate-slide-in-right lg:order-2 order-first">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-chrome-light to-gold-accent rounded-3xl transform rotate-6 opacity-20"></div>
-              <img alt="Lethícia Nunes, nutricionista sorrindo em ambiente profissional" className="relative rounded-3xl shadow-2xl w-full max-w-xs md:max-w-md mx-auto object-cover h-[320px] md:h-[500px]" loading="eager" src="/lovable-uploads/6a4e2531-0216-4050-9fd9-76fdbfa72be5.jpg" />
+              <img alt="Nicoly Bédia, nutricionista sorrindo em ambiente profissional" className="relative rounded-3xl shadow-2xl w-full max-w-xs md:max-w-md mx-auto object-cover h-[320px] md:h-[500px]" loading="eager" src="/lovable-uploads/nicoly-perfil.jpg" />
             </div>
           </div>
 
           {/* Text Content */}
           <div className="space-y-6 md:space-y-8 animate-slide-in-left">
             <div className="flex items-center gap-2 text-chrome-gold">
-              <span className="text-sm font-medium tracking-wide uppercase">Nutricionista Lethícia Nunes</span>
+              <span className="text-sm font-medium tracking-wide uppercase">Nutricionista Nicoly Bédia</span>
             </div>
             
             <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-              <span className="text-gradient">Saúde</span>
+              <span className="text-gradient">Coma bem,</span>
               <br />
-              <span className="text-gray-rose">começa pelo</span>
+              <span className="text-gray-rose">viva leve,</span>
               <br />
-              <span className="text-gradient">intestino.</span>
+              <span className="text-gradient">sem culpa.</span>
             </h1>
             
             <p className="text-base md:text-lg lg:text-xl text-gray-rose leading-relaxed max-w-2xl">
-              Nutricionista clínica especializada em saúde gastrointestinal e nutrição comportamental. Ajudo você a desenvolver uma relação equilibrada e consciente com a alimentação.
+              Te ajudo a melhorar sua relação com a comida e alcançar seus objetivos de forma leve! Sem dietas malucas, sem terrorismo nutricional — só equilíbrio e carinho com você.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -89,9 +89,9 @@ const Hero = () => {
                 Agendar consulta
               </button>
               
-              <a href="tel:+5513981214037" className="inline-flex items-center justify-center gap-3 bg-transparent border-2 border-chrome-gold text-chrome-gold px-8 py-4 rounded-full font-semibold text-lg hover-lift hover:bg-chrome-gold hover:text-white transition-all whitespace-nowrap" aria-label="Ligar para Lethícia Nunes">
+              <a href="tel:+5513996905517" className="inline-flex items-center justify-center gap-3 bg-transparent border-2 border-chrome-gold text-chrome-gold px-8 py-4 rounded-full font-semibold text-lg hover-lift hover:bg-chrome-gold hover:text-white transition-all whitespace-nowrap" aria-label="Ligar para Nicoly Bédia">
                 <Phone className="w-6 h-6 flex-shrink-0" />
-                <span className="whitespace-nowrap">(13) 98121-4037</span>
+                <span className="whitespace-nowrap">(13) 99690-5517</span>
               </a>
             </div>
           </div>

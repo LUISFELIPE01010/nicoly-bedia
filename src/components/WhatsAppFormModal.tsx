@@ -14,13 +14,13 @@ interface WhatsAppFormModalProps {
   onClose: () => void;
 }
 
-const WHATSAPP_NUMBER = "5513981214037";
+const WHATSAPP_NUMBER = "5513996905517";
 
 const goals = [
-  "Saúde intestinal / Gastro",
-  "Nutrição comportamental",
-  "Intolerâncias alimentares",
   "Reeducação alimentar",
+  "Emagrecimento saudável",
+  "Nutrição comportamental",
+  "Planejamento alimentar",
   "Outro"
 ];
 

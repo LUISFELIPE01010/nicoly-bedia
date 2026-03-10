@@ -3,45 +3,45 @@ import { Star, Quote } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "A Lethícia mudou minha relação com a comida. Finalmente entendi que comer bem não precisa ser sofrido. Meus sintomas intestinais melhoraram muito!",
+      quote: "A Nicoly mudou minha relação com a comida. Finalmente entendi que comer bem não precisa ser sofrido. Me sinto muito mais leve e feliz!",
       name: "Camila",
       age: "28 anos",
-      image: "/lovable-uploads/68e54351-155a-4d01-ae41-61d0c1c4b649.png"
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
     },
     {
-      quote: "Depois do acompanhamento com a Lethícia, minha distensão abdominal praticamente sumiu. Ela realmente escuta e entende o que você está passando.",
-      name: "Juliana", 
+      quote: "O acompanhamento com a Nicoly é incrível. Ela realmente escuta e entende o que você está passando. Me sinto acolhida em cada consulta.",
+      name: "Juliana",
       age: "35 anos",
-      image: "/lovable-uploads/juliana-testimonial.png"
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
     },
     {
-      quote: "O cuidado da Lethícia vai além da nutrição. Ela me ajudou a entender meu corpo e a ter uma alimentação sem culpa. Recomendo de olhos fechados!",
+      quote: "Depois de tantas dietas frustradas, finalmente encontrei uma profissional que me ensinou a comer sem culpa. Recomendo de olhos fechados!",
       name: "Fernanda",
-      age: "31 anos", 
+      age: "31 anos",
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
     },
     {
-      quote: "Sofria com refluxo e constipação há anos. Com o plano da Lethícia, em poucos meses já senti uma melhora enorme na qualidade de vida.",
+      quote: "A Nicoly é uma profissional incrível! Me ajudou a emagrecer de forma saudável e sem passar fome. Mudou minha vida!",
       name: "Patrícia",
       age: "29 anos",
-      image: "/lovable-uploads/patricia-testimonial.png"
-    },
-    {
-      quote: "A consulta com a Lethícia foi transformadora. Ela realmente investiga a causa dos sintomas e cria um plano que funciona na vida real.",
-      name: "Renata",
-      age: "33 anos",
       image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
     },
     {
-      quote: "A nutrição comportamental mudou minha vida. Hoje como sem medo, sem culpa e me sinto muito mais equilibrada e disposta!",
+      quote: "O carinho e dedicação da Nicoly fazem toda a diferença. Ela não é só nutricionista, é uma parceira no processo de cuidar de mim.",
+      name: "Renata",
+      age: "33 anos",
+      image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+    },
+    {
+      quote: "Aprendi que alimentação saudável pode ser gostosa e prática. A Nicoly tornou tudo mais leve e possível na minha rotina!",
       name: "Luciana",
       age: "27 anos",
-      image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section id="testimonials" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16 animate-on-scroll">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-rose mb-6">
@@ -49,7 +49,7 @@ const Testimonials = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-chrome-gold to-chrome-dark rounded-full mx-auto mb-4"></div>
           <p className="text-lg text-gray-rose/80 max-w-2xl mx-auto">
-            Histórias reais de quem recuperou a saúde intestinal e a paz com a alimentação
+            Histórias reais de quem transformou a relação com a comida e encontrou mais leveza
           </p>
         </div>
         

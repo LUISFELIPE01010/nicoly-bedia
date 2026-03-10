@@ -4,32 +4,32 @@ const Tips = () => {
   const tips = [
     {
       icon: Apple,
-      title: "Alimentos amigos do intestino",
-      description: "Fibras, probióticos e prebióticos são essenciais. Inclua frutas, verduras, iogurte natural e grãos integrais na sua rotina.",
+      title: "Nenhum alimento é vilão",
+      description: "Não existe alimento proibido! O segredo está no equilíbrio e na frequência. Permita-se comer o que gosta com consciência e sem culpa.",
       accent: "bg-green-100 text-green-700",
-      iconBg: "bg-green-500",
+      iconBg: "bg-chrome-gold",
       number: "01"
     },
     {
       icon: Smile,
-      title: "Coma sem culpa e sem medo",
-      description: "A nutrição comportamental ensina que não existem alimentos proibidos. O equilíbrio e a consciência são mais importantes que a restrição.",
+      title: "Coma com prazer e presença",
+      description: "Desligue o celular, sente-se à mesa e saboreie cada garfada. Comer com atenção plena ajuda na saciedade e transforma a experiência de se alimentar.",
       accent: "bg-amber-100 text-amber-700",
       iconBg: "bg-amber-500",
       number: "02"
     },
     {
       icon: Clock,
-      title: "Respeite os sinais do seu corpo",
-      description: "Coma quando sentir fome, pare quando estiver satisfeita. Prestar atenção nos sinais do corpo é o primeiro passo para uma alimentação saudável.",
+      title: "Não pule refeições",
+      description: "Ficar muito tempo sem comer pode te levar a exagerar depois. Faça refeições regulares e respeite os sinais de fome e saciedade do seu corpo.",
       accent: "bg-rose-100 text-rose-700",
       iconBg: "bg-rose-400",
       number: "03"
     },
     {
       icon: Droplets,
-      title: "Hidratação e saúde intestinal",
-      description: "A água é fundamental para o bom funcionamento do intestino. Beba pelo menos 35ml por kg de peso corporal ao longo do dia.",
+      title: "Hidrate-se ao longo do dia",
+      description: "A água é essencial para o metabolismo, disposição e até para controlar a fome. Tente beber pelo menos 35ml por kg de peso corporal diariamente.",
       accent: "bg-sky-100 text-sky-700",
       iconBg: "bg-sky-500",
       number: "04"
@@ -39,7 +39,7 @@ const Tips = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-nude-soft via-white to-chrome-light/10 relative overflow-hidden">
       {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-gold-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-72 h-72 bg-chrome-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-chrome-light/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
       
       <div className="max-w-6xl mx-auto px-4 relative z-10">
@@ -51,7 +51,7 @@ const Tips = () => {
             Dicas da Nutri
           </h2>
           <p className="text-lg text-gray-rose/70 max-w-2xl mx-auto">
-            Pequenas mudanças que fazem toda a diferença na sua saúde intestinal
+            Pequenas mudanças que fazem toda a diferença na sua saúde e no seu dia a dia
           </p>
         </div>
         

@@ -63,16 +63,18 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Pastel/warm palette for Lethícia Nunes
-				'chrome-gold': '#A89279',
-				'chrome-light': '#D6CBBC',
-				'chrome-dark': '#7D6B55',
-				'nude-soft': '#F2EEE9',
+				// Palette for Nicoly Bédia
+				'chrome-gold': '#6D9F80',
+				'chrome-light': '#B8D4C4',
+				'chrome-dark': '#4A7D5E',
+				'nude-soft': '#F5F0EB',
 				'gray-rose': '#4A4A4A',
-				'gold-accent': '#E0D5C7',
-				'gold-dark': '#6B5D4F',
-				'pastel-green': '#B8C9B3',
-				'pastel-sage': '#C5D1C0',
+				'gold-accent': '#D4E6DB',
+				'gold-dark': '#3D6B4F',
+				'pastel-green': '#B8D4C4',
+				'pastel-sage': '#C5D8CC',
+				'pastel-peach': '#F5DCD0',
+				'pastel-lavender': '#E0D6EC',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
