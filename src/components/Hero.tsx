@@ -1,6 +1,7 @@
 import { Phone, MessageCircle, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import WhatsAppFormModal from './WhatsAppFormModal';
+import strawberryLogo from '@/assets/strawberry-logo.png';
 
 const navLinks = [
   { label: 'Sobre', href: '#about' },
