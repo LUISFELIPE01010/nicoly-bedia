@@ -27,7 +27,7 @@ const About = () => {
             </p>
             
             <p className="text-lg text-gray-rose leading-relaxed">
-              Mas o que me move de verdade vai além do currículo: eu sou apaixonada pelo que faço! Cada sorriso de paciente, cada conquista compartilhada, me lembra do motivo de ter escolhido essa profissão. Sou uma nutri dedicada, que escuta de verdade, que acredita que alimentação boa é alimentação sem medo — e que está sempre buscando aprender mais pra te ajudar melhor. ✨
+              Mas o que me move de verdade vai além do currículo: eu sou apaixonada pelo que faço! Cada sorriso de paciente, cada conquista compartilhada, me lembra do motivo de ter escolhido essa profissão. Sou uma nutri dedicada, que escuta de verdade, que acredita que alimentação boa é alimentação sem medo  e que está sempre buscando aprender mais pra te ajudar melhor. ✨
             </p>
             
             {/* Stats */}
@@ -59,8 +59,8 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default About;
