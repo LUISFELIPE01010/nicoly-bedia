@@ -70,8 +70,8 @@ const Hero = () => {
           </div>
 
           {/* Text Content */}
-          <div className="space-y-6 md:space-y-8 animate-slide-in-left">
-            <div className="flex items-center gap-2 text-chrome-gold">
+          <div className="space-y-6 md:space-y-8 animate-slide-in-left text-center lg:text-left">
+            <div className="flex items-center gap-2 text-chrome-gold justify-center lg:justify-start">
               <span className="text-sm font-medium tracking-wide uppercase">Nutricionista Nicoly Bédia</span>
             </div>
             
@@ -83,11 +83,11 @@ const Hero = () => {
               <span className="text-gradient">sem culpa.</span>
             </h1>
             
-            <p className="text-base md:text-lg lg:text-xl text-gray-rose leading-relaxed max-w-2xl">
+            <p className="text-base md:text-lg lg:text-xl text-gray-rose leading-relaxed max-w-2xl mx-auto lg:mx-0">
               Te ajudo a melhorar sua relação com a comida e alcançar seus objetivos de forma leve! Sem dietas malucas, sem terrorismo nutricional — só equilíbrio e carinho com você.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button onClick={() => setFormOpen(true)} className="inline-flex items-center justify-center gap-3 bg-chrome-gold text-white px-8 py-4 rounded-full font-semibold text-lg hover-lift shadow-lg hover:bg-chrome-dark transition-all" aria-label="Agendar consulta">
                 <MessageCircle className="w-6 h-6" />
                 Agendar consulta
