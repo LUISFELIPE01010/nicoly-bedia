@@ -26,7 +26,7 @@ const Results = () => {
         'Cada consulta é especial. A Nicoly realmente escuta e cria um plano que funciona pra minha rotina.',
     },
     {
-      image: '/lovable-uploads/nicoly-perfil.jpg',
+      image: '/lovable-uploads/d96c0b93-efa5-494a-a668-fb520d37c8b7.jpg',
       alt: 'Nutricionista Nicoly Bédia',
       title: 'Relação Saudável com a Comida',
       description: 'Sem culpa, sem restrição',
