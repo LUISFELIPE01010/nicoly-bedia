@@ -20,7 +20,10 @@ const Hero = () => {
       {/* Header */}
       <header className="w-full py-4 px-4 sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-chrome-light/30">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <span className="text-xl md:text-2xl font-bold text-chrome-dark">Nicoly Bédia</span>
+          <span className="text-xl md:text-2xl font-bold text-chrome-dark flex items-center gap-2">
+            <img src={strawberryLogo} alt="" className="w-7 h-7 md:w-8 md:h-8" />
+            Nicoly Bédia
+          </span>
           
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-6">
