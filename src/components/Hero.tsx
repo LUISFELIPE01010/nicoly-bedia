@@ -61,7 +61,7 @@ const Hero = () => {
           <div className="animate-slide-in-right lg:order-2 order-first">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-chrome-light to-gold-accent rounded-3xl transform rotate-6 opacity-20"></div>
-              <img alt="Nicoly Bédia, nutricionista sorrindo em ambiente profissional" className="relative rounded-3xl shadow-2xl w-full max-w-xs md:max-w-md mx-auto object-cover h-[320px] md:h-[500px]" loading="eager" src="/lovable-uploads/nicoly-perfil.jpg" />
+              <img alt="Nicoly Bédia, nutricionista sorrindo em ambiente profissional" className="relative rounded-3xl shadow-2xl w-full max-w-xs md:max-w-md mx-auto object-cover h-[320px] md:h-[500px]" loading="eager" src="/lovable-uploads/nicoly-hero.png" />
             </div>
           </div>
 
