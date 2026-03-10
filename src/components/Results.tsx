@@ -17,7 +17,7 @@ const Results = () => {
         'Aprendi a montar pratos equilibrados e saborosos. A Nicoly tornou tudo mais simples e sem neura!',
     },
     {
-      image: '/lovable-uploads/nicoly-consulta.png',
+      image: '/lovable-uploads/nicoly-acompanhamento.png',
       alt: 'Consulta nutricional personalizada',
       title: 'Acompanhamento Personalizado',
       description: 'Cuidado individual e acolhedor',
