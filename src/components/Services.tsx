@@ -1,4 +1,4 @@
-import { Stethoscope, HeartPulse, Salad, Brain, Video, Leaf } from 'lucide-react';
+import { Apple, Salad, Brain, Video, Heart, Leaf } from 'lucide-react';
 import { useState } from 'react';
 import ServiceModal from './ServiceModal';
 
@@ -7,45 +7,45 @@ const Services = () => {
   
   const services = [
     {
-      icon: Stethoscope,
-      title: "Saúde Gastrointestinal",
-      description: "Tratamento de distensão abdominal, constipação, diarreia, refluxo e desequilíbrios intestinais.",
-      modalContent: "Atendo pacientes com queixas gastrointestinais como distensão abdominal, constipação, diarreia, refluxo, intolerâncias alimentares e desequilíbrios intestinais. Através de uma avaliação detalhada, identificamos as causas dos sintomas e criamos um plano nutricional personalizado focado na melhora da saúde intestinal e da qualidade de vida."
-    },
-    {
-      icon: HeartPulse,
-      title: "Nutrição Clínica",
-      description: "Acompanhamento nutricional individualizado com foco no trato gastrointestinal.",
-      modalContent: "A nutrição clínica é a base do meu atendimento. Com formação em Nutrição Clínica e Hospitalar, ofereço um acompanhamento que vai além da prescrição de dietas. Avalio exames, histórico de saúde e sintomas para criar estratégias nutricionais que promovam a recuperação e o bem-estar do paciente."
-    },
-    {
       icon: Brain,
       title: "Nutrição Comportamental",
-      description: "Mudanças sustentáveis sem dietas restritivas, terrorismo nutricional ou culpa alimentar.",
-      modalContent: "A nutrição comportamental é um pilar fundamental da minha prática. Promovo mudanças sustentáveis, sem dietas restritivas, terrorismo nutricional ou culpa alimentar. Trabalhamos juntos para que você desenvolva uma relação saudável com a comida, respeitando os sinais do seu corpo e o prazer em comer."
-    },
-    {
-      icon: Leaf,
-      title: "Nutrição Integrativa",
-      description: "Abordagem que conecta alimentação, saúde intestinal e bem-estar emocional.",
-      modalContent: "Na nutrição integrativa, olhamos para o paciente como um todo. A alimentação é vista como uma aliada da saúde física e emocional, respeitando a individualidade de cada pessoa. Integro conhecimentos de saúde intestinal, comportamento alimentar e equilíbrio nutricional para resultados completos e duradouros."
+      description: "Melhore sua relação com a comida sem dietas restritivas, sem culpa e com muito mais prazer em comer.",
+      modalContent: "A nutrição comportamental é sobre entender seus hábitos, emoções e relação com a comida. Juntas, vamos construir uma alimentação que funcione pra você de verdade — sem proibições, sem terrorismo nutricional, só equilíbrio e autoconhecimento."
     },
     {
       icon: Salad,
-      title: "Intolerâncias Alimentares",
-      description: "Investigação e manejo nutricional de intolerâncias e sensibilidades alimentares.",
-      modalContent: "Se você sofre com sintomas após comer determinados alimentos, posso ajudar. Realizo uma investigação detalhada dos seus hábitos e sintomas para identificar possíveis intolerâncias e sensibilidades alimentares, criando um plano alimentar que respeite suas necessidades sem comprometer o prazer e a variedade na alimentação."
+      title: "Reeducação Alimentar",
+      description: "Aprenda a montar pratos equilibrados e nutritivos que cabem na sua rotina e no seu gosto.",
+      modalContent: "Reeducação alimentar não é dieta! É aprender a fazer escolhas mais conscientes e equilibradas, respeitando seus gostos, sua rotina e seu corpo. Vou te ajudar a entender o que comer, quando comer e como montar pratos práticos e gostosos."
+    },
+    {
+      icon: Heart,
+      title: "Emagrecimento Saudável",
+      description: "Perca peso de forma sustentável, sem passar fome e sem efeito sanfona.",
+      modalContent: "Emagrecimento de verdade não acontece com dieta da moda. É um processo que respeita seu corpo e sua individualidade. Vou criar um plano personalizado pra você alcançar seus objetivos com saúde, prazer e leveza."
+    },
+    {
+      icon: Leaf,
+      title: "Saúde e Bem-estar",
+      description: "Cuide da sua saúde de forma integral com uma alimentação que nutre corpo e mente.",
+      modalContent: "Alimentação vai muito além de estética — é sobre saúde, disposição, humor e qualidade de vida. Vou te ajudar a se sentir melhor no seu corpo através de uma nutrição personalizada e integrativa."
+    },
+    {
+      icon: Apple,
+      title: "Planejamento Alimentar",
+      description: "Cardápios personalizados e práticos para facilitar sua rotina alimentar.",
+      modalContent: "Sei que a correria do dia a dia dificulta manter uma alimentação equilibrada. Por isso, crio planos alimentares práticos e flexíveis, adaptados aos seus horários, preferências e necessidades."
     },
     {
       icon: Video,
       title: "Consultas Online e Presenciais",
       description: "Flexibilidade total para caber na sua agenda e localização.",
-      modalContent: "Ofereço atendimento presencial em Santos/SP e também consultas online para todo o Brasil. Através de uma plataforma completa, você terá acesso a consultas, materiais educativos e acompanhamento personalizado com a mesma qualidade e cuidado do atendimento presencial."
+      modalContent: "Atendo presencialmente em Santos/SP na Av. Conselheiro Nébias, 754 - Boqueirão, e também online para todo o Brasil. Você escolhe o formato que for mais prático pra você, com a mesma qualidade e cuidado!"
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-nude-soft to-white">
+    <section id="services" className="py-20 bg-gradient-to-b from-nude-soft to-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16 animate-on-scroll">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-rose mb-6">

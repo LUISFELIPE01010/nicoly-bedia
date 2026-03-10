@@ -2,14 +2,14 @@ import { Star, Award, Users } from 'lucide-react';
 
 const About = () => {
   return (
-    <section className="py-20 bg-white">
+    <section id="about" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
           <div className="animate-on-scroll">
             <div className="relative">
               <div className="absolute inset-0 bg-chrome-light rounded-3xl transform -rotate-3 opacity-30"></div>
-              <img alt="Lethícia Nunes em consulta nutricional" className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto object-cover h-[400px] md:h-[500px]" loading="lazy" src="/lovable-uploads/787eb591-d3bc-4bfc-a62a-7585fac80851.jpg" />
+              <img alt="Nicoly Bédia em consulta nutricional" className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto object-cover h-[400px] md:h-[500px]" loading="lazy" src="/lovable-uploads/nicoly-consulta.png" />
             </div>
           </div>
           
@@ -23,11 +23,11 @@ const About = () => {
             </div>
             
             <p className="text-lg text-gray-rose leading-relaxed">
-              Olá! Sou Lethícia Nunes, nutricionista clínica com atuação voltada para a saúde gastrointestinal e a nutrição comportamental. Formada em Nutrição em 2018 e pós-graduada em Nutrição Clínica e Hospitalar, ajudo pessoas a desenvolverem uma relação mais equilibrada e consciente com a alimentação.
+              Oi, eu sou a Nicoly! 💚 Nutricionista formada pelo Centro Universitário Saúde ABC e Mestra em Ciências da Saúde pela UNIFESP, com pesquisa voltada para obesidade e neurociência do comportamento alimentar.
             </p>
             
             <p className="text-lg text-gray-rose leading-relaxed">
-              Meu trabalho é baseado em uma abordagem individualizada, que considera não apenas os sintomas físicos, mas também os hábitos alimentares, o comportamento, a rotina e o contexto de vida de cada paciente. Acredito que a alimentação deve ser uma aliada da saúde física e emocional.
+              Mas o que me move de verdade vai além do currículo: eu sou apaixonada pelo que faço! Cada sorriso de paciente, cada conquista compartilhada, me lembra do motivo de ter escolhido essa profissão. Sou uma nutri dedicada, que escuta de verdade, que acredita que alimentação boa é alimentação sem medo — e que está sempre buscando aprender mais pra te ajudar melhor. ✨
             </p>
             
             {/* Stats */}
@@ -36,16 +36,16 @@ const About = () => {
                 <div className="w-16 h-16 bg-chrome-light rounded-full flex items-center justify-center mx-auto mb-3">
                   <Users className="w-8 h-8 text-chrome-dark" />
                 </div>
-                <div className="text-2xl font-bold text-gray-rose">300+</div>
-                <div className="text-sm text-gray-rose">Pacientes atendidos</div>
+                <div className="text-2xl font-bold text-gray-rose">Mestra</div>
+                <div className="text-sm text-gray-rose">UNIFESP</div>
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-gold-accent rounded-full flex items-center justify-center mx-auto mb-3">
                   <Star className="w-8 h-8 text-chrome-dark" />
                 </div>
-                <div className="text-2xl font-bold text-gray-rose">+6 anos</div>
-                <div className="text-sm text-gray-rose">De experiência</div>
+                <div className="text-2xl font-bold text-gray-rose">Dedicada</div>
+                <div className="text-sm text-gray-rose">De coração</div>
               </div>
               
               <div className="text-center">
@@ -59,8 +59,8 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default About;
