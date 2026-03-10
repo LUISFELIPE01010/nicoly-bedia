@@ -25,6 +25,12 @@ const Services = () => {
       modalContent: "Emagrecimento de verdade não acontece com dieta da moda. É um processo que respeita seu corpo e sua individualidade. Vou criar um plano personalizado pra você alcançar seus objetivos com saúde, prazer e leveza."
     },
     {
+      icon: Apple,
+      title: "Planejamento Alimentar",
+      description: "Cardápios personalizados e práticos para facilitar sua rotina alimentar.",
+      modalContent: "Sei que a correria do dia a dia dificulta manter uma alimentação equilibrada. Por isso, crio planos alimentares práticos e flexíveis, adaptados aos seus horários, preferências e necessidades."
+    },
+    {
       icon: Dumbbell,
       title: "Nutrição Esportiva e Hipertrofia",
       description: "Maximize seu desempenho, ganhe massa muscular e alcance seus objetivos com alimentação estratégica.",
