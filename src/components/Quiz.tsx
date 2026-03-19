@@ -11,30 +11,30 @@ const Quiz = () => {
 
   const questions = [
     {
-      question: "Qual é o seu maior desafio hoje com a alimentação?",
+      question: "Qual é a sua maior preocupação com a pele atualmente?",
       options: [
-        "Não consigo manter uma alimentação equilibrada na rotina",
-        "Sinto culpa ou ansiedade ao comer",
-        "Quero emagrecer mas não sei por onde começar",
-        "Já fiz várias dietas e nenhuma funcionou"
+        "Manchas, melasma ou tom desigual",
+        "Flacidez e perda de firmeza",
+        "Rugas, linhas finas e sinais de envelhecimento",
+        "Acne, cravos e poros dilatados"
       ]
     },
     {
-      question: "Como você se sente em relação à comida?",
+      question: "Qual é a sua faixa etária?",
       options: [
-        "Tenho medo de engordar e restrinjo muitos alimentos",
-        "Como bem, mas quero melhorar minha disposição e saúde",
-        "Tenho compulsão alimentar e não consigo controlar",
-        "Quero aprender a comer melhor sem neura"
+        "20 a 30 anos",
+        "31 a 40 anos",
+        "41 a 50 anos",
+        "Acima de 50 anos"
       ]
     },
     {
-      question: "O que você busca em um acompanhamento nutricional?",
+      question: "Você já fez algum procedimento estético antes?",
       options: [
-        "Um plano alimentar prático que caiba na minha rotina",
-        "Ajuda para melhorar minha relação com a comida",
-        "Emagrecimento saudável e sustentável",
-        "Uma profissional que me escute e me entenda de verdade"
+        "Nunca fiz, seria minha primeira vez",
+        "Sim, limpeza de pele e peeling",
+        "Sim, procedimentos com tecnologia (laser, ultrassom, etc)",
+        "Sim, já fiz procedimentos injetáveis"
       ]
     }
   ];
@@ -57,32 +57,33 @@ const Quiz = () => {
   }, [answers, currentQuestion, questions.length, isTransitioning]);
 
   const getResult = useCallback(() => {
-    const behavioralKeywords = ['culpa', 'ansiedade', 'compulsão', 'medo', 'restrinjo', 'relação'];
-    const weightKeywords = ['emagrecer', 'dietas', 'engordar', 'emagrecimento'];
-    
     const answerText = answers.join(' ').toLowerCase();
     
-    if (behavioralKeywords.some(keyword => answerText.includes(keyword))) {
+    if (answerText.includes('manchas') || answerText.includes('melasma') || answerText.includes('tom desigual')) {
       return {
-        title: "Nutrição Comportamental é o seu caminho! 💚",
-        description: "Suas respostas mostram que trabalhar a relação com a comida é essencial pra você. Juntas, vamos construir uma alimentação sem culpa, sem restrições e com muito mais prazer e equilíbrio."
+        title: "Peeling + Microagulhamento é ideal para você! ✨",
+        description: "Suas respostas indicam que tratamentos para clareamento e uniformização da pele trarão os melhores resultados. Com peeling personalizado e microagulhamento com drug delivery, vamos devolver a luminosidade e uniformidade da sua pele."
       };
-    } else if (weightKeywords.some(keyword => answerText.includes(keyword))) {
+    } else if (answerText.includes('flacidez') || answerText.includes('firmeza')) {
       return {
-        title: "Emagrecimento Saudável e Sustentável 🌿",
-        description: "Você busca emagrecer de forma saudável e definitiva. Vou te ajudar com um plano personalizado, sem dietas malucas, respeitando seu corpo e seus gostos."
+        title: "Ultraformer III + Radiofrequência! 💎",
+        description: "O combo perfeito para combater a flacidez! O Ultraformer III trabalha nas camadas profundas estimulando colágeno, enquanto a radiofrequência firma e redefine o contorno facial. Resultados visíveis e progressivos!"
+      };
+    } else if (answerText.includes('rugas') || answerText.includes('linhas finas') || answerText.includes('envelhecimento')) {
+      return {
+        title: "Skinbooster + Ultrassom Microfocado! 🌟",
+        description: "A combinação ideal para rejuvenescimento! O skinbooster hidrata profundamente e devolve o viço, enquanto o ultrassom microfocado estimula a produção de colágeno. Sua pele vai ficar radiante e revitalizada!"
       };
     } else {
       return {
-        title: "Reeducação Alimentar Personalizada ✨",
-        description: "Você se beneficiaria de um acompanhamento completo para reorganizar sua alimentação de forma prática, leve e que funcione na sua rotina."
+        title: "Limpeza de Pele + Peeling Personalizado! 💆‍♀️",
+        description: "Começar com uma limpeza profunda e um peeling específico para o seu tipo de pele é o primeiro passo para uma pele saudável e bonita. Vamos tratar cravos, poros e deixar sua pele renovada!"
       };
     }
   }, [answers]);
 
   const resetQuiz = useCallback(() => {
     if (isTransitioning) return;
-    
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentQuestion(0);
@@ -101,10 +102,10 @@ const Quiz = () => {
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-chrome-light/30">
             <div className="mb-8">
               <CheckCircle className="w-20 h-20 text-chrome-gold mx-auto mb-6" />
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-rose mb-4">
+              <h3 className="text-2xl md:text-3xl font-bold text-title-blue mb-4">
                 {result.title}
               </h3>
-              <p className="text-lg text-gray-rose/80 leading-relaxed mb-8">
+              <p className="text-lg text-title-blue/80 leading-relaxed mb-8">
                 {result.description}
               </p>
             </div>
@@ -113,10 +114,10 @@ const Quiz = () => {
               <button 
                 onClick={() => setFormOpen(true)}
                 className="inline-flex items-center justify-center gap-3 bg-chrome-gold text-white px-8 py-4 rounded-full font-semibold text-lg hover-lift shadow-lg hover:bg-chrome-dark transition-all"
-                aria-label="Conversar sobre resultado do quiz via WhatsApp"
+                aria-label="Agendar avaliação via WhatsApp"
               >
                 <MessageCircle className="w-6 h-6" />
-                Vamos conversar sobre isso?
+                Agendar minha avaliação
               </button>
               
               <div>
@@ -124,7 +125,7 @@ const Quiz = () => {
                   onClick={resetQuiz}
                   disabled={isTransitioning}
                   className="text-chrome-gold hover:text-chrome-dark transition-colors disabled:opacity-50 font-medium"
-                  aria-label="Refazer quiz nutricional"
+                  aria-label="Refazer quiz"
                 >
                   Refazer o quiz
                 </button>
@@ -142,19 +143,18 @@ const Quiz = () => {
     <section className="py-20 bg-gradient-to-br from-nude-soft to-chrome-light/20">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-rose mb-6">
-            Descubra como posso te ajudar
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-title-blue mb-6">
+            Descubra o tratamento ideal para você
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-chrome-gold to-chrome-dark rounded-full mx-auto mb-4"></div>
-          <p className="text-lg text-gray-rose/80">
-            Responda 3 perguntas rápidas e descubra o melhor caminho para você
+          <p className="text-lg text-title-blue/80">
+            Responda 3 perguntas rápidas e descubra o procedimento perfeito para a sua pele
           </p>
         </div>
         
         <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-12 shadow-2xl border border-chrome-light/30">
-          {/* Progress Bar */}
           <div className="mb-8">
-            <div className="flex justify-between text-sm text-gray-rose/60 mb-2">
+            <div className="flex justify-between text-sm text-title-blue/60 mb-2">
               <span>Pergunta {currentQuestion + 1} de {questions.length}</span>
               <span>{Math.round(((currentQuestion + 1) / questions.length) * 100)}%</span>
             </div>
@@ -167,7 +167,7 @@ const Quiz = () => {
           </div>
           
           <div className="mb-8">
-            <h3 className="text-xl md:text-2xl font-semibold text-gray-rose mb-8">
+            <h3 className="text-xl md:text-2xl font-semibold text-title-blue mb-8">
               {questions[currentQuestion].question}
             </h3>
             
@@ -181,7 +181,7 @@ const Quiz = () => {
                   aria-label={`Selecionar opção: ${option}`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-rose">{option}</span>
+                    <span className="text-title-blue">{option}</span>
                     <ArrowRight className="w-5 h-5 text-chrome-gold opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                 </button>

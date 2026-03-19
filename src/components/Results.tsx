@@ -1,116 +1,129 @@
-import { Star, Heart, ArrowRight, TrendingUp } from 'lucide-react';
+import { Star, Heart, ArrowRight, TrendingUp, Sparkles } from 'lucide-react';
 import { useState } from 'react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import WhatsAppFormModal from './WhatsAppFormModal';
 
 const Results = () => {
   const [formOpen, setFormOpen] = useState(false);
-
-  const resultItems = [
-    {
-      image: '/lovable-uploads/nicoly-comida.jpg',
-      alt: 'Prato saudável e equilibrado',
-      title: 'Alimentação Equilibrada',
-      description: 'Pratos práticos e gostosos',
-      name: 'Maria, 32 anos',
-      feedback:
-        'Aprendi a montar pratos equilibrados e saborosos. A Nicoly tornou tudo mais simples e sem neura!',
-    },
-    {
-      image: '/lovable-uploads/nicoly-acompanhamento.png',
-      alt: 'Consulta nutricional personalizada',
-      title: 'Acompanhamento Personalizado',
-      description: 'Cuidado individual e acolhedor',
-      name: 'Ana, 28 anos',
-      feedback:
-        'Cada consulta é especial. A Nicoly realmente escuta e cria um plano que funciona pra minha rotina.',
-    },
-    {
-      image: '/lovable-uploads/d96c0b93-efa5-494a-a668-fb520d37c8b7.jpg',
-      alt: 'Nutricionista Nicoly Bédia',
-      title: 'Relação Saudável com a Comida',
-      description: 'Sem culpa, sem restrição',
-      name: 'Carla, 35 anos',
-      feedback: 'Finalmente como sem medo e sem culpa. A nutrição comportamental mudou minha vida!',
-    },
-  ];
 
   return (
     <>
       <section id="results" className="py-20 bg-gradient-to-b from-white via-nude-soft/40 to-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-14 animate-on-scroll">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-rose mb-5">Resultados que Inspiram</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold text-title-blue mb-5">Antes & Depois</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-chrome-gold to-chrome-dark rounded-full mx-auto mb-4" />
-            <p className="text-lg text-gray-rose/80 max-w-3xl mx-auto">
-              Cada transformação é única. Veja como a nutrição personalizada e o cuidado individualizado
-              transformaram a vida dessas pacientes.
+            <p className="text-lg text-title-blue/80 max-w-3xl mx-auto">
+              Resultados reais de clientes reais. Cada transformação é única e personalizada para as necessidades de cada pele.
             </p>
           </div>
 
-          <div className="mb-14 animate-on-scroll">
-            <Carousel className="w-full max-w-5xl mx-auto px-10 md:px-0">
-              <CarouselContent>
-                {resultItems.map((item, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                    <article className="bg-white rounded-3xl border border-chrome-light/20 shadow-lg overflow-hidden h-full">
-                      <div className="relative">
-                        <img
-                          src={item.image}
-                          alt={item.alt}
-                          loading="lazy"
-                          width={400}
-                          height={224}
-                          onError={(e) => {
-                            e.currentTarget.src = '/placeholder.svg';
-                          }}
-                          className="w-full h-56 object-cover"
-                        />
-                        <div className="absolute top-4 right-4 w-10 h-10 bg-chrome-gold rounded-full flex items-center justify-center">
-                          <TrendingUp className="w-5 h-5 text-white" />
-                        </div>
-                      </div>
+          {/* Before & After Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-14 animate-on-scroll">
+            {/* Card 1 */}
+            <article className="bg-white rounded-3xl border border-chrome-light/20 shadow-lg overflow-hidden">
+              <div className="relative">
+                <div className="grid grid-cols-2">
+                  <div className="bg-chrome-light/20 h-48 flex items-center justify-center">
+                    <div className="text-center">
+                      <Sparkles className="w-8 h-8 text-chrome-gold mx-auto mb-2" />
+                      <span className="text-sm font-medium text-title-blue/60">Antes</span>
+                    </div>
+                  </div>
+                  <div className="bg-chrome-gold/10 h-48 flex items-center justify-center">
+                    <div className="text-center">
+                      <Star className="w-8 h-8 text-chrome-gold fill-current mx-auto mb-2" />
+                      <span className="text-sm font-medium text-chrome-dark">Depois</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute top-4 right-4 w-10 h-10 bg-chrome-gold rounded-full flex items-center justify-center">
+                  <TrendingUp className="w-5 h-5 text-white" />
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-title-blue mb-2">Rejuvenescimento Facial</h3>
+                <p className="text-chrome-gold font-medium mb-3">Ultraformer III + Skinbooster</p>
+                <blockquote className="text-title-blue/70 italic text-sm leading-relaxed">"Minha pele ficou completamente diferente! Mais firme, luminosa e rejuvenescida. A Elizabeth é incrível!"</blockquote>
+                <p className="font-semibold text-title-blue text-sm mt-2">Marina, 42 anos</p>
+              </div>
+            </article>
 
-                      <div className="p-6">
-                        <h3 className="text-2xl font-semibold text-gray-rose mb-2 leading-tight">{item.title}</h3>
-                        <p className="text-chrome-gold font-medium mb-4">{item.description}</p>
+            {/* Card 2 */}
+            <article className="bg-white rounded-3xl border border-chrome-light/20 shadow-lg overflow-hidden">
+              <div className="relative">
+                <div className="grid grid-cols-2">
+                  <div className="bg-chrome-light/20 h-48 flex items-center justify-center">
+                    <div className="text-center">
+                      <Sparkles className="w-8 h-8 text-chrome-gold mx-auto mb-2" />
+                      <span className="text-sm font-medium text-title-blue/60">Antes</span>
+                    </div>
+                  </div>
+                  <div className="bg-chrome-gold/10 h-48 flex items-center justify-center">
+                    <div className="text-center">
+                      <Star className="w-8 h-8 text-chrome-gold fill-current mx-auto mb-2" />
+                      <span className="text-sm font-medium text-chrome-dark">Depois</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute top-4 right-4 w-10 h-10 bg-chrome-gold rounded-full flex items-center justify-center">
+                  <TrendingUp className="w-5 h-5 text-white" />
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-title-blue mb-2">Tratamento de Melasma</h3>
+                <p className="text-chrome-gold font-medium mb-3">Peeling + Microagulhamento</p>
+                <blockquote className="text-title-blue/70 italic text-sm leading-relaxed">"As manchas clarearam demais! Estou amando o resultado, minha autoestima voltou!"</blockquote>
+                <p className="font-semibold text-title-blue text-sm mt-2">Carla, 38 anos</p>
+              </div>
+            </article>
 
-                        <div className="border-t border-chrome-light/30 pt-4">
-                          <div className="flex items-center gap-1 mb-3" aria-hidden="true">
-                            {[...Array(5)].map((_, i) => (
-                              <Star key={i} className="w-4 h-4 text-chrome-gold fill-current" />
-                            ))}
-                          </div>
-                          <blockquote className="text-gray-rose/80 italic text-sm leading-relaxed mb-2">"{item.feedback}"</blockquote>
-                          <p className="font-semibold text-gray-rose text-sm">{item.name}</p>
-                        </div>
-                      </div>
-                    </article>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="left-0 md:-left-12" />
-              <CarouselNext className="right-0 md:-right-12" />
-            </Carousel>
+            {/* Card 3 */}
+            <article className="bg-white rounded-3xl border border-chrome-light/20 shadow-lg overflow-hidden">
+              <div className="relative">
+                <div className="grid grid-cols-2">
+                  <div className="bg-chrome-light/20 h-48 flex items-center justify-center">
+                    <div className="text-center">
+                      <Sparkles className="w-8 h-8 text-chrome-gold mx-auto mb-2" />
+                      <span className="text-sm font-medium text-title-blue/60">Antes</span>
+                    </div>
+                  </div>
+                  <div className="bg-chrome-gold/10 h-48 flex items-center justify-center">
+                    <div className="text-center">
+                      <Star className="w-8 h-8 text-chrome-gold fill-current mx-auto mb-2" />
+                      <span className="text-sm font-medium text-chrome-dark">Depois</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute top-4 right-4 w-10 h-10 bg-chrome-gold rounded-full flex items-center justify-center">
+                  <TrendingUp className="w-5 h-5 text-white" />
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-title-blue mb-2">Lifting Não Cirúrgico</h3>
+                <p className="text-chrome-gold font-medium mb-3">Radiofrequência + Ultrassom</p>
+                <blockquote className="text-title-blue/70 italic text-sm leading-relaxed">"Parece que tirei 10 anos do rosto! O contorno facial ficou muito mais definido."</blockquote>
+                <p className="font-semibold text-title-blue text-sm mt-2">Patrícia, 50 anos</p>
+              </div>
+            </article>
           </div>
 
           <div className="text-center animate-on-scroll">
             <div className="bg-gradient-to-br from-chrome-light/20 to-nude-soft/50 rounded-3xl p-8 border border-chrome-light/30">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <Heart className="w-6 h-6 text-chrome-gold fill-current" />
-                <span className="text-gray-rose font-semibold text-lg">Pacientes atendidas com muito carinho e dedicação</span>
+                <span className="text-title-blue font-semibold text-lg">Clientes atendidas com carinho e tecnologia de ponta</span>
               </div>
 
-              <p className="text-gray-rose/80 mb-6 max-w-2xl mx-auto">
-                Sua transformação pode ser a próxima! Descubra como a nutrição personalizada pode melhorar sua relação com a comida e sua qualidade de vida.
+              <p className="text-title-blue/80 mb-6 max-w-2xl mx-auto">
+                Sua transformação pode ser a próxima! Agende uma avaliação gratuita e descubra o tratamento ideal para a sua pele.
               </p>
 
               <button
                 onClick={() => setFormOpen(true)}
                 className="inline-flex items-center gap-2 bg-chrome-gold text-white px-8 py-4 rounded-full font-semibold hover-lift shadow-lg hover:bg-chrome-dark transition-all"
-                aria-label="Agendar consulta via WhatsApp"
+                aria-label="Agendar avaliação via WhatsApp"
               >
-                Quero cuidar de mim
+                Quero minha transformação
                 <ArrowRight className="w-5 h-5" />
               </button>
             </div>

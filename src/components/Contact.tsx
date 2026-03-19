@@ -1,29 +1,28 @@
-import { MessageCircle, Instagram, MapPin, Clock, Phone, Heart } from 'lucide-react';
+import { MessageCircle, Instagram, MapPin, Clock, Phone, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 import WhatsAppFormModal from './WhatsAppFormModal';
 
 const Contact = () => {
-  const instagramUrl = "https://www.instagram.com/nicolybedianutri/";
+  const instagramUrl = "https://www.instagram.com/elizabethgutesteticista/";
   const [formOpen, setFormOpen] = useState(false);
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-chrome-light/20 to-gold-accent/10">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16 animate-on-scroll">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-rose mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-title-blue mb-6">
             Vamos conversar?
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-chrome-gold to-chrome-dark rounded-full mx-auto mb-4"></div>
-          <p className="text-lg text-gray-rose/80 max-w-2xl mx-auto">
-            Estou aqui para te ajudar a melhorar sua relação com a comida de forma leve e personalizada
+          <p className="text-lg text-title-blue/80 max-w-2xl mx-auto">
+            Estou aqui para cuidar da sua pele com carinho, tecnologia e experiência
           </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Methods */}
           <div className="space-y-8 animate-on-scroll">
             <div className="bg-white rounded-3xl p-8 shadow-lg hover-lift">
-              <h3 className="text-2xl font-semibold text-gray-rose mb-6">
+              <h3 className="text-2xl font-semibold text-title-blue mb-6">
                 Entre em contato
               </h3>
               
@@ -33,8 +32,8 @@ const Contact = () => {
                     <MessageCircle className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-rose">WhatsApp</p>
-                    <p className="text-gray-rose/70">(13) 99690-5517</p>
+                    <p className="font-semibold text-title-blue">WhatsApp</p>
+                    <p className="text-title-blue/70">(13) 99784-6585</p>
                   </div>
                 </button>
                 
@@ -43,26 +42,25 @@ const Contact = () => {
                     <Instagram className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-rose">Instagram</p>
-                    <p className="text-gray-rose/70">@nicolybedianutri</p>
+                    <p className="font-semibold text-title-blue">Instagram</p>
+                    <p className="text-title-blue/70">@elizabethgutesteticista</p>
                   </div>
                 </a>
                 
-                <a href="tel:+5513996905517" className="flex items-center gap-4 p-4 rounded-2xl bg-nude-soft hover:bg-chrome-light/30 transition-colors group" aria-label="Ligar para Nicoly Bédia">
+                <a href="tel:+5513997846585" className="flex items-center gap-4 p-4 rounded-2xl bg-nude-soft hover:bg-chrome-light/30 transition-colors group" aria-label="Ligar para Elizabeth Gut">
                   <div className="w-12 h-12 bg-chrome-gold rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-rose">Telefone</p>
-                    <p className="text-gray-rose/70">(13) 99690-5517</p>
+                    <p className="font-semibold text-title-blue">Telefone</p>
+                    <p className="text-title-blue/70">(13) 99784-6585</p>
                   </div>
                 </a>
               </div>
             </div>
             
-            {/* Atendimento Info */}
             <div className="bg-white rounded-3xl p-8 shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-rose mb-6 flex items-center gap-2">
+              <h3 className="text-xl font-semibold text-title-blue mb-6 flex items-center gap-2">
                 <MapPin className="w-6 h-6 text-chrome-gold" />
                 Informações de Atendimento
               </h3>
@@ -70,25 +68,21 @@ const Contact = () => {
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-chrome-gold rounded-full mt-2"></div>
-                  <p className="text-gray-rose">
-                    <strong>Presencial:</strong> Av. Conselheiro Nébias, 754 - Boqueirão, Santos - SP, 11045-002
-                  </p>
-                </div>
-                
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-chrome-dark rounded-full mt-2"></div>
-                  <p className="text-gray-rose">
-                    <strong>Online:</strong> Atendimento para todo o Brasil via consulta virtual
+                  <p className="text-title-blue">
+                    <strong>Endereço:</strong> R. Luiz Suplicy, 35 - Gonzaga, Santos - SP, 11055-330
                   </p>
                 </div>
                 
                 <div className="flex items-start gap-3">
                   <Clock className="w-5 h-5 text-chrome-gold mt-0.5 shrink-0" />
-                  <div className="text-gray-rose text-sm space-y-1">
+                  <div className="text-title-blue text-sm space-y-1">
                     <p><strong>Horários:</strong></p>
-                    <p>Segunda-feira: Fechado</p>
-                    <p>Terça a Sexta: 10:00 – 19:00</p>
-                    <p>Sábado: 13:00 – 17:00</p>
+                    <p>Segunda-feira: 11:00 – 20:00</p>
+                    <p>Terça-feira: 11:00 – 20:00</p>
+                    <p>Quarta-feira: 14:00 – 20:00</p>
+                    <p>Quinta-feira: 10:30 – 20:00</p>
+                    <p>Sexta-feira: 11:00 – 20:00</p>
+                    <p>Sábado: 10:00 – 18:00</p>
                     <p>Domingo: Fechado</p>
                   </div>
                 </div>
@@ -96,25 +90,24 @@ const Contact = () => {
             </div>
           </div>
           
-          {/* CTA Card */}
           <div className="animate-on-scroll">
             <div className="bg-gradient-to-br from-chrome-gold to-chrome-dark rounded-3xl p-8 lg:p-12 text-white shadow-2xl relative overflow-hidden">
               <div className="relative z-10 text-center">
-                <Heart className="w-16 h-16 mx-auto mb-6 fill-current" />
+                <Sparkles className="w-16 h-16 mx-auto mb-6" />
                 <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                  Pronta para cuidar de você?
+                  Pronta para se cuidar?
                 </h3>
                 <p className="text-lg mb-8 leading-relaxed">
-                  Não espere mais para melhorar sua relação com a comida. Vamos juntas construir uma alimentação leve, gostosa e que funcione pra você!
+                  Não espere mais para cuidar da sua pele e da sua autoestima. Agende uma avaliação e descubra o tratamento perfeito para você!
                 </p>
                 
-                <button onClick={() => setFormOpen(true)} className="inline-flex items-center justify-center gap-3 bg-white text-chrome-gold px-8 py-4 rounded-full font-semibold text-lg hover-lift shadow-lg hover:shadow-xl transition-all" aria-label="Agendar consulta nutricional">
+                <button onClick={() => setFormOpen(true)} className="inline-flex items-center justify-center gap-3 bg-white text-chrome-gold px-8 py-4 rounded-full font-semibold text-lg hover-lift shadow-lg hover:shadow-xl transition-all" aria-label="Agendar avaliação estética">
                   <MessageCircle className="w-6 h-6" />
-                  Agendar minha consulta
+                  Agendar minha avaliação
                 </button>
                 
                 <p className="text-sm mt-6 opacity-90">
-                  Primeira consulta: avaliação completa e plano personalizado
+                  Avaliação personalizada • Tratamentos com tecnologia de ponta
                 </p>
               </div>
             </div>

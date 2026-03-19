@@ -1,4 +1,4 @@
-import { Star, Award, Users } from 'lucide-react';
+import { Star, Award, Clock } from 'lucide-react';
 
 const About = () => {
   return (
@@ -9,58 +9,58 @@ const About = () => {
           <div className="animate-on-scroll">
             <div className="relative">
               <div className="absolute inset-0 bg-chrome-light rounded-3xl transform -rotate-3 opacity-30"></div>
-              <img alt="Nicoly Bédia em consulta nutricional" className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto object-cover h-[400px] md:h-[500px]" loading="lazy" src="/lovable-uploads/0188c983-aaa2-4b36-88ee-e37f5240b553.png" />
+              <img alt="Elizabeth Gut em seu consultório de estética" className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto object-cover h-[400px] md:h-[500px]" loading="lazy" src="/lovable-uploads/elizabeth-gut-1.png" />
             </div>
           </div>
           
           {/* Content */}
           <div className="space-y-8 animate-on-scroll">
             <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-rose mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-title-blue mb-4">
                 Quem sou eu?
               </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-chrome-gold to-chrome-dark rounded-full"></div>
             </div>
             
-            <p className="text-lg text-gray-rose leading-relaxed">
-              Oi, eu sou a Nicoly! 💚 Nutricionista formada pelo Centro Universitário Saúde ABC e Mestra em Ciências da Saúde pela UNIFESP, com pesquisa voltada para obesidade e neurociência do comportamento alimentar.
+            <p className="text-lg text-title-blue/80 leading-relaxed">
+              Olá, eu sou a Elizabeth Gut! ✨ Apaixonada pela estética e pelo poder transformador que ela tem na vida das pessoas. Desde 2003 atuando como Técnica em Estética, me especializei em procedimentos que realçam a beleza natural de cada pessoa com segurança e carinho.
             </p>
             
-            <p className="text-lg text-gray-rose leading-relaxed">
-              Mas o que me move de verdade vai além do currículo: eu sou apaixonada pelo que faço! Cada sorriso de paciente, cada conquista compartilhada, me lembra do motivo de ter escolhido essa profissão. Sou uma nutri dedicada, que escuta de verdade, que acredita que alimentação boa é alimentação sem medo  e que está sempre buscando aprender mais pra te ajudar melhor. ✨
+            <p className="text-lg text-title-blue/80 leading-relaxed">
+              Sou Esteticista e Cosmetóloga, Pós-graduada em Procedimentos Injetáveis, e atualmente cursando Biomedicina para aprimorar ainda mais meus conhecimentos. Acredito que cada pessoa é única e merece um tratamento personalizado, feito com dedicação e as melhores tecnologias do mercado. Meu objetivo é fazer você se sentir ainda mais bonita e confiante! 💎
             </p>
             
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-chrome-light rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Users className="w-8 h-8 text-chrome-dark" />
+                  <Clock className="w-8 h-8 text-chrome-dark" />
                 </div>
-                <div className="text-2xl font-bold text-gray-rose">Mestra</div>
-                <div className="text-sm text-gray-rose">UNIFESP</div>
+                <div className="text-2xl font-bold text-title-blue">+20 anos</div>
+                <div className="text-sm text-title-blue/70">de experiência</div>
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-gold-accent rounded-full flex items-center justify-center mx-auto mb-3">
                   <Star className="w-8 h-8 text-chrome-dark" />
                 </div>
-                <div className="text-2xl font-bold text-gray-rose">Dedicada</div>
-                <div className="text-sm text-gray-rose">De coração</div>
+                <div className="text-2xl font-bold text-title-blue">Dedicada</div>
+                <div className="text-sm text-title-blue/70">De coração</div>
               </div>
               
               <div className="text-center">
                 <div className="w-16 h-16 bg-nude-soft rounded-full flex items-center justify-center mx-auto mb-3">
                   <Award className="w-8 h-8 text-chrome-dark" />
                 </div>
-                <div className="text-2xl font-bold text-gray-rose">100%</div>
-                <div className="text-sm text-gray-rose">Individualizado</div>
+                <div className="text-2xl font-bold text-title-blue">Pós-grad</div>
+                <div className="text-sm text-title-blue/70">Injetáveis</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default About;
