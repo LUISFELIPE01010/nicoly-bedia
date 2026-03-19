@@ -63,18 +63,19 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Palette for Nicoly Bédia
-				'chrome-gold': '#6D9F80',
-				'chrome-light': '#B8D4C4',
-				'chrome-dark': '#4A7D5E',
+				// Palette for Elizabeth Gut
+				'chrome-gold': '#84C2B2',
+				'chrome-light': '#B8E0D4',
+				'chrome-dark': '#5FA99A',
 				'nude-soft': '#F5F0EB',
-				'gray-rose': '#4A4A4A',
-				'gold-accent': '#D4E6DB',
-				'gold-dark': '#3D6B4F',
-				'pastel-green': '#B8D4C4',
-				'pastel-sage': '#C5D8CC',
+				'gray-rose': '#4A69A7',
+				'gold-accent': '#D4EDE5',
+				'gold-dark': '#3D5A8A',
+				'pastel-green': '#B8E0D4',
+				'pastel-sage': '#C5E0D8',
 				'pastel-peach': '#F5DCD0',
 				'pastel-lavender': '#E0D6EC',
+				'title-blue': '#4A69A7',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

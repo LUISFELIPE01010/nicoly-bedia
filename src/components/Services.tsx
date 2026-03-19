@@ -1,4 +1,4 @@
-import { Apple, Salad, Brain, Video, Heart, Dumbbell } from 'lucide-react';
+import { Sparkles, Eye, Droplets, Zap, Radio, Layers, ScanFace, Shield } from 'lucide-react';
 import { useState } from 'react';
 import ServiceModal from './ServiceModal';
 
@@ -7,40 +7,52 @@ const Services = () => {
   
   const services = [
     {
-      icon: Brain,
-      title: "Nutrição Comportamental",
-      description: "Melhore sua relação com a comida sem dietas restritivas, sem culpa e com muito mais prazer em comer.",
-      modalContent: "A nutrição comportamental é sobre entender seus hábitos, emoções e relação com a comida. Juntas, vamos construir uma alimentação que funcione pra você de verdade — sem proibições, sem terrorismo nutricional, só equilíbrio e autoconhecimento."
+      icon: Layers,
+      title: "Peeling Facial",
+      description: "Renove sua pele com peelings personalizados que promovem clareamento, uniformização e rejuvenescimento.",
+      modalContent: "O peeling facial é um procedimento que remove as camadas superficiais da pele, estimulando a renovação celular. Ideal para tratar manchas, acne, linhas finas e melhorar a textura da pele. Trabalho com diversos tipos de peeling, escolhendo o mais indicado para o seu tipo de pele e necessidade."
     },
     {
-      icon: Salad,
-      title: "Reeducação Alimentar",
-      description: "Aprenda a montar pratos equilibrados e nutritivos que cabem na sua rotina e no seu gosto.",
-      modalContent: "Reeducação alimentar não é dieta! É aprender a fazer escolhas mais conscientes e equilibradas, respeitando seus gostos, sua rotina e seu corpo. Vou te ajudar a entender o que comer, quando comer e como montar pratos práticos e gostosos."
+      icon: Eye,
+      title: "Tratamento para Olheiras",
+      description: "Reduza olheiras e bolsas com tratamentos específicos que devolvem luminosidade ao olhar.",
+      modalContent: "As olheiras podem ter diversas causas: genética, cansaço, pigmentação ou perda de volume. Avalio cada caso individualmente para indicar o melhor tratamento, que pode incluir bioestimuladores, skinbooster, ácidos ou tecnologias como radiofrequência na região periorbital."
     },
     {
-      icon: Heart,
-      title: "Emagrecimento Saudável",
-      description: "Perca peso de forma sustentável, sem passar fome e sem efeito sanfona.",
-      modalContent: "Emagrecimento de verdade não acontece com dieta da moda. É um processo que respeita seu corpo e sua individualidade. Vou criar um plano personalizado pra você alcançar seus objetivos com saúde, prazer e leveza."
+      icon: Sparkles,
+      title: "Limpeza de Pele",
+      description: "Limpeza profunda profissional que remove impurezas, cravos e prepara sua pele para tratamentos.",
+      modalContent: "A limpeza de pele é essencial para manter a saúde cutânea. Realizo um protocolo completo com higienização, esfoliação, extração cuidadosa, máscara calmante e hidratação profunda. Sua pele sai renovada, limpa e pronta para absorver melhor os ativos dos seus cosméticos."
     },
     {
-      icon: Apple,
-      title: "Planejamento Alimentar",
-      description: "Cardápios personalizados e práticos para facilitar sua rotina alimentar.",
-      modalContent: "Sei que a correria do dia a dia dificulta manter uma alimentação equilibrada. Por isso, crio planos alimentares práticos e flexíveis, adaptados aos seus horários, preferências e necessidades."
+      icon: Droplets,
+      title: "Skinbooster",
+      description: "Hidratação profunda injetável que devolve viço, luminosidade e elasticidade à pele.",
+      modalContent: "O Skinbooster é um tratamento injetável que leva ácido hialurônico diretamente nas camadas mais profundas da pele. Promove hidratação intensa, melhora a qualidade da pele, reduz linhas finas e devolve o aspecto saudável e luminoso. Resultados visíveis desde a primeira sessão!"
     },
     {
-      icon: Dumbbell,
-      title: "Nutrição Esportiva e Hipertrofia",
-      description: "Maximize seu desempenho, ganhe massa muscular e alcance seus objetivos com alimentação estratégica.",
-      modalContent: "Se você treina e quer resultados de verdade, a alimentação é tão importante quanto o treino! Vou montar um plano nutricional personalizado para potencializar seus ganhos de massa muscular, otimizar a recuperação, periodizar sua alimentação de acordo com seus treinos e melhorar sua performance. Seja para hipertrofia, emagrecimento com manutenção de massa magra ou alta performance esportiva!"
+      icon: Zap,
+      title: "Ultrassom Microfocado",
+      description: "Tecnologia de ponta para lifting não cirúrgico, estimulando colágeno e firmando a pele.",
+      modalContent: "O ultrassom microfocado é o tratamento mais avançado para flacidez facial e corporal sem cirurgia. A energia ultrassônica atinge camadas profundas da pele, estimulando a produção de novo colágeno. Ideal para lifting de sobrancelha, papada, contorno facial e rejuvenescimento geral."
     },
     {
-      icon: Video,
-      title: "Consultas Online e Presenciais",
-      description: "Flexibilidade total para caber na sua agenda e localização.",
-      modalContent: "Atendo presencialmente em Santos/SP na Av. Conselheiro Nébias, 754 - Boqueirão, e também online para todo o Brasil. Você escolhe o formato que for mais prático pra você, com a mesma qualidade e cuidado!"
+      icon: ScanFace,
+      title: "Microagulhamento",
+      description: "Estimule a produção de colágeno e trate cicatrizes, rugas e poros dilatados.",
+      modalContent: "O microagulhamento cria microcanais na pele que estimulam a produção natural de colágeno e elastina. Excelente para tratar cicatrizes de acne, rugas, linhas finas, poros dilatados e melasma. Pode ser associado a drug delivery para potencializar os resultados."
+    },
+    {
+      icon: Radio,
+      title: "Radiofrequência",
+      description: "Combata a flacidez e estimule colágeno com calor controlado para uma pele mais firme.",
+      modalContent: "A radiofrequência utiliza ondas eletromagnéticas que geram calor controlado nas camadas profundas da pele, estimulando a produção de colágeno e elastina. Trata flacidez facial e corporal, melhora o contorno facial e promove firmeza. Um tratamento confortável com resultados progressivos."
+    },
+    {
+      icon: Shield,
+      title: "Ultraformer III",
+      description: "O mais avançado equipamento de ultrassom microfocado para lifting e rejuvenescimento.",
+      modalContent: "O Ultraformer III é a referência mundial em ultrassom microfocado. Atinge a camada SMAS (a mesma trabalhada em cirurgias plásticas) de forma não invasiva. Promove lifting imediato, redução de papada, melhora do contorno facial e estimulação de colágeno profundo. Resultados que melhoram progressivamente por até 6 meses!"
     }
   ];
 
@@ -48,34 +60,34 @@ const Services = () => {
     <section id="services" className="py-20 bg-gradient-to-b from-nude-soft to-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16 animate-on-scroll">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-rose mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-title-blue mb-6">
             Como posso te ajudar?
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-chrome-gold to-chrome-dark rounded-full mx-auto"></div>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-white rounded-3xl p-8 shadow-lg hover-lift animate-on-scroll border border-chrome-light/20"
+              className="bg-white rounded-3xl p-6 shadow-lg hover-lift animate-on-scroll border border-chrome-light/20"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-chrome-light to-gold-accent rounded-2xl flex items-center justify-center mb-6">
-                <service.icon className="w-8 h-8 text-chrome-dark" />
+              <div className="w-14 h-14 bg-gradient-to-br from-chrome-light to-gold-accent rounded-2xl flex items-center justify-center mb-5">
+                <service.icon className="w-7 h-7 text-chrome-dark" />
               </div>
               
-              <h3 className="text-xl font-semibold text-gray-rose mb-4">
+              <h3 className="text-lg font-semibold text-title-blue mb-3">
                 {service.title}
               </h3>
               
-              <p className="text-gray-rose/80 leading-relaxed mb-6">
+              <p className="text-title-blue/70 leading-relaxed mb-5 text-sm">
                 {service.description}
               </p>
               
               <button 
                 onClick={() => setSelectedService(index)}
-                className="inline-flex items-center gap-2 text-chrome-gold font-semibold hover:text-chrome-dark transition-colors"
+                className="inline-flex items-center gap-2 text-chrome-gold font-semibold hover:text-chrome-dark transition-colors text-sm"
                 aria-label={`Saber mais sobre ${service.title}`}
               >
                 Quero saber mais

@@ -7,32 +7,32 @@
 @layer base {
   :root {
     --background: 30 15% 95%;
-    --foreground: 0 0% 29%;
+    --foreground: 222 30% 47%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 29%;
+    --card-foreground: 222 30% 47%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 29%;
+    --popover-foreground: 222 30% 47%;
 
-    --primary: 148 22% 53%;
+    --primary: 166 30% 64%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 148 20% 85%;
-    --secondary-foreground: 0 0% 29%;
+    --secondary: 166 25% 90%;
+    --secondary-foreground: 222 30% 47%;
 
-    --muted: 148 15% 90%;
+    --muted: 166 15% 90%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 148 20% 85%;
-    --accent-foreground: 0 0% 29%;
+    --accent: 166 25% 90%;
+    --accent-foreground: 222 30% 47%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 148 15% 88%;
-    --input: 148 15% 88%;
-    --ring: 148 22% 53%;
+    --border: 166 15% 88%;
+    --input: 166 15% 88%;
+    --ring: 166 30% 64%;
 
     --radius: 0.5rem;
 
@@ -48,24 +48,24 @@
 
   .dark {
     --background: 0 0% 10%;
-    --foreground: 148 15% 95%;
+    --foreground: 166 15% 95%;
     --card: 0 0% 12%;
-    --card-foreground: 148 15% 95%;
+    --card-foreground: 166 15% 95%;
     --popover: 0 0% 12%;
-    --popover-foreground: 148 15% 95%;
-    --primary: 148 22% 53%;
+    --popover-foreground: 166 15% 95%;
+    --primary: 166 30% 64%;
     --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 18%;
-    --secondary-foreground: 148 15% 95%;
+    --secondary-foreground: 166 15% 95%;
     --muted: 0 0% 18%;
-    --muted-foreground: 148 10% 65%;
+    --muted-foreground: 166 10% 65%;
     --accent: 0 0% 18%;
-    --accent-foreground: 148 15% 95%;
+    --accent-foreground: 166 15% 95%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 148 22% 53%;
+    --ring: 166 30% 64%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -93,7 +93,7 @@
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #6D9F80 0%, #4A7D5E 100%);
+    background: linear-gradient(135deg, #84C2B2 0%, #4A69A7 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -105,7 +105,7 @@
 
   .hover-lift:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(109, 159, 128, 0.15);
+    box-shadow: 0 10px 25px rgba(132, 194, 178, 0.15);
   }
 
   .animate-on-scroll {
