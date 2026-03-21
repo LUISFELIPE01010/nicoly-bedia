@@ -73,7 +73,7 @@ const Results = () => {
                     <img alt="Antes - Lifting Não Cirúrgico" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/antes-lifting.webp" width={400} height={192} decoding="async" />
                   </div>
                   <div className="h-48 overflow-hidden">
-                    <img alt="Depois - Lifting Não Cirúrgico" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/depois-lifting.png" />
+                    <img alt="Depois - Lifting Não Cirúrgico" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/depois-lifting.webp" width={400} height={192} decoding="async" />
                   </div>
                 </div>
                 <div className="absolute top-4 right-4 w-10 h-10 bg-chrome-gold rounded-full flex items-center justify-center">
