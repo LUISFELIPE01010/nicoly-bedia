@@ -59,7 +59,7 @@ const Contact = () => {
               </div>
             </div>
             
-            <div className="bg-white rounded-3xl p-8 shadow-lg">
+            <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-lg">
               <h3 className="text-xl font-semibold text-title-blue mb-6 flex items-center gap-2">
                 <MapPin className="w-6 h-6 text-chrome-gold" />
                 Informações de Atendimento
