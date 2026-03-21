@@ -91,7 +91,7 @@ const Contact = () => {
           </div>
           
           <div className="animate-on-scroll">
-            <div className="bg-gradient-to-br from-chrome-gold to-chrome-dark rounded-3xl p-8 lg:p-12 text-white shadow-2xl relative overflow-hidden">
+            <div className="bg-gradient-to-br from-chrome-gold to-chrome-dark rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-12 text-white shadow-2xl relative overflow-hidden">
               <div className="relative z-10 text-center">
                 <Sparkles className="w-16 h-16 mx-auto mb-6" />
                 <h3 className="text-2xl md:text-3xl font-bold mb-4">
