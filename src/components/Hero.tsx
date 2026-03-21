@@ -15,12 +15,12 @@ const Hero = () => {
   const [formOpen, setFormOpen] = useState(false);
 
   return (
-    <section className="min-h-screen flex flex-col relative" style={{ backgroundImage: "url('/lovable-uploads/hero-bg.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section className="min-h-screen flex flex-col relative" style={{ backgroundImage: "url('/lovable-uploads/hero-bg.webp')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       {/* Header */}
       <header className="w-full py-4 px-4 sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-chrome-light/30">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <span className="text-xl md:text-2xl font-bold text-title-blue flex items-center gap-2">
-            <img alt="Logo Elizabeth Gut" className="w-8 h-8 md:w-9 md:h-9 object-contain" src="/lovable-uploads/e45973ed-86cf-4851-ad5d-cbd50de5eb11.png" />
+            <img alt="Logo Elizabeth Gut" className="w-8 h-8 md:w-9 md:h-9 object-contain" src="/lovable-uploads/e45973ed-86cf-4851-ad5d-cbd50de5eb11.webp" width={36} height={36} />
             Elizabeth Gut
           </span>
           
@@ -67,7 +67,7 @@ const Hero = () => {
           <div className="animate-slide-in-right lg:order-2 order-first">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-chrome-light to-gold-accent rounded-3xl transform rotate-6 opacity-20"></div>
-              <img alt="Elizabeth Gut, esteticista profissional em seu consultório" className="relative rounded-3xl shadow-2xl w-full max-w-xs md:max-w-md mx-auto object-cover h-[320px] md:h-[500px]" loading="eager" src="/lovable-uploads/elizabeth-gut-2.png" width={448} height={500} />
+              <img alt="Elizabeth Gut, esteticista profissional em seu consultório" className="relative rounded-3xl shadow-2xl w-full max-w-xs md:max-w-md mx-auto object-cover h-[320px] md:h-[500px]" loading="eager" src="/lovable-uploads/elizabeth-gut-2.webp" width={448} height={500} fetchPriority="high" decoding="async" />
             </div>
           </div>
 
