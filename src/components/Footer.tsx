@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img alt="Logo Elizabeth Gut" className="w-7 h-7 object-contain brightness-0 invert" src="/lovable-uploads/logo-elizabeth-gut.png" />
+              <img alt="Logo Elizabeth Gut" className="w-7 h-7 object-contain brightness-0 invert" src="/lovable-uploads/logo-elizabeth-gut.webp" width={28} height={28} />
               <span className="text-xl font-semibold">Elizabeth Gut</span>
             </div>
             <p className="text-white/80 leading-relaxed">
