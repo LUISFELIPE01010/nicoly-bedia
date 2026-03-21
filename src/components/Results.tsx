@@ -27,7 +27,7 @@ const Results = () => {
                     <img alt="Antes - Rejuvenescimento Facial" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/7b6d3b37-807f-46e3-8dee-23abd55f4f63.webp" width={400} height={192} decoding="async" />
                   </div>
                   <div className="h-48 overflow-hidden">
-                    <img alt="Depois - Rejuvenescimento Facial" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/depois-1.jpg" />
+                    <img alt="Depois - Rejuvenescimento Facial" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/depois-1.webp" width={400} height={192} decoding="async" />
                   </div>
                 </div>
                 <div className="absolute top-4 right-4 w-10 h-10 bg-chrome-gold rounded-full flex items-center justify-center">
