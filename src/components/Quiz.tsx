@@ -98,7 +98,7 @@ const Quiz = () => {
     return (
       <>
       <section className="py-20 bg-gradient-to-br from-nude-soft to-chrome-light/20">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+        <div className="max-w-4xl mx-auto px-6 md:px-4 text-center">
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-chrome-light/30">
             <div className="mb-8">
               <CheckCircle className="w-20 h-20 text-chrome-gold mx-auto mb-6" />
