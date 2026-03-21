@@ -72,11 +72,8 @@ const Results = () => {
                   <div className="h-48 overflow-hidden">
                     <img alt="Antes - Lifting Não Cirúrgico" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/antes-lifting.png" />
                   </div>
-                  <div className="bg-chrome-gold/10 h-48 flex items-center justify-center">
-                    <div className="text-center">
-                      <Star className="w-8 h-8 text-chrome-gold fill-current mx-auto mb-2" />
-                      <span className="text-sm font-medium text-chrome-dark">Depois</span>
-                    </div>
+                  <div className="h-48 overflow-hidden">
+                    <img alt="Depois - Lifting Não Cirúrgico" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/depois-lifting.png" />
                   </div>
                 </div>
                 <div className="absolute top-4 right-4 w-10 h-10 bg-chrome-gold rounded-full flex items-center justify-center">
