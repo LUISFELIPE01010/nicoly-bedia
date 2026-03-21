@@ -33,29 +33,29 @@ Técnica em Estética desde 2003, sou Esteticista e Cosmetóloga, pós-graduada 
             
             
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8">
+            <div className="grid grid-cols-3 gap-4 md:gap-6 pt-6">
               <div className="text-center">
-                <div className="w-16 h-16 bg-chrome-light rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Clock className="w-8 h-8 text-chrome-dark" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-chrome-light rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Clock className="w-5 h-5 md:w-8 md:h-8 text-chrome-dark" />
                 </div>
-                <div className="text-2xl font-bold text-title-blue">+20 anos</div>
-                <div className="text-sm text-title-blue/70">de experiência</div>
+                <div className="text-sm md:text-xl font-bold text-title-blue leading-tight">+20 anos</div>
+                <div className="text-xs md:text-sm text-title-blue/70">de experiência</div>
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-gold-accent rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Star className="w-8 h-8 text-chrome-dark" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-gold-accent rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Star className="w-5 h-5 md:w-8 md:h-8 text-chrome-dark" />
                 </div>
-                <div className="text-2xl font-bold text-title-blue">Dedicada</div>
-                <div className="text-sm text-title-blue/70">De coração</div>
+                <div className="text-sm md:text-xl font-bold text-title-blue leading-tight">Dedicada</div>
+                <div className="text-xs md:text-sm text-title-blue/70">De coração</div>
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-nude-soft rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Award className="w-8 h-8 text-chrome-dark" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-nude-soft rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Award className="w-5 h-5 md:w-8 md:h-8 text-chrome-dark" />
                 </div>
-                <div className="text-2xl font-bold text-title-blue">Pós-grad</div>
-                <div className="text-sm text-title-blue/70">Injetáveis</div>
+                <div className="text-sm md:text-xl font-bold text-title-blue leading-tight">Pós-grad</div>
+                <div className="text-xs md:text-sm text-title-blue/70">Injetáveis</div>
               </div>
             </div>
           </div>
