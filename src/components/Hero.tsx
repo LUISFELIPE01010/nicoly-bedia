@@ -15,7 +15,7 @@ const Hero = () => {
   const [formOpen, setFormOpen] = useState(false);
 
   return (
-    <section className="min-h-screen flex flex-col relative" style={{ backgroundImage: "url('/lovable-uploads/hero-bg.webp')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section className="min-h-screen flex flex-col relative" style={{ backgroundImage: "url('/lovable-uploads/hero-bg.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       {/* Header */}
       <header className="w-full py-4 px-4 sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-chrome-light/30">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
