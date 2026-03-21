@@ -47,7 +47,7 @@ const Results = () => {
               <div className="relative">
                 <div className="grid grid-cols-2">
                   <div className="h-48 overflow-hidden">
-                    <img alt="Antes - Tratamento de Melasma" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/antes-melasma.webp" width={400} height={192} decoding="async" />
+                    <img alt="Antes - Tratamento de Melasma" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/antes-melasma.png" width={400} height={192} decoding="async" />
                   </div>
                   <div className="h-48 overflow-hidden">
                     <img alt="Depois - Tratamento de Melasma" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/depois-melasma.webp" width={400} height={192} decoding="async" />
