@@ -24,7 +24,7 @@ const Results = () => {
               <div className="relative">
                 <div className="grid grid-cols-2">
                   <div className="h-48 overflow-hidden">
-                    <img src="/lovable-uploads/antes-1.png" alt="Antes - Rejuvenescimento Facial" className="w-full h-full object-cover" loading="lazy" />
+                    <img alt="Antes - Rejuvenescimento Facial" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/7b6d3b37-807f-46e3-8dee-23abd55f4f63.jpg" />
                   </div>
                   <div className="bg-chrome-gold/10 h-48 flex items-center justify-center">
                     <div className="text-center">
@@ -118,8 +118,8 @@ const Results = () => {
               <button
                 onClick={() => setFormOpen(true)}
                 className="inline-flex items-center gap-2 bg-chrome-gold text-white px-8 py-4 rounded-full font-semibold hover-lift shadow-lg hover:bg-chrome-dark transition-all"
-                aria-label="Agendar avaliação via WhatsApp"
-              >
+                aria-label="Agendar avaliação via WhatsApp">
+                
                 Quero minha transformação
                 <ArrowRight className="w-5 h-5" />
               </button>
@@ -129,8 +129,8 @@ const Results = () => {
       </section>
 
       <WhatsAppFormModal isOpen={formOpen} onClose={() => setFormOpen(false)} />
-    </>
-  );
+    </>);
+
 };
 
 export default Results;
