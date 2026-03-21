@@ -50,7 +50,7 @@ const Results = () => {
                     <img alt="Antes - Tratamento de Melasma" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/antes-melasma.png" width={400} height={192} decoding="async" />
                   </div>
                   <div className="h-48 overflow-hidden">
-                    <img alt="Depois - Tratamento de Melasma" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/depois-melasma.webp" width={400} height={192} decoding="async" />
+                    <img alt="Depois - Tratamento de Melasma" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/depois-melasma.png" width={400} height={192} decoding="async" />
                   </div>
                 </div>
                 <div className="absolute top-4 right-4 w-10 h-10 bg-chrome-gold rounded-full flex items-center justify-center">
