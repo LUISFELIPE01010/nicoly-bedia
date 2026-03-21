@@ -21,7 +21,7 @@ const Contact = () => {
         
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-8 animate-on-scroll">
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover-lift">
+            <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-lg hover-lift">
               <h3 className="text-2xl font-semibold text-title-blue mb-6">
                 Entre em contato
               </h3>
