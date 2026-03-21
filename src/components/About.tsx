@@ -3,7 +3,7 @@ import { Star, Award, Clock } from 'lucide-react';
 const About = () => {
   return (
     <section id="about" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-6 md:px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
           <div className="animate-on-scroll">
