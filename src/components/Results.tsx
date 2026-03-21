@@ -46,11 +46,8 @@ const Results = () => {
             <article className="bg-white rounded-3xl border border-chrome-light/20 shadow-lg overflow-hidden">
               <div className="relative">
                 <div className="grid grid-cols-2">
-                  <div className="bg-chrome-light/20 h-48 flex items-center justify-center">
-                    <div className="text-center">
-                      <Sparkles className="w-8 h-8 text-chrome-gold mx-auto mb-2" />
-                      <span className="text-sm font-medium text-title-blue/60">Antes</span>
-                    </div>
+                  <div className="h-48 overflow-hidden">
+                    <img alt="Antes - Tratamento de Melasma" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/antes-melasma.png" />
                   </div>
                   <div className="bg-chrome-gold/10 h-48 flex items-center justify-center">
                     <div className="text-center">
