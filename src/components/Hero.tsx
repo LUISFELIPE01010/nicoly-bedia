@@ -72,7 +72,7 @@ const Hero = () => {
           </div>
 
           {/* Text Content */}
-          <div className="space-y-6 md:space-y-8 animate-slide-in-left text-center lg:text-left">
+          <div className="space-y-4 md:space-y-8 animate-slide-in-left text-center lg:text-left">
             <div className="flex items-center gap-2 text-chrome-gold justify-center lg:justify-start">
               <Sparkles className="w-4 h-4" />
               <span className="text-sm font-medium tracking-wide uppercase">Esteticista Elizabeth Gut</span>
