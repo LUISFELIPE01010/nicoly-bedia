@@ -8,7 +8,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-chrome-light/20 to-gold-accent/10">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-6 md:px-4">
         <div className="text-center mb-16 animate-on-scroll">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-title-blue mb-6">
             Vamos conversar?

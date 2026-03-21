@@ -8,7 +8,7 @@ const Results = () => {
   return (
     <>
       <section id="results" className="py-20 bg-gradient-to-b from-white via-nude-soft/40 to-white">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-6 md:px-4">
           <div className="text-center mb-14 animate-on-scroll">
             <h2 className="text-4xl lg:text-5xl font-bold text-title-blue mb-5">Antes & Depois</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-chrome-gold to-chrome-dark rounded-full mx-auto mb-4" />

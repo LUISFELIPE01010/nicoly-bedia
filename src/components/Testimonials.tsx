@@ -42,7 +42,7 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-6 md:px-4">
         <div className="text-center mb-16 animate-on-scroll">
           <h2 className="text-4xl lg:text-5xl font-bold text-title-blue mb-6">
             O que minhas clientes dizem
