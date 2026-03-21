@@ -57,8 +57,11 @@ const Hero = () => {
         )}
       </header>
 
+      {/* White overlay */}
+      <div className="absolute inset-0 bg-white/60 z-0"></div>
+
       {/* Hero Content */}
-      <div className="flex-1 flex items-center justify-center px-4 py-8 md:py-12">
+      <div className="flex-1 flex items-center justify-center px-4 py-8 md:py-12 relative z-10">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Image - appears first on mobile */}
           <div className="animate-slide-in-right lg:order-2 order-first">
