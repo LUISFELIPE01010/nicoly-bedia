@@ -20,7 +20,7 @@ const Hero = () => {
       <header className="w-full py-4 px-4 sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-chrome-light/30">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <span className="text-xl md:text-2xl font-bold text-title-blue flex items-center gap-2">
-            <img alt="Logo Elizabeth Gut" className="w-8 h-8 md:w-9 md:h-9 object-contain" src="/lovable-uploads/e45973ed-86cf-4851-ad5d-cbd50de5eb11.png" />
+            <img alt="Logo Elizabeth Gut" className="w-8 h-8 md:w-9 md:h-9 object-contain" src="/lovable-uploads/e45973ed-86cf-4851-ad5d-cbd50de5eb11.webp" width={36} height={36} />
             Elizabeth Gut
           </span>
           
