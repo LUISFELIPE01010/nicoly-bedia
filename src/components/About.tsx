@@ -23,12 +23,14 @@ const About = () => {
             </div>
             
             <p className="text-lg text-title-blue/80 leading-relaxed">
-              Olá, eu sou a Elizabeth Gut! ✨ Apaixonada pela estética e pelo poder transformador que ela tem na vida das pessoas. Desde 2003 atuando como Técnica em Estética, me especializei em procedimentos que realçam a beleza natural de cada pessoa com segurança e carinho.
+              Olá, eu sou a Elizabeth Gut! ✨
+
+Técnica em Estética desde 2003, sou Esteticista e Cosmetóloga, pós-graduada em Procedimentos Injetáveis e atualmente curso Biomedicina para aprimorar meus conhecimentos. Apaixonada pelo poder transformador da estética, trabalho para valorizar a beleza natural de cada pessoa com segurança, dedicação, tecnologia e tratamentos personalizados, sempre com o objetivo de fazer você se sentir mais bonita e confiante.
             </p>
             
-            <p className="text-lg text-title-blue/80 leading-relaxed">
-              Sou Esteticista e Cosmetóloga, Pós-graduada em Procedimentos Injetáveis, e atualmente cursando Biomedicina para aprimorar ainda mais meus conhecimentos. Acredito que cada pessoa é única e merece um tratamento personalizado, feito com dedicação e as melhores tecnologias do mercado. Meu objetivo é fazer você se sentir ainda mais bonita e confiante! 💎
-            </p>
+            
+
+            
             
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8">
@@ -59,8 +61,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>);
-
-};
+    </section>);};
 
 export default About;
