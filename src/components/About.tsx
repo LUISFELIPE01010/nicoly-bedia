@@ -22,12 +22,12 @@ const About = () => {
               <div className="w-20 h-1 bg-gradient-to-r from-chrome-gold to-chrome-dark rounded-full"></div>
             </div>
             
-            <p className="text-lg text-title-blue/80 leading-relaxed">
-              Olá, eu sou a Elizabeth Gut! ✨ Apaixonada pela estética e pelo poder transformador que ela tem na vida das pessoas. Desde 2003 atuando como Técnica em Estética, me especializei em procedimentos que realçam a beleza natural de cada pessoa com segurança e carinho.
+            <p className="text-sm md:text-lg text-title-blue/80 leading-relaxed">
+              Olá, eu sou a Elizabeth Gut! ✨ Apaixonada pela estética e pelo poder transformador que ela tem na vida das pessoas. Desde 2003 atuando como Técnica em Estética, me especializei em procedimentos que realçam a beleza natural com segurança e carinho.
             </p>
             
-            <p className="text-lg text-title-blue/80 leading-relaxed">
-              Sou Esteticista e Cosmetóloga, Pós-graduada em Procedimentos Injetáveis, e atualmente cursando Biomedicina para aprimorar ainda mais meus conhecimentos. Acredito que cada pessoa é única e merece um tratamento personalizado, feito com dedicação e as melhores tecnologias do mercado. Meu objetivo é fazer você se sentir ainda mais bonita e confiante! 💎
+            <p className="text-sm md:text-lg text-title-blue/80 leading-relaxed">
+              Sou Esteticista e Cosmetóloga, Pós-graduada em Procedimentos Injetáveis, e atualmente cursando Biomedicina. Cada pessoa é única e merece um tratamento personalizado, feito com dedicação e as melhores tecnologias. 💎
             </p>
             
             {/* Stats */}
