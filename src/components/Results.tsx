@@ -24,7 +24,7 @@ const Results = () => {
               <div className="relative">
                 <div className="grid grid-cols-2">
                   <div className="h-48 overflow-hidden">
-                    <img alt="Antes - Rejuvenescimento Facial" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/7b6d3b37-807f-46e3-8dee-23abd55f4f63.jpg" />
+                    <img alt="Antes - Rejuvenescimento Facial" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/7b6d3b37-807f-46e3-8dee-23abd55f4f63.webp" width={400} height={192} decoding="async" />
                   </div>
                   <div className="h-48 overflow-hidden">
                     <img alt="Depois - Rejuvenescimento Facial" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/depois-1.jpg" />
