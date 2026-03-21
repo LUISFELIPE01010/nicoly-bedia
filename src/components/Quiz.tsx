@@ -141,7 +141,7 @@ const Quiz = () => {
 
   return (
     <section className="py-20 bg-gradient-to-br from-nude-soft to-chrome-light/20">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="max-w-4xl mx-auto px-6 md:px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-title-blue mb-6">
             Descubra o tratamento ideal para você
