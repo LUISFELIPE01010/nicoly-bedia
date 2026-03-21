@@ -24,10 +24,10 @@ const Results = () => {
               <div className="relative">
                 <div className="grid grid-cols-2">
                   <div className="h-48 overflow-hidden">
-                    <img alt="Antes - Rejuvenescimento Facial" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/7b6d3b37-807f-46e3-8dee-23abd55f4f63.webp" width={400} height={192} decoding="async" />
+                    <img alt="Antes - Rejuvenescimento Facial" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/7b6d3b37-807f-46e3-8dee-23abd55f4f63.jpg" width={400} height={192} decoding="async" />
                   </div>
                   <div className="h-48 overflow-hidden">
-                    <img alt="Depois - Rejuvenescimento Facial" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/depois-1.webp" width={400} height={192} decoding="async" />
+                    <img alt="Depois - Rejuvenescimento Facial" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/depois-1.jpg" width={400} height={192} decoding="async" />
                   </div>
                 </div>
                 <div className="absolute top-4 right-4 w-10 h-10 bg-chrome-gold rounded-full flex items-center justify-center">
@@ -47,10 +47,10 @@ const Results = () => {
               <div className="relative">
                 <div className="grid grid-cols-2">
                   <div className="h-48 overflow-hidden">
-                    <img alt="Antes - Tratamento de Melasma" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/antes-melasma.webp" width={400} height={192} decoding="async" />
+                    <img alt="Antes - Tratamento de Melasma" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/antes-melasma.png" width={400} height={192} decoding="async" />
                   </div>
                   <div className="h-48 overflow-hidden">
-                    <img alt="Depois - Tratamento de Melasma" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/depois-melasma.webp" width={400} height={192} decoding="async" />
+                    <img alt="Depois - Tratamento de Melasma" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/depois-melasma.png" width={400} height={192} decoding="async" />
                   </div>
                 </div>
                 <div className="absolute top-4 right-4 w-10 h-10 bg-chrome-gold rounded-full flex items-center justify-center">
@@ -70,10 +70,10 @@ const Results = () => {
               <div className="relative">
                 <div className="grid grid-cols-2">
                   <div className="h-48 overflow-hidden">
-                    <img alt="Antes - Lifting Não Cirúrgico" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/antes-lifting.webp" width={400} height={192} decoding="async" />
+                    <img alt="Antes - Lifting Não Cirúrgico" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/antes-lifting.png" width={400} height={192} decoding="async" />
                   </div>
                   <div className="h-48 overflow-hidden">
-                    <img alt="Depois - Lifting Não Cirúrgico" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/depois-lifting.webp" width={400} height={192} decoding="async" />
+                    <img alt="Depois - Lifting Não Cirúrgico" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/depois-lifting.png" width={400} height={192} decoding="async" />
                   </div>
                 </div>
                 <div className="absolute top-4 right-4 w-10 h-10 bg-chrome-gold rounded-full flex items-center justify-center">

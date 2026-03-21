@@ -9,7 +9,7 @@ const About = () => {
           <div className="animate-on-scroll">
             <div className="relative">
               <div className="absolute inset-0 bg-chrome-light rounded-3xl transform -rotate-3 opacity-30"></div>
-              <img alt="Elizabeth Gut em seu consultório de estética" className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto object-cover h-[400px] md:h-[500px]" loading="lazy" src="/lovable-uploads/7e5bb34e-8a17-42ff-b135-d77451a3aac2.webp" width={400} height={500} decoding="async" />
+              <img alt="Elizabeth Gut em seu consultório de estética" className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto object-cover h-[400px] md:h-[500px]" loading="lazy" src="/lovable-uploads/7e5bb34e-8a17-42ff-b135-d77451a3aac2.jpg" width={400} height={500} decoding="async" />
             </div>
           </div>
           
