@@ -90,14 +90,14 @@ const Hero = () => {
               Tratamentos estéticos personalizados com tecnologia de ponta e o carinho que você merece. Mais de 20 anos de experiência cuidando da sua pele e autoestima.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button onClick={() => setFormOpen(true)} className="inline-flex items-center justify-center gap-3 bg-chrome-gold text-white px-8 py-4 rounded-full font-semibold text-lg hover-lift shadow-lg hover:bg-chrome-dark transition-all" aria-label="Agendar avaliação">
-                <MessageCircle className="w-6 h-6" />
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+              <button onClick={() => setFormOpen(true)} className="inline-flex items-center justify-center gap-2 bg-chrome-gold text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-base md:text-lg hover-lift shadow-lg hover:bg-chrome-dark transition-all" aria-label="Agendar avaliação">
+                <MessageCircle className="w-5 h-5 md:w-6 md:h-6" />
                 Agendar avaliação
               </button>
               
-              <a href="tel:+5513997846585" className="inline-flex items-center justify-center gap-3 bg-transparent border-2 border-chrome-gold text-chrome-gold px-8 py-4 rounded-full font-semibold text-lg hover-lift hover:bg-chrome-gold hover:text-white transition-all whitespace-nowrap" aria-label="Ligar para Elizabeth Gut">
-                <Phone className="w-6 h-6 flex-shrink-0" />
+              <a href="tel:+5513997846585" className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-chrome-gold text-chrome-gold px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-base md:text-lg hover-lift hover:bg-chrome-gold hover:text-white transition-all whitespace-nowrap" aria-label="Ligar para Elizabeth Gut">
+                <Phone className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" />
                 <span className="whitespace-nowrap">(13) 99784-6585</span>
               </a>
             </div>
