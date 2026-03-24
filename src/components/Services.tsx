@@ -50,9 +50,9 @@ const Services = () => {
     },
     {
       icon: Shield,
-      title: "Ultraformer III",
+      title: "Ultraformer MPT",
       description: "O mais avançado equipamento de ultrassom microfocado para lifting e rejuvenescimento.",
-      modalContent: "O Ultraformer III é a referência mundial em ultrassom microfocado. Atinge a camada SMAS (a mesma trabalhada em cirurgias plásticas) de forma não invasiva. Promove lifting imediato, redução de papada, melhora do contorno facial e estimulação de colágeno profundo. Resultados que melhoram progressivamente por até 6 meses!"
+      modalContent: "O Ultraformer MPT é a referência mundial em ultrassom microfocado. Atinge a camada SMAS (a mesma trabalhada em cirurgias plásticas) de forma não invasiva. Promove lifting imediato, redução de papada, melhora do contorno facial e estimulação de colágeno profundo. Resultados que melhoram progressivamente por até 6 meses!"
     }
   ];
 

@@ -36,7 +36,7 @@ const Results = () => {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-title-blue mb-2">Rejuvenescimento Facial</h3>
-                <p className="text-chrome-gold font-medium mb-3">Ultraformer III + Skinbooster</p>
+                <p className="text-chrome-gold font-medium mb-3">Ultraformer MPT + Skinbooster</p>
                 <blockquote className="text-title-blue/70 italic text-sm leading-relaxed">"Minha pele ficou completamente diferente! Mais firme, luminosa e rejuvenescida. A Elizabeth é incrível!"</blockquote>
                 <p className="font-semibold text-title-blue text-sm mt-2">Marina, 42 anos</p>
               </div>

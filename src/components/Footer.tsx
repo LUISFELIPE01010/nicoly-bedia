@@ -23,7 +23,7 @@ const Footer = () => {
               <li>Peeling Facial</li>
               <li>Limpeza de Pele</li>
               <li>Skinbooster</li>
-              <li>Ultraformer III</li>
+              <li>Ultraformer MPT</li>
               <li>Microagulhamento</li>
               <li>Radiofrequência</li>
             </ul>
