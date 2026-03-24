@@ -24,7 +24,7 @@ const procedures = [
   "Ultrassom Microfocado",
   "Microagulhamento",
   "Radiofrequência",
-  "Ultraformer III",
+  "Ultraformer MPT",
   "Outro"
 ];
 

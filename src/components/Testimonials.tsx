@@ -6,9 +6,9 @@ import Autoplay from 'embla-carousel-autoplay';
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "A Elizabeth é maravilhosa! Fiz o Ultraformer III e o resultado foi incrível. Minha pele ficou muito mais firme e rejuvenescida. Super recomendo!",
+      quote: "A Elizabeth é maravilhosa! Fiz o Ultraformer MPT e o resultado foi incrível. Minha pele ficou muito mais firme e rejuvenescida. Super recomendo!",
       name: "Claudia",
-      detail: "Ultraformer III",
+      detail: "Ultraformer MPT",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
     },
     {

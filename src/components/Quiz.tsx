@@ -66,8 +66,8 @@ const Quiz = () => {
       };
     } else if (answerText.includes('flacidez') || answerText.includes('firmeza')) {
       return {
-        title: "Ultraformer III + Radiofrequência! 💎",
-        description: "O combo perfeito para combater a flacidez! O Ultraformer III trabalha nas camadas profundas estimulando colágeno, enquanto a radiofrequência firma e redefine o contorno facial. Resultados visíveis e progressivos!"
+        title: "Ultraformer MPT + Radiofrequência! 💎",
+        description: "O combo perfeito para combater a flacidez! O Ultraformer MPT trabalha nas camadas profundas estimulando colágeno, enquanto a radiofrequência firma e redefine o contorno facial. Resultados visíveis e progressivos!"
       };
     } else if (answerText.includes('rugas') || answerText.includes('linhas finas') || answerText.includes('envelhecimento')) {
       return {
