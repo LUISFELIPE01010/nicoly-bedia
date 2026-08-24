@@ -1,10 +1,14 @@
 import { useState } from 'react';
-import { MessageCircle, User, Target, Users } from 'lucide-react';
+import { MessageCircle, User, Target, Users, Phone, Mail, Pencil } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { supabase } from '@/integrations/supabase/client';
 import { z } from 'zod';
 
 const formSchema = z.object({
   name: z.string().trim().min(2, 'Por favor, informe seu nome').max(100),
+  phone: z.string().trim().refine((v) => v.replace(/\D/g, '').length >= 10, 'Informe um WhatsApp válido'),
+  email: z.string().trim().max(160).email('E-mail inválido').optional().or(z.literal('')),
+  message: z.string().trim().max(1000).optional().or(z.literal('')),
   procedure: z.string().trim().min(1, 'Selecione um procedimento'),
   clientType: z.string().trim().min(1, 'Selecione uma opção'),
 });
