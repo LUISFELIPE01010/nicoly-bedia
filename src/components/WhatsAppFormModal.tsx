@@ -118,6 +118,39 @@ const WhatsAppFormModal = ({ isOpen, onClose }: WhatsAppFormModalProps) => {
 
           <div>
             <label className="flex items-center gap-2 text-sm font-semibold text-title-blue mb-2">
+              <Phone className="w-4 h-4 text-chrome-gold" />
+              Seu WhatsApp
+            </label>
+            <input
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="(13) 99999-9999"
+              maxLength={30}
+              className="w-full px-4 py-3 rounded-xl border border-chrome-light/40 bg-nude-soft/30 text-title-blue placeholder:text-title-blue/40 focus:outline-none focus:ring-2 focus:ring-chrome-gold/50 focus:border-chrome-gold transition-all"
+            />
+            {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+          </div>
+
+          <div>
+            <label className="flex items-center gap-2 text-sm font-semibold text-title-blue mb-2">
+              <Mail className="w-4 h-4 text-chrome-gold" />
+              E-mail <span className="font-normal text-title-blue/50">(opcional)</span>
+            </label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="seuemail@exemplo.com"
+              maxLength={160}
+              className="w-full px-4 py-3 rounded-xl border border-chrome-light/40 bg-nude-soft/30 text-title-blue placeholder:text-title-blue/40 focus:outline-none focus:ring-2 focus:ring-chrome-gold/50 focus:border-chrome-gold transition-all"
+            />
+            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+          </div>
+
+
+          <div>
+            <label className="flex items-center gap-2 text-sm font-semibold text-title-blue mb-2">
               <Target className="w-4 h-4 text-chrome-gold" />
               Procedimento de interesse
             </label>
