@@ -1,6 +1,6 @@
 import { ReactNode, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Users, LogOut, Menu, X } from 'lucide-react';
+import { LayoutDashboard, Users, LogOut, Menu, X, ExternalLink } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -54,6 +54,9 @@ const AdminLayout = ({ children }: { children: ReactNode }) => {
           ))}
         </nav>
         <div className="absolute inset-x-0 bottom-0 border-t border-border p-3">
+          <a href="/" className="mb-2 flex items-center gap-2 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+            <ExternalLink className="h-4 w-4" /> Voltar ao site
+          </a>
           <div className="mb-2 truncate text-xs text-muted-foreground">{profile?.full_name || 'Usuário'}</div>
           <Button variant="outline" size="sm" className="w-full justify-start gap-2" onClick={handleSignOut}>
             <LogOut className="h-4 w-4" /> Sair
@@ -69,6 +72,11 @@ const AdminLayout = ({ children }: { children: ReactNode }) => {
             <Menu className="h-5 w-5" />
           </button>
           <span className="text-sm font-medium text-muted-foreground">Painel de gestão</span>
+          <a href="/" className="ml-auto">
+            <Button variant="outline" size="sm" className="gap-2">
+              <ExternalLink className="h-4 w-4" /> Voltar ao site
+            </Button>
+          </a>
         </header>
         <main className="p-4 md:p-6">{children}</main>
       </div>
