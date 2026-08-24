@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Loader2, Lock } from 'lucide-react';
+import { Loader2, Lock, ArrowLeft } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -55,6 +55,12 @@ const Login = () => {
               {busy && <Loader2 className="mr-2 h-4 w-4 animate-spin" />} Entrar
             </Button>
           </form>
+          <a
+            href="/"
+            className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <ArrowLeft className="h-4 w-4" /> Voltar ao site
+          </a>
         </CardContent>
       </Card>
     </div>
