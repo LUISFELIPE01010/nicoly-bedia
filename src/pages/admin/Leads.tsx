@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { Plus, Search, MessageCircle } from 'lucide-react';
+import { Plus, Search, MessageCircle, Trash2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
@@ -73,6 +73,14 @@ const Leads = () => {
     setOpen(false);
   };
 
+  const removeLead = async (lead: Lead) => {
+    if (!window.confirm(`Excluir o lead "${lead.name}"? Esta ação não pode ser desfeita.`)) return;
+    const { error } = await supabase.from('leads').delete().eq('id', lead.id);
+    if (error) { toast.error(error.message); return; }
+    toast.success('Lead excluído.');
+    qc.invalidateQueries({ queryKey: ['leads'] });
+  };
+
   const setStatus = (value: string) => {
     if (value === 'todos') params.delete('status');
     else params.set('status', value);
@@ -123,6 +131,15 @@ const Leads = () => {
                       <Button size="icon" variant="outline" className="h-8 w-8"><MessageCircle className="h-4 w-4" /></Button>
                     </a>
                   )}
+                  <Button
+                    size="icon"
+                    variant="outline"
+                    className="h-8 w-8 text-destructive hover:bg-destructive/10"
+                    aria-label={`Excluir ${l.name}`}
+                    onClick={() => removeLead(l)}
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
                 </li>
               );
             })}

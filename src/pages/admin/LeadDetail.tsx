@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { ArrowLeft, MessageCircle, Mail, Phone, Clock } from 'lucide-react';
+import { ArrowLeft, MessageCircle, Mail, Phone, Clock, Trash2, X } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -67,14 +67,42 @@ const LeadDetail = () => {
     refresh();
   };
 
+  const removeLead = async () => {
+    if (!window.confirm(`Excluir o lead "${lead.name}"? Esta ação não pode ser desfeita.`)) return;
+    const { error } = await supabase.from('leads').delete().eq('id', id);
+    if (error) { toast.error(error.message); return; }
+    toast.success('Lead excluído.');
+    qc.invalidateQueries({ queryKey: ['leads'] });
+    navigate('/admin/leads');
+  };
+
+  const clearHistory = async () => {
+    if (!window.confirm('Excluir todo o histórico de status deste lead?')) return;
+    const { error } = await supabase.from('lead_status_history').delete().eq('lead_id', id);
+    if (error) { toast.error(error.message); return; }
+    toast.success('Histórico excluído.');
+    refresh();
+  };
+
+  const removeHistoryItem = async (historyId: string) => {
+    const { error } = await supabase.from('lead_status_history').delete().eq('id', historyId);
+    if (error) { toast.error(error.message); return; }
+    refresh();
+  };
+
   const wa = whatsappLink(lead.phone, `Olá ${lead.name.split(' ')[0]}, tudo bem? Aqui é da clínica.`);
   const procedure = procedures.find((p) => p.id === lead.procedure_id)?.name;
 
   return (
     <div className="mx-auto max-w-3xl space-y-4">
-      <Button variant="ghost" size="sm" className="gap-2 px-2" onClick={() => navigate('/admin/leads')}>
-        <ArrowLeft className="h-4 w-4" /> Voltar
-      </Button>
+      <div className="flex items-center justify-between">
+        <Button variant="ghost" size="sm" className="gap-2 px-2" onClick={() => navigate('/admin/leads')}>
+          <ArrowLeft className="h-4 w-4" /> Voltar
+        </Button>
+        <Button variant="outline" size="sm" className="gap-2 text-destructive hover:bg-destructive/10" onClick={removeLead}>
+          <Trash2 className="h-4 w-4" /> Excluir lead
+        </Button>
+      </div>
 
       <Card>
         <CardContent className="space-y-4 p-5">
@@ -128,17 +156,31 @@ const LeadDetail = () => {
 
       <Card>
         <CardContent className="p-5">
-          <p className="mb-3 text-sm font-medium">Histórico de status</p>
+          <div className="mb-3 flex items-center justify-between gap-3">
+            <p className="text-sm font-medium">Histórico de status</p>
+            {history.length > 0 && (
+              <Button variant="ghost" size="sm" className="gap-2 text-destructive hover:bg-destructive/10" onClick={clearHistory}>
+                <Trash2 className="h-3.5 w-3.5" /> Limpar histórico
+              </Button>
+            )}
+          </div>
           {history.length === 0 && <p className="text-sm text-muted-foreground">Sem alterações registradas.</p>}
           <ul className="space-y-2">
             {history.map((h) => (
-              <li key={h.id} className="flex items-center gap-2 text-sm">
+              <li key={h.id} className="group flex items-center gap-2 text-sm">
                 <Clock className="h-3.5 w-3.5 text-muted-foreground" />
                 <span>
                   {h.from_status ? `${LEAD_STATUS_LABEL[h.from_status] ?? h.from_status} → ` : 'Criado como '}
                   <strong>{LEAD_STATUS_LABEL[h.to_status] ?? h.to_status}</strong>
                 </span>
                 <span className="text-xs text-muted-foreground">{dateTime(h.created_at)}</span>
+                <button
+                  className="ml-auto text-muted-foreground transition-colors hover:text-destructive"
+                  aria-label="Excluir registro do histórico"
+                  onClick={() => removeHistoryItem(h.id)}
+                >
+                  <X className="h-3.5 w-3.5" />
+                </button>
               </li>
             ))}
           </ul>

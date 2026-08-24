@@ -1,9 +1,12 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
-import { Sparkles, MessageSquare, CalendarCheck, CheckCircle2 } from 'lucide-react';
+import { Sparkles, MessageSquare, CalendarCheck, CheckCircle2, Trash2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { supabase as sb } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 import { dateTime, LEAD_STATUS_LABEL, LEAD_STATUS_CLASS } from '@/lib/crm';
 
 type Lead = { id: string; name: string; phone: string | null; status: string; created_at: string };
@@ -16,6 +19,7 @@ const cards = [
 ];
 
 const Dashboard = () => {
+  const qc = useQueryClient();
   const { data: leads = [] } = useQuery({
     queryKey: ['leads'],
     queryFn: async () =>
@@ -25,6 +29,14 @@ const Dashboard = () => {
 
   const count = (status: string) => leads.filter((l) => l.status === status).length;
   const latest = leads.slice(0, 8);
+
+  const removeLead = async (lead: Lead) => {
+    if (!window.confirm(`Excluir o lead "${lead.name}"? Esta ação não pode ser desfeita.`)) return;
+    const { error } = await sb.from('leads').delete().eq('id', lead.id);
+    if (error) { toast.error(error.message); return; }
+    toast.success('Lead excluído.');
+    qc.invalidateQueries({ queryKey: ['leads'] });
+  };
 
   return (
     <div className="space-y-6">
@@ -57,14 +69,23 @@ const Dashboard = () => {
           )}
           <ul className="divide-y divide-border">
             {latest.map((l) => (
-              <li key={l.id}>
-                <Link to={`/admin/leads/${l.id}`} className="flex items-center justify-between gap-3 px-5 py-3 hover:bg-muted/50">
+              <li key={l.id} className="flex items-center gap-3 px-5 py-3 hover:bg-muted/50">
+                <Link to={`/admin/leads/${l.id}`} className="flex min-w-0 flex-1 items-center justify-between gap-3">
                   <div className="min-w-0">
                     <p className="truncate text-sm font-medium">{l.name}</p>
                     <p className="truncate text-xs text-muted-foreground">{dateTime(l.created_at)}</p>
                   </div>
                   <Badge variant="secondary" className={LEAD_STATUS_CLASS[l.status]}>{LEAD_STATUS_LABEL[l.status] ?? l.status}</Badge>
                 </Link>
+                <Button
+                  size="icon"
+                  variant="ghost"
+                  className="h-8 w-8 text-destructive hover:bg-destructive/10"
+                  aria-label={`Excluir ${l.name}`}
+                  onClick={() => removeLead(l)}
+                >
+                  <Trash2 className="h-4 w-4" />
+                </Button>
               </li>
             ))}
           </ul>
