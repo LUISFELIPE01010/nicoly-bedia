@@ -11,15 +11,7 @@ import AdminLayout from "@/components/admin/AdminLayout";
 import Login from "./pages/admin/Login";
 import Dashboard from "./pages/admin/Dashboard";
 import Leads from "./pages/admin/Leads";
-import Pipeline from "./pages/admin/Pipeline";
-import FollowUps from "./pages/admin/FollowUps";
-import Agenda from "./pages/admin/Agenda";
-import Clients from "./pages/admin/Clients";
-import Procedures from "./pages/admin/Procedures";
-import Sales from "./pages/admin/Sales";
-import Reports from "./pages/admin/Reports";
-import Reactivation from "./pages/admin/Reactivation";
-import SettingsPage from "./pages/admin/SettingsPage";
+import LeadDetail from "./pages/admin/LeadDetail";
 
 const queryClient = new QueryClient();
 
