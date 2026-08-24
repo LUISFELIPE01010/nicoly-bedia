@@ -66,11 +66,11 @@ const Footer = () => {
           </p>
           <a
             href="/admin/login"
-            className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-2 text-sm text-white/70 transition-colors hover:border-white/60 hover:text-white"
+            className="mt-6 inline-flex h-8 w-8 items-center justify-center rounded-full text-white/30 transition-colors hover:text-white/80"
             aria-label="Acessar o painel administrativo"
+            title="Área administrativa"
           >
-            <Lock className="w-4 h-4" />
-            Área administrativa
+            <Lock className="w-3.5 h-3.5" />
           </a>
         </div>
       </div>
