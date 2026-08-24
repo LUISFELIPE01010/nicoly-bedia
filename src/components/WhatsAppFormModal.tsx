@@ -34,6 +34,9 @@ const procedures = [
 
 const WhatsAppFormModal = ({ isOpen, onClose }: WhatsAppFormModalProps) => {
   const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [note, setNote] = useState('');
   const [procedure, setProcedure] = useState('');
   const [clientType, setClientType] = useState('');
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -42,7 +45,7 @@ const WhatsAppFormModal = ({ isOpen, onClose }: WhatsAppFormModalProps) => {
     e.preventDefault();
     setErrors({});
 
-    const result = formSchema.safeParse({ name, procedure, clientType });
+    const result = formSchema.safeParse({ name, phone, email, message: note, procedure, clientType });
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
       result.error.errors.forEach((err) => {
@@ -52,15 +55,30 @@ const WhatsAppFormModal = ({ isOpen, onClose }: WhatsAppFormModalProps) => {
       return;
     }
 
-    const message = "Olá! Meu nome é *" + result.data.name + "*.\n\n" +
-      "Procedimento de interesse: " + result.data.procedure + "\n" +
-      "Cliente: " + result.data.clientType + "\n\n" +
-      "Gostaria de agendar uma avaliação!";
+    const data = result.data;
+    const message = "Olá! Meu nome é *" + data.name + "*.\n\n" +
+      "Procedimento de interesse: " + data.procedure + "\n" +
+      "Cliente: " + data.clientType + "\n" +
+      (data.message ? "Mensagem: " + data.message + "\n" : "") +
+      "\nGostaria de agendar uma avaliação!";
 
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
-    
+
+    void supabase.functions.invoke('public-lead', {
+      body: {
+        name: data.name,
+        phone: data.phone,
+        email: data.email || '',
+        procedure: data.procedure,
+        message: [data.message, `Cliente: ${data.clientType}`].filter(Boolean).join(' | '),
+      },
+    });
+
     setName('');
+    setPhone('');
+    setEmail('');
+    setNote('');
     setProcedure('');
     setClientType('');
     onClose();
