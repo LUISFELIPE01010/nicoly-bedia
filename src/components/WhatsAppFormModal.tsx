@@ -197,6 +197,22 @@ const WhatsAppFormModal = ({ isOpen, onClose }: WhatsAppFormModalProps) => {
             {errors.clientType && <p className="text-red-500 text-xs mt-1">{errors.clientType}</p>}
           </div>
 
+          <div>
+            <label className="flex items-center gap-2 text-sm font-semibold text-title-blue mb-2">
+              <Pencil className="w-4 h-4 text-chrome-gold" />
+              Mensagem <span className="font-normal text-title-blue/50">(opcional)</span>
+            </label>
+            <textarea
+              value={note}
+              onChange={(e) => setNote(e.target.value)}
+              placeholder="Conte um pouco sobre o que você procura"
+              maxLength={1000}
+              rows={3}
+              className="w-full px-4 py-3 rounded-xl border border-chrome-light/40 bg-nude-soft/30 text-title-blue placeholder:text-title-blue/40 focus:outline-none focus:ring-2 focus:ring-chrome-gold/50 focus:border-chrome-gold transition-all resize-none"
+            />
+          </div>
+
+
           <button
             type="submit"
             className="w-full inline-flex items-center justify-center gap-3 bg-chrome-gold text-white px-8 py-4 rounded-full font-semibold text-lg hover-lift shadow-lg hover:bg-chrome-dark transition-all"
