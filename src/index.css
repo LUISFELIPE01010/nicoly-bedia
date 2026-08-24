@@ -127,3 +127,40 @@
     opacity: 0;
   }
 }
+
+/* ===== CRM admin theme (neutral, high density) ===== */
+@layer base {
+  .crm {
+    --background: 210 20% 98%;
+    --foreground: 222 24% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 24% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 24% 16%;
+
+    --primary: 243 65% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 25% 95%;
+    --secondary-foreground: 222 24% 20%;
+
+    --muted: 215 25% 95%;
+    --muted-foreground: 215 14% 45%;
+
+    --accent: 215 25% 93%;
+    --accent-foreground: 222 24% 20%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 20% 89%;
+    --input: 215 20% 89%;
+    --ring: 243 65% 60%;
+
+    --radius: 0.5rem;
+
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+}
