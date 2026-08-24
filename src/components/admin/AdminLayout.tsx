@@ -1,25 +1,13 @@
 import { ReactNode, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import {
-  LayoutDashboard, Users, KanbanSquare, BellRing, CalendarDays, Sparkles,
-  Receipt, BarChart3, HeartHandshake, Settings as SettingsIcon, LogOut, Menu, X, UserRound,
-} from 'lucide-react';
+import { LayoutDashboard, Users, LogOut, Menu, X } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const nav = [
-  { to: '/admin', end: true, label: 'Dashboard', icon: LayoutDashboard },
+  { to: '/admin', end: true, label: 'Visão geral', icon: LayoutDashboard },
   { to: '/admin/leads', label: 'Leads', icon: Users },
-  { to: '/admin/pipeline', label: 'Pipeline', icon: KanbanSquare },
-  { to: '/admin/follow-ups', label: 'Follow-ups', icon: BellRing },
-  { to: '/admin/agenda', label: 'Agenda', icon: CalendarDays },
-  { to: '/admin/clientes', label: 'Clientes', icon: UserRound },
-  { to: '/admin/procedimentos', label: 'Procedimentos', icon: Sparkles },
-  { to: '/admin/vendas', label: 'Vendas', icon: Receipt },
-  { to: '/admin/relatorios', label: 'Relatórios', icon: BarChart3 },
-  { to: '/admin/reativacao', label: 'Reativação', icon: HeartHandshake },
-  { to: '/admin/configuracoes', label: 'Configurações', icon: SettingsIcon },
 ];
 
 const AdminLayout = ({ children }: { children: ReactNode }) => {

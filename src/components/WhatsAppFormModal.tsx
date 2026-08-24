@@ -1,10 +1,14 @@
 import { useState } from 'react';
-import { MessageCircle, User, Target, Users } from 'lucide-react';
+import { MessageCircle, User, Target, Users, Phone, Mail, Pencil } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { supabase } from '@/integrations/supabase/client';
 import { z } from 'zod';
 
 const formSchema = z.object({
   name: z.string().trim().min(2, 'Por favor, informe seu nome').max(100),
+  phone: z.string().trim().refine((v) => v.replace(/\D/g, '').length >= 10, 'Informe um WhatsApp válido'),
+  email: z.string().trim().max(160).email('E-mail inválido').optional().or(z.literal('')),
+  message: z.string().trim().max(1000).optional().or(z.literal('')),
   procedure: z.string().trim().min(1, 'Selecione um procedimento'),
   clientType: z.string().trim().min(1, 'Selecione uma opção'),
 });
@@ -30,6 +34,9 @@ const procedures = [
 
 const WhatsAppFormModal = ({ isOpen, onClose }: WhatsAppFormModalProps) => {
   const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [note, setNote] = useState('');
   const [procedure, setProcedure] = useState('');
   const [clientType, setClientType] = useState('');
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -38,7 +45,7 @@ const WhatsAppFormModal = ({ isOpen, onClose }: WhatsAppFormModalProps) => {
     e.preventDefault();
     setErrors({});
 
-    const result = formSchema.safeParse({ name, procedure, clientType });
+    const result = formSchema.safeParse({ name, phone, email, message: note, procedure, clientType });
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
       result.error.errors.forEach((err) => {
@@ -48,15 +55,30 @@ const WhatsAppFormModal = ({ isOpen, onClose }: WhatsAppFormModalProps) => {
       return;
     }
 
-    const message = "Olá! Meu nome é *" + result.data.name + "*.\n\n" +
-      "Procedimento de interesse: " + result.data.procedure + "\n" +
-      "Cliente: " + result.data.clientType + "\n\n" +
-      "Gostaria de agendar uma avaliação!";
+    const data = result.data;
+    const message = "Olá! Meu nome é *" + data.name + "*.\n\n" +
+      "Procedimento de interesse: " + data.procedure + "\n" +
+      "Cliente: " + data.clientType + "\n" +
+      (data.message ? "Mensagem: " + data.message + "\n" : "") +
+      "\nGostaria de agendar uma avaliação!";
 
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
-    
+
+    void supabase.functions.invoke('public-lead', {
+      body: {
+        name: data.name,
+        phone: data.phone,
+        email: data.email || '',
+        procedure: data.procedure,
+        message: [data.message, `Cliente: ${data.clientType}`].filter(Boolean).join(' | '),
+      },
+    });
+
     setName('');
+    setPhone('');
+    setEmail('');
+    setNote('');
     setProcedure('');
     setClientType('');
     onClose();
@@ -93,6 +115,39 @@ const WhatsAppFormModal = ({ isOpen, onClose }: WhatsAppFormModalProps) => {
             />
             {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
           </div>
+
+          <div>
+            <label className="flex items-center gap-2 text-sm font-semibold text-title-blue mb-2">
+              <Phone className="w-4 h-4 text-chrome-gold" />
+              Seu WhatsApp
+            </label>
+            <input
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="(13) 99999-9999"
+              maxLength={30}
+              className="w-full px-4 py-3 rounded-xl border border-chrome-light/40 bg-nude-soft/30 text-title-blue placeholder:text-title-blue/40 focus:outline-none focus:ring-2 focus:ring-chrome-gold/50 focus:border-chrome-gold transition-all"
+            />
+            {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+          </div>
+
+          <div>
+            <label className="flex items-center gap-2 text-sm font-semibold text-title-blue mb-2">
+              <Mail className="w-4 h-4 text-chrome-gold" />
+              E-mail <span className="font-normal text-title-blue/50">(opcional)</span>
+            </label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="seuemail@exemplo.com"
+              maxLength={160}
+              className="w-full px-4 py-3 rounded-xl border border-chrome-light/40 bg-nude-soft/30 text-title-blue placeholder:text-title-blue/40 focus:outline-none focus:ring-2 focus:ring-chrome-gold/50 focus:border-chrome-gold transition-all"
+            />
+            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+          </div>
+
 
           <div>
             <label className="flex items-center gap-2 text-sm font-semibold text-title-blue mb-2">
@@ -141,6 +196,22 @@ const WhatsAppFormModal = ({ isOpen, onClose }: WhatsAppFormModalProps) => {
             </div>
             {errors.clientType && <p className="text-red-500 text-xs mt-1">{errors.clientType}</p>}
           </div>
+
+          <div>
+            <label className="flex items-center gap-2 text-sm font-semibold text-title-blue mb-2">
+              <Pencil className="w-4 h-4 text-chrome-gold" />
+              Mensagem <span className="font-normal text-title-blue/50">(opcional)</span>
+            </label>
+            <textarea
+              value={note}
+              onChange={(e) => setNote(e.target.value)}
+              placeholder="Conte um pouco sobre o que você procura"
+              maxLength={1000}
+              rows={3}
+              className="w-full px-4 py-3 rounded-xl border border-chrome-light/40 bg-nude-soft/30 text-title-blue placeholder:text-title-blue/40 focus:outline-none focus:ring-2 focus:ring-chrome-gold/50 focus:border-chrome-gold transition-all resize-none"
+            />
+          </div>
+
 
           <button
             type="submit"

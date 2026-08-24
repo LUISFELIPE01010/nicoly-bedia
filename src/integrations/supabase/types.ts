@@ -341,6 +341,51 @@ export type Database = {
           },
         ]
       }
+      lead_status_history: {
+        Row: {
+          changed_by: string | null
+          company_id: string
+          created_at: string
+          from_status: Database["public"]["Enums"]["lead_status"] | null
+          id: string
+          lead_id: string
+          to_status: Database["public"]["Enums"]["lead_status"]
+        }
+        Insert: {
+          changed_by?: string | null
+          company_id: string
+          created_at?: string
+          from_status?: Database["public"]["Enums"]["lead_status"] | null
+          id?: string
+          lead_id: string
+          to_status: Database["public"]["Enums"]["lead_status"]
+        }
+        Update: {
+          changed_by?: string | null
+          company_id?: string
+          created_at?: string
+          from_status?: Database["public"]["Enums"]["lead_status"] | null
+          id?: string
+          lead_id?: string
+          to_status?: Database["public"]["Enums"]["lead_status"]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "lead_status_history_company_id_fkey"
+            columns: ["company_id"]
+            isOneToOne: false
+            referencedRelation: "companies"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "lead_status_history_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "leads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       leads: {
         Row: {
           company_id: string
@@ -349,9 +394,11 @@ export type Database = {
           email: string | null
           estimated_value: number | null
           id: string
+          message: string | null
           name: string
           next_followup_at: string | null
           notes: string | null
+          origin: string
           owner_id: string | null
           phone: string | null
           procedure_id: string | null
@@ -368,9 +415,11 @@ export type Database = {
           email?: string | null
           estimated_value?: number | null
           id?: string
+          message?: string | null
           name: string
           next_followup_at?: string | null
           notes?: string | null
+          origin?: string
           owner_id?: string | null
           phone?: string | null
           procedure_id?: string | null
@@ -387,9 +436,11 @@ export type Database = {
           email?: string | null
           estimated_value?: number | null
           id?: string
+          message?: string | null
           name?: string
           next_followup_at?: string | null
           notes?: string | null
+          origin?: string
           owner_id?: string | null
           phone?: string | null
           procedure_id?: string | null
