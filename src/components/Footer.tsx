@@ -1,4 +1,4 @@
-import { Instagram, MessageCircle } from 'lucide-react';
+import { Instagram, MessageCircle, Lock } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
