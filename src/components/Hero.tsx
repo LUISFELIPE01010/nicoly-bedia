@@ -86,9 +86,9 @@ const Hero = () => {
       {/* Hero Content */}
       <div className="flex-1 relative">
         {/* Foto da Elizabeth (desktop: lateral direita até a borda) */}
-<div className="hidden lg:block absolute inset-y-0 right-0 w-[46%]" aria-hidden="true">
-          <img src="/lovable-uploads/elizabeth-hero.jpg" alt="" className="w-full h-full object-cover object-[70%_25%]" loading="eager" decoding="async" width={1600} height={900} />
-          <div className="absolute inset-0 bg-gradient-to-r from-nude-soft via-nude-soft/50 to-transparent"></div>
+<div className="hidden lg:block absolute inset-y-0 right-0 w-[54%]" aria-hidden="true">
+          <img src="/lovable-uploads/elizabeth-hero-2.jpg" alt="" className="w-full h-full object-cover object-[78%_22%]" loading="eager" decoding="async" width={1600} height={900} />
+          <div className="absolute inset-0 bg-gradient-to-r from-nude-soft via-nude-soft/40 to-transparent"></div>
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-4 py-10 md:py-16 lg:py-24">
@@ -129,7 +129,7 @@ const Hero = () => {
 
         {/* Foto da Elizabeth (mobile: abaixo do texto, largura total) */}
         <div className="lg:hidden relative z-10 px-6 pb-8">
-          <img src="/lovable-uploads/elizabeth-hero.jpg" alt="Elizabeth Gut, esteticista, em seu consultório" className="w-full max-w-sm mx-auto rounded-3xl shadow-xl object-cover aspect-[4/3] object-right" loading="eager" decoding="async" width={1600} height={900} />
+          <img src="/lovable-uploads/elizabeth-hero-2.jpg" alt="Elizabeth Gut, esteticista, em seu consultório" className="w-full max-w-sm mx-auto rounded-3xl shadow-xl object-cover aspect-[4/3] object-[62%_18%]" loading="eager" decoding="async" width={1600} height={900} />
         </div>
 
       </div>
