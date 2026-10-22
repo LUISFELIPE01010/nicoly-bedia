@@ -126,8 +126,8 @@ export const procedimentos: Procedimento[] = [
     explicacao: 'Técnica manual com movimentos suaves e ritmados que estimulam a circulação linfática.',
     beneficios: ['Redução da retenção de líquidos e do inchaço', 'Sensação de leveza', 'Relaxamento profundo'],
     resultado: 'Corpo mais leve e desinchado, com melhores resultados quando feita com regularidade.',
-    imagem: '/lovable-uploads/hero-bg.png',
-    imagemAlt: 'Sala de tratamento corporal da clínica Elizabeth Gut',
+    imagem: '/lovable-uploads/7e5bb34e-8a17-42ff-b135-d77451a3aac2.jpg',
+    imagemAlt: 'Elizabeth Gut, esteticista, em atendimento acolhedor',
     visivel: true,
   },
   {
@@ -148,8 +148,8 @@ export const procedimentos: Procedimento[] = [
     explicacao: 'Tratamentos para celulite, gordura localizada, flacidez e estrias.',
     beneficios: ['Melhora do aspecto da celulite', 'Auxilia na redução de gordura localizada', 'Mais firmeza e estrias suavizadas'],
     resultado: 'Evolução gradual, com protocolo personalizado e orientações para manter o resultado.',
-    imagem: '/lovable-uploads/hero-bg.png',
-    imagemAlt: 'Ambiente da clínica para tratamentos corporais',
+    imagem: tecnologiaImg,
+    imagemAlt: 'Equipamento de estética corporal em clínica',
     visivel: true,
   },
   {
@@ -159,8 +159,8 @@ export const procedimentos: Procedimento[] = [
     explicacao: 'Massagem para aliviar a tensão do corpo e proporcionar uma pausa na rotina.',
     beneficios: ['Alívio da tensão muscular', 'Relaxamento e redução do estresse', 'Sensação de leveza'],
     resultado: 'Corpo e mente mais leves já ao final da sessão.',
-    imagem: '/lovable-uploads/7e5bb34e-8a17-42ff-b135-d77451a3aac2.jpg',
-    imagemAlt: 'Elizabeth Gut, esteticista, em ambiente acolhedor de bem-estar',
+    imagem: facialImg,
+    imagemAlt: 'Momento de relaxamento em tratamento de bem-estar',
     visivel: true,
   },
 ];
