@@ -1,22 +1,14 @@
-import { Calendar, MessageCircle, Menu, X, Phone, Instagram, Droplets, Zap, ShieldCheck, Heart } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import WhatsAppFormModal from './WhatsAppFormModal';
 
 const navLinks = [
-  { label: 'Início', href: '#top' },
-  { label: 'Sobre Mim', href: '#about' },
   { label: 'Tratamentos', href: '#services' },
   { label: 'Catálogo', href: '/catalogo', route: true },
-  { label: 'Depoimentos', href: '#testimonials' },
+  { label: 'Sobre', href: '#about' },
+  { label: 'Resultados', href: '#results' },
   { label: 'Contato', href: '#contact' },
-];
-
-const destaques = [
-  { icon: Droplets, texto: 'Limpeza de pele profissional' },
-  { icon: Zap, texto: 'Tecnologia Ultraformer MPT e Laser Lavieen' },
-  { icon: ShieldCheck, texto: 'Mais de 20 anos de experiência cuidando da sua pele' },
-  { icon: Heart, texto: 'Sua autoestima em primeiro lugar' },
 ];
 
 const Hero = () => {
@@ -24,129 +16,131 @@ const Hero = () => {
   const [formOpen, setFormOpen] = useState(false);
 
   return (
-    <section id="top" className="min-h-screen flex flex-col relative bg-nude-soft">
-      {/* Header */}
-      <header className="w-full py-4 px-6 md:px-4 sticky top-0 z-50 bg-nude-soft/95 backdrop-blur-md border-b border-brand/20">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <a href="#top" className="flex items-center gap-2.5">
-            <img alt="Logo Elizabeth Gut" className="w-9 h-9 md:w-10 md:h-10 object-contain" src="/lovable-uploads/e45973ed-86cf-4851-ad5d-cbd50de5eb11.png" width={40} height={40} />
+    <section id="top" className="relative flex min-h-screen flex-col bg-background">
+      {/* Cabeçalho */}
+      <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 px-6 py-4 backdrop-blur-sm md:px-8">
+        <div className="mx-auto flex max-w-6xl items-center justify-between">
+          <a href="#top" className="flex items-center gap-3">
+            <img alt="Logo Elizabeth Gut" className="h-10 w-10 object-contain" src="/lovable-uploads/e45973ed-86cf-4851-ad5d-cbd50de5eb11.png" width={40} height={40} />
             <span className="leading-tight">
-              <span className="block text-base md:text-lg font-bold tracking-wide text-ink">ELIZABETH GUT</span>
-              <span className="block text-[10px] md:text-xs tracking-[0.3em] text-brand">ESTETICISTA</span>
+              <span className="block font-display text-lg text-ink md:text-xl">Elizabeth Gut</span>
+              <span className="block text-[11px] tracking-wide text-gold-dark">Esteticista</span>
             </span>
           </a>
 
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6">
+          {/* Menu desktop */}
+          <nav className="hidden items-center gap-7 lg:flex">
             {navLinks.map((link) =>
               link.route ? (
-                <Link key={link.href} to={link.href} className="text-sm font-medium text-ink/70 hover:text-brand transition-colors">
+                <Link key={link.href} to={link.href} className="text-sm text-ink/80 decoration-brand underline-offset-4 transition-colors hover:text-gold-dark hover:underline">
                   {link.label}
                 </Link>
               ) : (
-                <a key={link.href} href={link.href} className={`text-sm font-medium transition-colors ${link.label === 'Início' ? 'text-ink border-b-2 border-brand pb-0.5' : 'text-ink/70 hover:text-brand'}`}>
+                <a key={link.href} href={link.href} className="text-sm text-ink/80 decoration-brand underline-offset-4 transition-colors hover:text-gold-dark hover:underline">
                   {link.label}
                 </a>
               )
             )}
-            <button onClick={() => setFormOpen(true)} className="inline-flex items-center gap-2 bg-brand text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-chrome-dark transition-all">
-              <MessageCircle className="w-4 h-4" />
-              Fale comigo
+            <button onClick={() => setFormOpen(true)} className="rounded-full bg-ink px-5 py-2.5 text-sm text-ivory transition-colors hover:bg-gold-dark">
+              Agendar avaliação
             </button>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden text-ink p-2" aria-label="Menu">
-            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {/* Botão do menu mobile */}
+          <button onClick={() => setMenuOpen(true)} className="p-2 text-ink lg:hidden" aria-label="Abrir menu">
+            <Menu className="h-6 w-6" />
           </button>
         </div>
+      </header>
 
-        {/* Mobile Nav */}
-        {menuOpen && (
-          <nav className="lg:hidden mt-4 pb-4 flex flex-col gap-3 border-t border-brand/20 pt-4">
+      {/* Menu mobile em tela cheia */}
+      {menuOpen && (
+        <div className="fixed inset-0 z-50 flex flex-col bg-background px-6 py-5">
+          <div className="flex items-center justify-between">
+            <span className="font-display text-xl text-ink">Elizabeth Gut</span>
+            <button onClick={() => setMenuOpen(false)} className="p-2 text-ink" aria-label="Fechar menu">
+              <X className="h-6 w-6" />
+            </button>
+          </div>
+          <nav className="flex flex-1 flex-col items-center justify-center gap-7">
             {navLinks.map((link) =>
               link.route ? (
-                <Link key={link.href} to={link.href} onClick={() => setMenuOpen(false)} className="text-sm font-medium text-ink/70 hover:text-brand transition-colors px-2 py-1">
+                <Link key={link.href} to={link.href} onClick={() => setMenuOpen(false)} className="font-display text-3xl text-ink">
                   {link.label}
                 </Link>
               ) : (
-                <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="text-sm font-medium text-ink/70 hover:text-brand transition-colors px-2 py-1">
+                <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="font-display text-3xl text-ink">
                   {link.label}
                 </a>
               )
             )}
-            <button onClick={() => { setFormOpen(true); setMenuOpen(false); }} className="inline-flex items-center justify-center gap-2 bg-brand text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-chrome-dark transition-all mt-2">
-              <MessageCircle className="w-4 h-4" />
-              Fale comigo
+            <button onClick={() => { setFormOpen(true); setMenuOpen(false); }} className="mt-4 rounded-full bg-ink px-8 py-3.5 text-base text-ivory transition-colors hover:bg-gold-dark">
+              Agendar avaliação
             </button>
           </nav>
-        )}
-      </header>
-
-      {/* Hero Content */}
-      <div className="flex-1 relative">
-        {/* Foto da Elizabeth (desktop: lateral direita até a borda) */}
-<div className="hidden lg:block absolute inset-y-0 right-0 w-[54%]" aria-hidden="true">
-          <img src="/lovable-uploads/beth-gut.webp" alt="" className="w-full h-full object-cover object-[90%_22%]" loading="eager" decoding="async" width={1600} height={900} style={{ maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 7%, black 16%)", WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 7%, black 16%)" }} />
         </div>
+      )}
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-4 py-10 md:py-16 lg:py-24">
-          <div className="max-w-xl space-y-5 md:space-y-7 animate-slide-in-left text-center lg:text-left">
-            <div className="flex items-center gap-3 justify-center lg:justify-start">
-              <span className="w-10 h-px bg-brand"></span>
-              <span className="text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-title-blue/70">Esteticista Elizabeth Gut</span>
-            </div>
-
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-ink">
-              Sua beleza,
-              <br />
-              nosso cuidado,
-              <br />
-              <span className="italic text-brand">seu brilho.</span>
-            </h1>
-
-            <p className="text-base md:text-lg text-title-blue/80 leading-relaxed">
-              Tratamentos estéticos personalizados com tecnologia de ponta e o carinho que você merece.
-            </p>
-
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-3 justify-center lg:justify-start">
-              <button onClick={() => setFormOpen(true)} className="inline-flex items-center justify-center gap-2 bg-brand text-white px-6 py-3 md:px-7 md:py-3.5 rounded-full font-semibold text-base hover-lift shadow-lg hover:bg-chrome-dark transition-all" aria-label="Agendar avaliação">
-                <Calendar className="w-5 h-5" />
-                Agendar avaliação
-              </button>
-              <a href="tel:+5513997846585" className="inline-flex items-center gap-2 text-ink font-semibold hover:text-brand transition-colors whitespace-nowrap" aria-label="Ligar para Elizabeth Gut">
-                <Phone className="w-5 h-5 text-brand flex-shrink-0" />
-                (13) 99784-6585
-              </a>
-              <a href="https://www.instagram.com/elizabethgutesteticista/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-ink font-semibold hover:text-brand transition-colors whitespace-nowrap" aria-label="Instagram de Elizabeth Gut">
-                <Instagram className="w-5 h-5 text-brand flex-shrink-0" />
-                @elizabethgutesteticista
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Foto da Elizabeth (mobile: abaixo do texto, largura total) */}
-        <div className="lg:hidden relative z-10 px-6 pb-8">
-          <img src="/lovable-uploads/beth-gut-800.webp" alt="Elizabeth Gut, esteticista, em seu consultório" className="w-full max-w-sm mx-auto rounded-3xl shadow-xl object-cover aspect-[4/3] object-[92%_18%]" loading="eager" decoding="async" width={800} height={450} />
-        </div>
-
+      {/* Foto no mobile (primeiro) */}
+      <div className="lg:hidden">
+        <img
+          src="/lovable-uploads/beth-gut-800.webp"
+          alt="Elizabeth Gut, esteticista, em seu consultório"
+          className="h-[60vh] w-full object-cover object-[92%_18%]"
+          loading="eager"
+          decoding="async"
+          width={800}
+          height={450}
+        />
       </div>
 
-      {/* Faixa de destaques */}
-      <div className="relative z-10 border-t border-brand/30 bg-nude-soft/80">
-          <div className="max-w-6xl mx-auto px-6 md:px-4 py-6 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-5">
-            {destaques.map(({ icon: Icon, texto }) => (
-              <div key={texto} className="flex items-center gap-3">
-                <Icon className="w-7 h-7 text-brand flex-shrink-0" strokeWidth={1.5} />
-                <span className="text-xs md:text-sm font-medium text-ink/80 leading-snug">{texto}</span>
-              </div>
-            ))}
-          </div>
+      {/* Conteúdo do hero */}
+      <div className="relative flex-1">
+        {/* Foto no desktop (lateral direita, canto reto) */}
+        <div className="absolute inset-y-0 right-0 hidden min-h-[560px] w-[54%] lg:block" aria-hidden="true">
+          <img
+            src="/lovable-uploads/beth-gut.webp"
+            alt=""
+            className="hero-fade h-full w-full object-cover object-[90%_22%]"
+            loading="eager"
+            decoding="async"
+            width={1600}
+            height={900}
+          />
         </div>
 
-      <WhatsAppFormModal isOpen={formOpen} onClose={() => setFormOpen(false)} />
+        <div className="relative z-10 mx-auto max-w-6xl px-6 py-12 md:px-8 lg:py-24">
+          <div className="hero-enter max-w-xl space-y-6 text-center lg:text-left">
+            <h1 className="h-display h1-display text-ink">
+              Rejuvenescer sem
+              <br />
+              perder a sua expressão.
+            </h1>
+            <p className="mx-auto max-w-[36rem] text-lg leading-relaxed text-ink/70 lg:mx-0">
+              Avaliação individual e tecnologia como Ultraformer MPT e Laser Lavieen, com mais de 20 anos de experiência em Santos.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 lg:justify-start">
+              <button onClick={() => setFormOpen(true)} className="rounded-full bg-ink px-7 py-3.5 text-base text-ivory transition-colors hover:bg-gold-dark">
+                Agendar avaliação
+              </button>
+              <a href="tel:+5513997846585" className="whitespace-nowrap text-base font-medium text-ink decoration-brand underline-offset-4 transition-colors hover:text-gold-dark hover:underline" aria-label="Ligar para Elizabeth Gut">
+                (13) 99784-6585
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      {/* Faixa de fatos */}
+      <div className="relative z-10 border-t border-border bg-background">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-10 gap-y-2 px-6 py-5 text-sm text-ink/70 md:px-8">
+          <span>Técnica em Estética desde 2003</span>
+          <span>Pós-graduada em Procedimentos Injetáveis</span>
+          <span>Gonzaga, Santos/SP</span>
+        </div>
+      </div>
+
+      <WhatsAppFormModal isOpen={formOpen} onClose={() => setFormOpen(false)} />
     </section>
   );
 };
