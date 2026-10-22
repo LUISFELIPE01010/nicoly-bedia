@@ -128,7 +128,7 @@
     line-height: 1.05;
     letter-spacing: -0.02em;
   }
-  .h1-display { font-size: clamp(2.75rem, 6vw, 5rem); }
+  .h1-display { font-size: clamp(2.5rem, 5vw, 4.25rem); }
   .h2-display { font-size: clamp(2rem, 4vw, 3.25rem); }
 
   .hero-enter { animation: hero-up 0.7s ease-out both; }

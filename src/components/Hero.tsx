@@ -86,7 +86,7 @@ const Hero = () => {
         <img
           src="/lovable-uploads/beth-gut-800.webp"
           alt="Elizabeth Gut, esteticista, em seu consultório"
-          className="h-[60vh] w-full object-cover object-[92%_18%]"
+          className="h-[60vh] w-full object-cover object-[75%_20%]"
           loading="eager"
           decoding="async"
           width={800}
@@ -101,7 +101,7 @@ const Hero = () => {
           <img
             src="/lovable-uploads/beth-gut.webp"
             alt=""
-            className="hero-fade h-full w-full object-cover object-[90%_22%]"
+            className="hero-fade h-full w-full object-cover object-[72%_25%]"
             loading="eager"
             decoding="async"
             width={1600}
@@ -110,7 +110,7 @@ const Hero = () => {
         </div>
 
         <div className="relative z-10 mx-auto max-w-6xl px-6 py-12 md:px-8 lg:py-24">
-          <div className="hero-enter max-w-xl space-y-6 text-center lg:text-left">
+          <div className="hero-enter max-w-xl space-y-6 text-center lg:max-w-[30rem] lg:text-left">
             <h1 className="h-display h1-display text-ink">
               Rejuvenescer sem
               <br />
