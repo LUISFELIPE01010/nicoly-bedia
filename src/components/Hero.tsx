@@ -86,7 +86,7 @@ const Hero = () => {
         <img
           src="/lovable-uploads/beth-gut-800.webp"
           alt="Elizabeth Gut, esteticista, em seu consultório"
-          className="h-[60vh] w-full object-cover object-[75%_20%]"
+          className="h-[60vh] w-full object-cover object-[69%_20%]"
           loading="eager"
           decoding="async"
           width={800}
@@ -101,7 +101,7 @@ const Hero = () => {
           <img
             src="/lovable-uploads/beth-gut.webp"
             alt=""
-            className="hero-fade h-full w-full object-cover object-[72%_25%]"
+            className="hero-fade h-full w-full object-cover object-[67%_25%]"
             loading="eager"
             decoding="async"
             width={1600}
