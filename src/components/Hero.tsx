@@ -2,8 +2,6 @@ import { Calendar, MessageCircle, Menu, X, Phone, Instagram, Droplets, Zap, Shie
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import WhatsAppFormModal from './WhatsAppFormModal';
-import heroFoto from '@/assets/beth-gut.webp.asset.json';
-import heroFotoMobile from '@/assets/beth-gut-800.webp.asset.json';
 
 const navLinks = [
   { label: 'Início', href: '#top' },
@@ -89,7 +87,7 @@ const Hero = () => {
       <div className="flex-1 relative">
         {/* Foto da Elizabeth (desktop: lateral direita até a borda) */}
 <div className="hidden lg:block absolute inset-y-0 right-0 w-[54%]" aria-hidden="true">
-          <img src={heroFoto.url} alt="" className="w-full h-full object-cover object-[90%_22%]" loading="eager" decoding="async" width={1600} height={900} style={{ maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 7%, black 16%)", WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 7%, black 16%)" }} />
+          <img src="/lovable-uploads/beth-gut.webp" alt="" className="w-full h-full object-cover object-[90%_22%]" loading="eager" decoding="async" width={1600} height={900} style={{ maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 7%, black 16%)", WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 7%, black 16%)" }} />
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-4 py-10 md:py-16 lg:py-24">
@@ -130,7 +128,7 @@ const Hero = () => {
 
         {/* Foto da Elizabeth (mobile: abaixo do texto, largura total) */}
         <div className="lg:hidden relative z-10 px-6 pb-8">
-          <img src={heroFotoMobile.url} alt="Elizabeth Gut, esteticista, em seu consultório" className="w-full max-w-sm mx-auto rounded-3xl shadow-xl object-cover aspect-[4/3] object-[92%_18%]" loading="eager" decoding="async" width={800} height={450} />
+          <img src="/lovable-uploads/beth-gut-800.webp" alt="Elizabeth Gut, esteticista, em seu consultório" className="w-full max-w-sm mx-auto rounded-3xl shadow-xl object-cover aspect-[4/3] object-[92%_18%]" loading="eager" decoding="async" width={800} height={450} />
         </div>
 
       </div>
