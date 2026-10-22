@@ -86,8 +86,8 @@ const Hero = () => {
       {/* Hero Content */}
       <div className="flex-1 relative">
         {/* Foto da Elizabeth (desktop: lateral direita até a borda) */}
-        <div className="hidden lg:block absolute inset-y-0 right-0 w-[52%]" aria-hidden="true">
-          <img src="/lovable-uploads/elizabeth-hero.jpg" alt="" className="w-full h-full object-cover object-right" loading="eager" fetchpriority="high" decoding="async" width={1600} height={900} />
+<div className="hidden lg:block absolute inset-y-0 right-0 w-[46%]" aria-hidden="true">
+          <img src="/lovable-uploads/elizabeth-hero.jpg" alt="" className="w-full h-full object-cover object-[70%_25%]" loading="eager" fetchpriority="high" decoding="async" width={1600} height={900} />
           <div className="absolute inset-0 bg-gradient-to-r from-nude-soft via-nude-soft/50 to-transparent"></div>
         </div>
 
@@ -132,8 +132,10 @@ const Hero = () => {
           <img src="/lovable-uploads/elizabeth-hero.jpg" alt="Elizabeth Gut, esteticista, em seu consultório" className="w-full max-w-sm mx-auto rounded-3xl shadow-xl object-cover aspect-[4/3] object-right" loading="eager" fetchpriority="high" decoding="async" width={1600} height={900} />
         </div>
 
-        {/* Faixa de destaques */}
-        <div className="relative z-10 border-t border-brand/30 bg-nude-soft/80">
+      </div>
+
+      {/* Faixa de destaques */}
+      <div className="relative z-10 border-t border-brand/30 bg-nude-soft/80">
           <div className="max-w-6xl mx-auto px-6 md:px-4 py-6 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-5">
             {destaques.map(({ icon: Icon, texto }) => (
               <div key={texto} className="flex items-center gap-3">
