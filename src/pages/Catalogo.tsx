@@ -71,9 +71,9 @@ const Catalogo = () => {
   );
 
   return (
-    <div className="min-h-screen bg-nude-soft">
+    <div className="min-h-screen bg-nude-soft flex flex-col">
       {/* Capa (somente impressão) */}
-      <div className="hidden print:flex min-h-screen flex-col items-center justify-center text-center gap-6 break-after-page bg-nude-soft px-10">
+      <div className="hidden print:flex print:order-1 min-h-screen flex-col items-center justify-center text-center gap-6 break-after-page bg-nude-soft px-10">
         <img src="/lovable-uploads/logo-elizabeth-gut.png" alt="Logo Elizabeth Gut" className="w-24 h-24 object-contain" />
         <p className="text-sm tracking-[0.3em] uppercase text-brand">Elizabeth Gut | Esteticista</p>
         <h1 className="text-5xl font-serif text-ink">Catálogo de procedimentos</h1>
@@ -169,21 +169,8 @@ const Catalogo = () => {
         </div>
       </div>
 
-      {/* Como funciona (página 2 na impressão) */}
-      <section className="max-w-6xl mx-auto px-6 md:px-4 py-14 md:py-20 print:break-after-page print:break-inside-avoid">
-        <h2 className="text-2xl md:text-3xl font-serif text-ink text-center mb-10">Como funciona</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {passos.map((passo) => (
-            <div key={passo.numero} className="animate-on-scroll bg-white/70 rounded-3xl border border-brand/20 p-8 text-center">
-              <span className="inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-brand text-brand font-serif text-xl mb-4">{passo.numero}</span>
-              <p className="text-ink/80 leading-relaxed">{passo.texto}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Lista de procedimentos */}
-      <section className="max-w-6xl mx-auto px-6 md:px-4 pb-16 space-y-14 md:space-y-20">
+      <section className="max-w-6xl mx-auto px-6 md:px-4 pb-16 space-y-14 md:space-y-20 print:order-3">
         {visiveis.map((p, i) => (
           <article key={p.slug} className="animate-on-scroll grid md:grid-cols-2 gap-6 md:gap-12 items-center print:break-after-page print:break-inside-avoid">
             <div className={`${i % 2 === 1 ? 'md:order-2' : ''}`}>
@@ -239,8 +226,21 @@ const Catalogo = () => {
         ))}
       </section>
 
+      {/* Como funciona (página 2 na impressão) */}
+      <section className="max-w-6xl mx-auto px-6 md:px-4 py-14 md:py-20 print:order-2 print:break-after-page print:break-inside-avoid">
+        <h2 className="text-2xl md:text-3xl font-serif text-ink text-center mb-10">Como funciona</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {passos.map((passo) => (
+            <div key={passo.numero} className="animate-on-scroll bg-white/70 rounded-3xl border border-brand/20 p-8 text-center">
+              <span className="inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-brand text-brand font-serif text-xl mb-4">{passo.numero}</span>
+              <p className="text-ink/80 leading-relaxed">{passo.texto}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* CTA final (última página na impressão) */}
-      <section className="bg-white/70 border-t border-brand/20 print:break-inside-avoid">
+      <section className="bg-white/70 border-t border-brand/20 print:order-4 print:break-inside-avoid">
         <div className="max-w-3xl mx-auto px-6 md:px-4 py-14 md:py-20 text-center space-y-6">
           <h2 className="text-2xl md:text-3xl font-serif text-ink">Não sabe por onde começar?</h2>
           <p className="text-title-blue/80 leading-relaxed">
