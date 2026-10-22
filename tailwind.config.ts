@@ -75,8 +75,10 @@ export default {
 				'pastel-sage': '#D5E5D8',
 				'pastel-peach': '#F5E0D0',
 				'pastel-lavender': '#E8DFF0',
-				'title-blue': '#5A6E78',
-			},
+			'title-blue': '#5A6E78',
+			'brand': '#C09E7E',
+			'ink': '#3D3028',
+		},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
