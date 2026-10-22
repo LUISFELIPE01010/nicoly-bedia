@@ -109,19 +109,25 @@ const Hero = () => {
               Tratamentos estéticos personalizados com tecnologia de ponta e o carinho que você merece.
             </p>
 
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-3 justify-center lg:justify-start">
+            <div className="flex flex-col items-center lg:items-start gap-4 pt-1">
               <button onClick={() => setFormOpen(true)} className="inline-flex items-center justify-center gap-2 bg-brand text-white px-6 py-3 md:px-7 md:py-3.5 rounded-full font-semibold text-base hover-lift shadow-lg hover:bg-chrome-dark transition-all" aria-label="Agendar avaliação">
                 <Calendar className="w-5 h-5" />
                 Agendar avaliação
               </button>
-              <a href="tel:+5513997846585" className="inline-flex items-center gap-2 text-ink font-semibold hover:text-brand transition-colors whitespace-nowrap" aria-label="Ligar para Elizabeth Gut">
-                <Phone className="w-5 h-5 text-brand flex-shrink-0" />
-                (13) 99784-6585
-              </a>
-              <a href="https://www.instagram.com/elizabethgutesteticista/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-ink font-semibold hover:text-brand transition-colors whitespace-nowrap" aria-label="Instagram de Elizabeth Gut">
-                <Instagram className="w-5 h-5 text-brand flex-shrink-0" />
-                @elizabethgutesteticista
-              </a>
+
+              <div className="flex items-stretch gap-3.5">
+                <span className="w-px bg-ink/15" aria-hidden="true"></span>
+                <div className="flex flex-col justify-center gap-1.5">
+                  <a href="tel:+5513997846585" className="inline-flex items-center gap-2.5 text-sm md:text-base font-medium text-ink hover:text-brand transition-colors whitespace-nowrap" aria-label="Ligar para Elizabeth Gut">
+                    <Phone className="w-4 h-4 text-brand flex-shrink-0" />
+                    (13) 99784-6585
+                  </a>
+                  <a href="https://www.instagram.com/elizabethgutesteticista/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 text-sm md:text-base font-medium text-ink hover:text-brand transition-colors whitespace-nowrap" aria-label="Instagram de Elizabeth Gut">
+                    <Instagram className="w-4 h-4 text-brand flex-shrink-0" />
+                    @elizabethgutesteticista
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
