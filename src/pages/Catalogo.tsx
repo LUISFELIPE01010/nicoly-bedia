@@ -73,7 +73,7 @@ const Catalogo = () => {
   return (
     <div className="min-h-screen bg-nude-soft flex flex-col">
       {/* Capa (somente impressão) */}
-      <div className="hidden print:flex print:order-1 min-h-screen flex-col items-center justify-center text-center gap-6 break-after-page bg-nude-soft px-10">
+      <div className="hidden print:flex print:order-1 print-sheet flex-col items-center justify-center text-center gap-6 bg-nude-soft">
         <img src="/lovable-uploads/logo-elizabeth-gut.png" alt="Logo Elizabeth Gut" className="w-24 h-24 object-contain" />
         <p className="text-sm tracking-[0.3em] uppercase text-brand">Elizabeth Gut | Esteticista</p>
         <h1 className="text-5xl font-serif text-ink">Catálogo de procedimentos</h1>
@@ -170,9 +170,9 @@ const Catalogo = () => {
       </div>
 
       {/* Lista de procedimentos */}
-      <section className="max-w-6xl mx-auto px-6 md:px-4 pb-16 space-y-14 md:space-y-20 print:order-3">
+      <section className="max-w-6xl mx-auto px-6 md:px-4 pb-16 space-y-14 md:space-y-20 print:order-3 print:p-0 print:m-0 print:max-w-none print:space-y-0">
         {visiveis.map((p, i) => (
-          <article key={p.slug} className="animate-on-scroll grid md:grid-cols-2 gap-6 md:gap-12 items-center print:break-after-page print:break-inside-avoid">
+          <article key={p.slug} className="animate-on-scroll grid md:grid-cols-2 print:grid-cols-2 gap-6 md:gap-12 print:gap-10 items-center print-sheet">
             <div className={`${i % 2 === 1 ? 'md:order-2' : ''}`}>
               <div className="relative">
                 <div className="absolute -top-4 -left-4 w-24 h-24 rounded-full bg-brand/10" aria-hidden="true"></div>
@@ -227,7 +227,7 @@ const Catalogo = () => {
       </section>
 
       {/* Como funciona (página 2 na impressão) */}
-      <section className="max-w-6xl mx-auto px-6 md:px-4 py-14 md:py-20 print:order-2 print:break-after-page print:break-inside-avoid">
+      <section className="max-w-6xl mx-auto px-6 md:px-4 py-14 md:py-20 print:order-2 print-sheet print:flex print:flex-col print:justify-center">
         <h2 className="text-2xl md:text-3xl font-serif text-ink text-center mb-10">Como funciona</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {passos.map((passo) => (
