@@ -60,7 +60,7 @@ export const procedimentos: Procedimento[] = [
     explicacao: 'Tecnologia de ultrassom micro e macrofocado que age nas camadas profundas da pele para estimular o colágeno e promover efeito lifting sem cirurgia.',
     beneficios: ['Efeito lifting', 'Redução da flacidez', 'Definição de contornos'],
     resultado: 'Melhora gradual da firmeza, que evolui com o tempo enquanto o colágeno se reorganiza.',
-    imagem: '/lovable-uploads/e560b74b-115f-4e8c-a164-eb09e1b1c353.png',
+    imagem: '/lovable-uploads/elizabeth-gut-1.png',
     imagemAlt: 'Elizabeth Gut em sua clínica com equipamentos de estética',
     visivel: true,
   },
