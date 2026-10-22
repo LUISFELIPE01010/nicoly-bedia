@@ -70,7 +70,7 @@ export default {
 				'nude-soft': '#FBF6EF',
 				'gray-rose': '#B8A090',
 				'gold-accent': '#F0E6D2',
-				'gold-dark': '#8A7040',
+				'gold-dark': '#8A6B4F',
 				'pastel-green': '#C8DECE',
 				'pastel-sage': '#D5E5D8',
 				'pastel-peach': '#F5E0D0',
@@ -78,6 +78,8 @@ export default {
 			'title-blue': '#5A6E78',
 			'brand': '#C09E7E',
 			'ink': '#3D3028',
+			'ivory': '#FBF6EF',
+			'sand': '#F1E8DC',
 		},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -86,6 +88,8 @@ export default {
 			},
 			fontFamily: {
 				'poppins': ['Poppins', 'sans-serif'],
+				'body': ['Jost', 'sans-serif'],
+				'display': ['"Cormorant Garamond"', 'Georgia', 'serif'],
 			},
 			keyframes: {
 				'accordion-down': {

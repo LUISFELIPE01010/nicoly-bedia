@@ -6,33 +6,36 @@
 
 @layer base {
   :root {
-    --background: 40 30% 96%;
-    --foreground: 220 25% 40%;
+    --background: 36 60% 96%;
+    --foreground: 23 21% 20%;
 
-    --card: 40 20% 99%;
-    --card-foreground: 220 25% 40%;
+    --card: 36 45% 99%;
+    --card-foreground: 23 21% 20%;
 
-    --popover: 40 20% 99%;
-    --popover-foreground: 220 25% 40%;
+    --popover: 36 45% 99%;
+    --popover-foreground: 23 21% 20%;
 
-    --primary: 160 28% 68%;
-    --primary-foreground: 40 20% 99%;
+    --primary: 23 21% 20%;
+    --primary-foreground: 36 60% 96%;
 
-    --secondary: 38 30% 92%;
-    --secondary-foreground: 220 25% 40%;
+    --secondary: 34 43% 90%;
+    --secondary-foreground: 23 21% 20%;
 
-    --muted: 38 20% 92%;
-    --muted-foreground: 30 10% 50%;
+    --muted: 34 30% 92%;
+    --muted-foreground: 23 8% 40%;
 
-    --accent: 38 30% 90%;
-    --accent-foreground: 220 25% 40%;
+    --accent: 34 43% 90%;
+    --accent-foreground: 23 21% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 38 20% 88%;
-    --input: 38 20% 88%;
-    --ring: 160 28% 68%;
+    --border: 23 21% 20% / 0.15;
+    --input: 23 21% 20% / 0.15;
+    --ring: 29 27% 43%;
+
+    --gold: 29 34% 62%;
+    --gold-dark: 29 27% 43%;
 
     --radius: 0.5rem;
 
@@ -43,7 +46,7 @@
     --sidebar-accent: 38 25% 95%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 38 15% 91%;
-    --sidebar-ring: 160 28% 68%;
+    --sidebar-ring: 29 27% 43%;
   }
 
   .dark {
@@ -83,7 +86,9 @@
   }
 
   body {
-    @apply bg-background text-foreground font-poppins;
+    @apply bg-background text-foreground font-body;
+    font-size: 17px;
+    line-height: 1.65;
   }
 
   html {
@@ -97,6 +102,44 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Tipografia de marca (The Seasons/Garet: descomente quando as fontes forem enviadas) */
+  /*
+  @font-face {
+    font-family: 'The Seasons';
+    src: url('/fonts/TheSeasons-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Garet';
+    src: url('/fonts/Garet-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+  */
+  .font-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+  .h-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .h1-display { font-size: clamp(2.75rem, 6vw, 5rem); }
+  .h2-display { font-size: clamp(2rem, 4vw, 3.25rem); }
+
+  .hero-enter { animation: hero-up 0.7s ease-out both; }
+  .hero-fade { animation: hero-fade 0.9s ease-out both; }
+  @keyframes hero-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes hero-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   .hover-lift {
@@ -176,7 +219,9 @@
   .animate-slide-in-left,
   .animate-slide-in-right,
   .animate-fade-in,
-  .animate-scale-in {
+  .animate-scale-in,
+  .hero-enter,
+  .hero-fade {
     animation: none !important;
   }
 }
