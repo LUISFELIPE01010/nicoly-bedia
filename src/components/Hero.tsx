@@ -148,6 +148,7 @@ const Hero = () => {
       </div>
 
       <WhatsAppFormModal isOpen={formOpen} onClose={() => setFormOpen(false)} />
+
     </section>
   );
 };
