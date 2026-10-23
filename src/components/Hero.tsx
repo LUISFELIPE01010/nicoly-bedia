@@ -23,7 +23,7 @@ const Hero = () => {
   const [formOpen, setFormOpen] = useState(false);
 
   return (
-    <section id="top" className="min-h-screen flex flex-col relative bg-nude-soft">
+    <section id="top" className="flex flex-col relative bg-nude-soft">
       {/* Header */}
       <header className="w-full py-4 px-6 md:px-4 sticky top-0 z-50 bg-nude-soft/95 backdrop-blur-md border-b border-brand/20">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
@@ -83,7 +83,7 @@ const Hero = () => {
       </header>
 
       {/* Hero Content */}
-      <div className="flex-1 relative">
+      <div className="flex-1 relative lg:min-h-[560px]">
         <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-4 py-6 md:py-16 lg:py-24">
           <div className="max-w-xl space-y-4 md:space-y-7 animate-slide-in-left text-center lg:text-left">
             <div className="flex items-center gap-3 justify-center lg:justify-start">
@@ -129,7 +129,7 @@ const Hero = () => {
         <div className="relative z-0 px-6 pb-6 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[54%] lg:p-0">
           <picture>
             <source media="(min-width: 1024px)" srcSet="/lovable-uploads/beth-gut.webp" />
-            <img src="/lovable-uploads/beth-gut-800.webp" alt="Elizabeth Gut, esteticista, em seu consultório" className="w-full max-w-sm mx-auto rounded-lg object-cover aspect-[4/3] object-[92%_18%] lg:max-w-none lg:h-full lg:rounded-none lg:aspect-auto lg:object-[90%_22%] lg:hero-portrait-mask" loading="eager" decoding="async" width={800} height={450} />
+            <img src="/lovable-uploads/beth-gut-800.webp" alt="Elizabeth Gut, esteticista, em seu consultório" className="w-full max-w-sm mx-auto rounded-lg object-cover aspect-[4/3] object-[92%_18%] lg:max-w-none lg:h-full lg:rounded-none lg:aspect-auto lg:object-[65%_22%] hero-responsive-image" loading="eager" decoding="async" width={800} height={450} />
           </picture>
         </div>
 

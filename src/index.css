@@ -206,7 +206,9 @@
 }
 .catalog-cover-scrim { background: var(--catalog-hero-scrim); }
 .catalog-treatment { box-shadow: var(--catalog-shadow); }
-.hero-portrait-mask { mask-image: linear-gradient(to right, transparent, black 16%); }
+@media (min-width: 1024px) {
+  .hero-responsive-image { mask-image: linear-gradient(to right, transparent, black 16%); }
+}
 @media (max-width: 767px) {
   .catalog-cover-scrim { background: linear-gradient(0deg, hsl(24 20% 12% / 0.85), hsl(24 20% 12% / 0.2)); }
   section[id] { scroll-margin-top: 80px; }
