@@ -28,7 +28,7 @@ const Hero = () => {
       <header className="w-full py-4 px-6 md:px-4 sticky top-0 z-50 bg-nude-soft/95 backdrop-blur-md border-b border-brand/20">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <a href="#top" className="flex items-center gap-2.5">
-            <img alt="Logo Elizabeth Gut" className="w-9 h-9 md:w-10 md:h-10 object-contain" src="/lovable-uploads/e45973ed-86cf-4851-ad5d-cbd50de5eb11.png" width={40} height={40} />
+            <img alt="Logo Elizabeth Gut" className="w-9 h-9 md:w-10 md:h-10 object-contain" src="/lovable-uploads/e45973ed-86cf-4851-ad5d-cbd50de5eb11.webp" width={40} height={40} />
             <span className="leading-tight">
               <span className="block text-base md:text-lg font-bold tracking-wide text-ink">ELIZABETH GUT</span>
               <span className="block text-[10px] md:text-xs tracking-[0.3em] text-brand">ESTETICISTA</span>
@@ -84,13 +84,8 @@ const Hero = () => {
 
       {/* Hero Content */}
       <div className="flex-1 relative">
-        {/* Foto da Elizabeth (desktop: lateral direita até a borda) */}
-<div className="hidden lg:block absolute inset-y-0 right-0 w-[54%]" aria-hidden="true">
-          <img src="/lovable-uploads/beth-gut.webp" alt="" className="w-full h-full object-cover object-[90%_22%]" loading="eager" decoding="async" width={1600} height={900} style={{ maskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 7%, black 16%)", WebkitMaskImage: "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 7%, black 16%)" }} />
-        </div>
-
-        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-4 py-10 md:py-16 lg:py-24">
-          <div className="max-w-xl space-y-5 md:space-y-7 animate-slide-in-left text-center lg:text-left">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-4 py-6 md:py-16 lg:py-24">
+          <div className="max-w-xl space-y-4 md:space-y-7 animate-slide-in-left text-center lg:text-left">
             <div className="flex items-center gap-3 justify-center lg:justify-start">
               <span className="w-10 h-px bg-brand"></span>
               <span className="text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-title-blue/70">Esteticista Elizabeth Gut</span>
@@ -131,9 +126,11 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Foto da Elizabeth (mobile: abaixo do texto, largura total) */}
-        <div className="lg:hidden relative z-10 px-6 pb-8">
-          <img src="/lovable-uploads/beth-gut-800.webp" alt="Elizabeth Gut, esteticista, em seu consultório" className="w-full max-w-sm mx-auto rounded-3xl shadow-xl object-cover aspect-[4/3] object-[92%_18%]" loading="eager" decoding="async" width={800} height={450} />
+        <div className="relative z-0 px-6 pb-6 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[54%] lg:p-0">
+          <picture>
+            <source media="(min-width: 1024px)" srcSet="/lovable-uploads/beth-gut.webp" />
+            <img src="/lovable-uploads/beth-gut-800.webp" alt="Elizabeth Gut, esteticista, em seu consultório" className="w-full max-w-sm mx-auto rounded-lg object-cover aspect-[4/3] object-[92%_18%] lg:max-w-none lg:h-full lg:rounded-none lg:aspect-auto lg:object-[90%_22%] lg:hero-portrait-mask" loading="eager" decoding="async" width={800} height={450} />
+          </picture>
         </div>
 
       </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MessageCircle, User, Target, Users, Phone, Mail, Pencil } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { supabase } from '@/integrations/supabase/client';
@@ -16,6 +16,7 @@ const formSchema = z.object({
 interface WhatsAppFormModalProps {
   isOpen: boolean;
   onClose: () => void;
+  initialProcedure?: string;
 }
 
 const WHATSAPP_NUMBER = "5513997846585";
@@ -32,13 +33,14 @@ const procedures = [
   "Outro"
 ];
 
-const WhatsAppFormModal = ({ isOpen, onClose }: WhatsAppFormModalProps) => {
+const WhatsAppFormModal = ({ isOpen, onClose, initialProcedure }: WhatsAppFormModalProps) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [note, setNote] = useState('');
   const [procedure, setProcedure] = useState('');
   const [clientType, setClientType] = useState('');
+  useEffect(() => { if (isOpen && initialProcedure) setProcedure(initialProcedure); }, [isOpen, initialProcedure]);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -86,7 +88,7 @@ const WhatsAppFormModal = ({ isOpen, onClose }: WhatsAppFormModalProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md bg-white rounded-3xl p-0 border-none shadow-2xl overflow-hidden">
+      <DialogContent className="w-[calc(100%-32px)] sm:max-w-md bg-card rounded-lg p-0 border-none shadow-2xl max-h-[90dvh] overflow-y-auto">
         <div className="bg-gradient-to-r from-chrome-gold to-chrome-dark p-6 text-white">
           <DialogHeader>
             <DialogTitle className="text-xl font-bold text-white flex items-center gap-2">
@@ -155,7 +157,7 @@ const WhatsAppFormModal = ({ isOpen, onClose }: WhatsAppFormModalProps) => {
               Procedimento de interesse
             </label>
             <div className="flex flex-wrap gap-2">
-              {procedures.map((p) => (
+              {Array.from(new Set([...procedures, ...(initialProcedure ? [initialProcedure] : [])])).map((p) => (
                 <button
                   key={p}
                   type="button"

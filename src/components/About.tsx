@@ -3,13 +3,13 @@ import { Star, Award, Clock } from 'lucide-react';
 const About = () => {
   return (
     <section id="about" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-6xl mx-auto px-6 md:px-4">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Image */}
           <div className="animate-on-scroll">
             <div className="relative">
               <div className="absolute inset-0 bg-chrome-light rounded-3xl transform -rotate-3 opacity-30"></div>
-              <img alt="Elizabeth Gut em seu consultório de estética" className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto object-cover h-[400px] md:h-[500px]" loading="lazy" width={400} height={500} decoding="async" src="/lovable-uploads/0d1be02d-698b-497c-8d09-a194c88a611c.png" />
+              <img alt="Elizabeth Gut em seu consultório de estética" className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto object-cover h-[300px] md:h-[500px]" loading="lazy" width={400} height={500} decoding="async" src="/lovable-uploads/0d1be02d-698b-497c-8d09-a194c88a611c.webp" />
             </div>
           </div>
           
