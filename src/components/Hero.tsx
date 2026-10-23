@@ -8,14 +8,13 @@ const navLinks = [
   { label: 'Sobre Mim', href: '#about' },
   { label: 'Tratamentos', href: '#services' },
   { label: 'Catálogo', href: '/catalogo', route: true },
-  { label: 'Depoimentos', href: '#testimonials' },
   { label: 'Contato', href: '#contact' },
 ];
 
 const destaques = [
-  { icon: Droplets, texto: 'Limpeza de pele profissional' },
-  { icon: Zap, texto: 'Tecnologia Ultraformer MPT e Laser Lavieen' },
-  { icon: ShieldCheck, texto: 'Mais de 20 anos de experiência cuidando da sua pele' },
+  { icon: Droplets, texto: 'Cuidados personalizados para rosto e corpo' },
+  { icon: Zap, texto: 'Tecnologia e cuidado para valorizar sua beleza' },
+  { icon: ShieldCheck, texto: 'Mais de 20 anos de experiência em estética' },
   { icon: Heart, texto: 'Sua autoestima em primeiro lugar' },
 ];
 
