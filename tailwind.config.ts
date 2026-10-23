@@ -79,6 +79,8 @@ export default {
 			'brand': 'hsl(var(--brand))',
 				'catalog-rose': 'hsl(var(--catalog-rose))',
 				'catalog-rose-ink': 'hsl(var(--catalog-rose-ink))',
+				'catalog-gold': 'hsl(var(--catalog-gold))',
+				'catalog-gold-dark': 'hsl(var(--catalog-gold-dark))',
 			'ink': '#3D3028',
 		},
 			borderRadius: {

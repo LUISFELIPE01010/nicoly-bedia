@@ -206,6 +206,44 @@
 }
 .catalog-cover-scrim { background: var(--catalog-hero-scrim); }
 .catalog-treatment { box-shadow: var(--catalog-shadow); }
+/* Brand fonts can replace the temporary web catalog fallbacks when supplied.
+@font-face { font-family: 'The Seasons'; src: url('/fonts/the-seasons.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Garet'; src: url('/fonts/garet.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+*/
+@media screen {
+  .catalog-web {
+    --background: 35 60% 96.08%;
+    --foreground: 23 20.79% 19.8%;
+    --primary: var(--foreground);
+    --primary-foreground: var(--background);
+    --secondary: 34.29 42.86% 90.2%;
+    --secondary-foreground: var(--foreground);
+    --accent: var(--secondary);
+    --accent-foreground: var(--foreground);
+    --catalog-gold: 28.97 32.28% 62.35%;
+    --catalog-gold-dark: 28.47 27.19% 42.55%;
+    --brand: var(--catalog-gold);
+    --ring: var(--foreground);
+    --card: var(--background);
+    --card-foreground: var(--foreground);
+    --border: var(--foreground);
+    --catalog-shadow: 0 8px 30px hsl(var(--foreground) / .08);
+    font-family: 'Garet', 'Jost', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: hsl(var(--foreground));
+  }
+  .catalog-web h1, .catalog-web h2, .catalog-web h3, .catalog-web .catalog-display { font-family: 'The Seasons', 'Cormorant Garamond', serif; font-weight: 400; letter-spacing: 0; }
+  .catalog-web :is(a,button,summary,input,textarea):focus-visible { outline: 2px solid hsl(var(--foreground)); outline-offset: 4px; }
+  .catalog-web .catalog-filter-scroll { scrollbar-width: none; }
+  .catalog-web .catalog-filter-scroll::-webkit-scrollbar { display: none; }
+  .catalog-web .catalog-web-card { box-shadow: var(--catalog-shadow); }
+  .catalog-web .catalog-steps::before { content: ''; position: absolute; left: 15%; right: 15%; top: 38px; height: 1px; background: hsl(var(--catalog-gold)); }
+  .catalog-web [data-catalog-modal] { font-family: 'Garet', 'Jost', sans-serif; }
+}
+@media screen and (max-width: 767px) {
+  .catalog-web .catalog-steps::before { display: none; }
+}
 @media (min-width: 1024px) {
   .hero-responsive-image { mask-image: linear-gradient(to right, transparent, black 16%); }
 }
