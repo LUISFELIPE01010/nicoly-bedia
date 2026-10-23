@@ -3,16 +3,17 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import Index from "./pages/Index";
-import Catalogo from "./pages/Catalogo";
+const Catalogo = lazy(() => import("./pages/Catalogo"));
 import NotFound from "./pages/NotFound";
 import { AuthProvider } from "@/hooks/useAuth";
 import AuthGuard from "@/components/admin/AuthGuard";
 import AdminLayout from "@/components/admin/AdminLayout";
-import Login from "./pages/admin/Login";
-import Dashboard from "./pages/admin/Dashboard";
-import Leads from "./pages/admin/Leads";
-import LeadDetail from "./pages/admin/LeadDetail";
+const Login = lazy(() => import("./pages/admin/Login"));
+const Dashboard = lazy(() => import("./pages/admin/Dashboard"));
+const Leads = lazy(() => import("./pages/admin/Leads"));
+const LeadDetail = lazy(() => import("./pages/admin/LeadDetail"));
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <AuthProvider>
+          <Suspense fallback={<div className="min-h-screen bg-background" role="status" aria-label="Carregando página" />}>
           <Routes>
 <Route path="/" element={<Index />} />
             <Route path="/catalogo" element={<Catalogo />} />
@@ -39,6 +41,7 @@ const App = () => (
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </Suspense>
         </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>

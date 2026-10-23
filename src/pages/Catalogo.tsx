@@ -1,31 +1,29 @@
 import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Menu, X, MessageCircle, Instagram, Printer } from 'lucide-react';
+import { Menu, X, MessageCircle, Printer, ArrowDown, ArrowUpRight, Sparkles, ScanFace, Heart, Flower2, ShieldCheck, MapPin, ClipboardCheck, Layers, Check } from 'lucide-react';
 import Footer from '../components/Footer';
-import { procedimentos, whatsappCatalogo, type Categoria } from '@/data/catalogo';
+import WhatsAppFormModal from '@/components/WhatsAppFormModal';
+import CatalogTreatment from '@/components/CatalogTreatment';
+import { Button } from '@/components/ui/button';
+import { procedimentos, type Categoria } from '@/data/catalogo';
 
 const filtros: Array<'Todos' | Categoria> = ['Todos', 'Facial', 'Corporal', 'Bem-estar'];
-
+const categoryIcons = { Todos: Sparkles, Facial: ScanFace, Corporal: Heart, 'Bem-estar': Flower2 };
 const navLinks = [
-  { label: 'Início', href: '/' },
-  { label: 'Sobre Mim', href: '/#about' },
-  { label: 'Tratamentos', href: '/#services' },
-  { label: 'Catálogo', href: '/catalogo' },
-  { label: 'Contato', href: '/#contact' },
+  { label: 'Início', href: '/' }, { label: 'Sobre Mim', href: '/#about' },
+  { label: 'Tratamentos', href: '/#services' }, { label: 'Catálogo', href: '/catalogo' }, { label: 'Contato', href: '/#contact' },
 ];
-
 const passos = [
-  { numero: '1', texto: 'Avaliação da pele e conversa sobre os seus objetivos.' },
-  { numero: '2', texto: 'Plano personalizado com os procedimentos indicados para você.' },
-  { numero: '3', texto: 'Sessões com acompanhamento e orientações para manter o resultado.' },
+  { icon: ClipboardCheck, title: 'Escutar e avaliar', texto: 'Avaliação da pele e conversa sobre os seus objetivos.' },
+  { icon: Layers, title: 'Personalizar o cuidado', texto: 'Plano personalizado com os procedimentos indicados para você.' },
+  { icon: Heart, title: 'Acompanhar você', texto: 'Sessões com acompanhamento e orientações para manter o resultado.' },
 ];
-
 const Catalogo = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [filtro, setFiltro] = useState<'Todos' | Categoria>('Todos');
+  const [selectedProcedure, setSelectedProcedure] = useState<string | null>(null);
   const [searchParams] = useSearchParams();
   const exportMode = searchParams.get('export') === '1';
-
   useEffect(() => {
     document.title = 'Catálogo de Procedimentos | Elizabeth Gut Esteticista em Santos/SP';
     const setMeta = (selector: string, attr: string, value: string, content: string) => {
@@ -54,234 +52,95 @@ const Catalogo = () => {
     return () => window.removeEventListener('beforeprint', mostrarTudo);
   }, []);
 
-  // Animações suaves de entrada ao rolar
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add('visible')),
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-    );
-    const els = document.querySelectorAll('.animate-on-scroll');
-    els.forEach((el) => observer.observe(el));
-    return () => els.forEach((el) => observer.unobserve(el));
-  }, [filtro]);
 
-  const visiveis = procedimentos.filter(
-    (p) => p.visivel && (filtro === 'Todos' || p.categorias.includes(filtro))
-  );
+  const visiveis = procedimentos.filter(p => p.visivel && (filtro === 'Todos' || p.categorias.includes(filtro)));
+  const openForm = (procedure = 'Outro') => { setMenuOpen(false); setSelectedProcedure(procedure); };
 
   return (
-    <div className="min-h-screen bg-nude-soft flex flex-col">
-      {/* Capa (somente impressão) */}
-      <div className="hidden print:flex print:order-1 print-sheet flex-col items-center justify-center text-center gap-6 bg-nude-soft">
-        <img src="/lovable-uploads/logo-elizabeth-gut.png" alt="Logo Elizabeth Gut" className="w-24 h-24 object-contain" />
-        <p className="text-sm tracking-[0.3em] uppercase text-brand">Elizabeth Gut | Esteticista</p>
-        <h1 className="text-5xl font-serif text-ink">Catálogo de procedimentos</h1>
-        <p className="text-title-blue/80">@elizabethgutesteticista</p>
-        <p className="text-title-blue/80">elizabethgut.com.br</p>
+    <div className="catalog min-h-screen bg-background flex flex-col">
+      <div className="hidden print:flex print:order-1 print-sheet flex-col items-center justify-center text-center gap-6">
+        <img src="/lovable-uploads/logo-elizabeth-gut.webp" alt="Logo Elizabeth Gut" width={96} height={96} className="w-24 h-24 object-contain" />
+        <p className="text-sm uppercase text-brand">Elizabeth Gut | Esteticista</p>
+        <h1 className="text-5xl font-serif">Catálogo de procedimentos</h1>
+        <p>@elizabethgutesteticista · Santos/SP</p>
       </div>
-
-      {/* Header */}
-      <header className="w-full py-4 px-6 md:px-4 sticky top-0 z-50 bg-nude-soft/95 backdrop-blur-md border-b border-brand/20 print:hidden">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2.5">
-            <img alt="Logo Elizabeth Gut" className="w-9 h-9 md:w-10 md:h-10 object-contain" src="/lovable-uploads/e45973ed-86cf-4851-ad5d-cbd50de5eb11.png" width={40} height={40} />
-            <span className="leading-tight">
-              <span className="block text-base md:text-lg font-bold tracking-wide text-ink">ELIZABETH GUT</span>
-              <span className="block text-[10px] md:text-xs tracking-[0.3em] text-brand">ESTETICISTA</span>
-            </span>
+      <header className="sticky top-0 z-50 bg-background border-b border-brand/20 print:hidden">
+        <div className="max-w-6xl mx-auto px-6 md:px-4 h-[72px] flex items-center justify-between gap-4">
+          <Link to="/" className="flex items-center gap-2.5 shrink-0">
+            <img src="/lovable-uploads/e45973ed-86cf-4851-ad5d-cbd50de5eb11.webp" alt="Logo Elizabeth Gut" width={40} height={40} className="w-9 h-9 object-contain" />
+            <span className="leading-tight"><span className="block font-serif text-xl">Elizabeth Gut</span><span className="block text-[10px] text-catalog-rose-ink uppercase">Esteticista · Santos/SP</span></span>
           </Link>
-
-          <nav className="hidden lg:flex items-center gap-6">
-            {navLinks.map((link) =>
-              link.href === '/catalogo' ? (
-                <span key={link.href} className="text-sm font-medium text-ink border-b-2 border-brand pb-0.5" aria-current="page">
-                  {link.label}
-                </span>
-              ) : (
-                <a key={link.href} href={link.href} className="text-sm font-medium text-ink/70 hover:text-brand transition-colors">
-                  {link.label}
-                </a>
-              )
-            )}
-            <a href={whatsappCatalogo('uma avaliação')} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-brand text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-chrome-dark transition-all">
-              <MessageCircle className="w-4 h-4" />
-              Fale comigo
-            </a>
+          <nav className="hidden lg:flex items-center gap-6" aria-label="Menu principal">
+            {navLinks.map(link => <Link key={link.href} to={link.href} aria-current={link.href === '/catalogo' ? 'page' : undefined} className={`text-sm py-2 ${link.href === '/catalogo' ? 'border-b border-brand text-foreground' : 'text-muted-foreground hover:text-foreground'}`}>{link.label}</Link>)}
+            <Button onClick={() => openForm()}><MessageCircle />Agendar avaliação</Button>
           </nav>
-
-          <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden text-ink p-2" aria-label="Menu">
-            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <Button variant="ghost" size="icon" onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden h-11 w-11" aria-label="Menu" aria-expanded={menuOpen}>{menuOpen ? <X /> : <Menu />}</Button>
         </div>
-
-        {menuOpen && (
-          <nav className="lg:hidden mt-4 pb-4 flex flex-col gap-3 border-t border-brand/20 pt-4">
-            {navLinks.map((link) =>
-              link.href === '/catalogo' ? (
-                <span key={link.href} className="text-sm font-medium text-ink px-2 py-1 border-l-2 border-brand" aria-current="page">
-                  {link.label}
-                </span>
-              ) : (
-                <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="text-sm font-medium text-ink/70 hover:text-brand transition-colors px-2 py-1">
-                  {link.label}
-                </a>
-              )
-            )}
-            <a href={whatsappCatalogo('uma avaliação')} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-brand text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-chrome-dark transition-all mt-2">
-              <MessageCircle className="w-4 h-4" />
-              Fale comigo
-            </a>
-          </nav>
-        )}
+        {menuOpen && <nav aria-label="Menu celular" className="absolute left-0 right-0 top-full bg-background border-b border-brand/20 px-6 py-4 flex flex-col shadow-lg lg:hidden">
+          {navLinks.map(link => <Link key={link.href} to={link.href} onClick={() => setMenuOpen(false)} className="py-3 text-sm">{link.label}</Link>)}
+          <Button onClick={() => openForm()} className="h-12 mt-2"><MessageCircle />Agendar avaliação</Button>
+        </nav>}
       </header>
 
-      {/* Hero da página */}
-      <section className="max-w-6xl mx-auto px-6 md:px-4 pt-12 md:pt-20 pb-10 text-center print:hidden">
-        <p className="text-xs md:text-sm font-medium tracking-[0.25em] uppercase text-brand mb-4">Elizabeth Gut | Esteticista</p>
-        <h1 className="text-3xl md:text-5xl font-serif text-ink mb-5">Catálogo de procedimentos</h1>
-        <p className="text-base md:text-lg text-title-blue/80 leading-relaxed max-w-2xl mx-auto">
-          Conheça os cuidados que a Elizabeth oferece em Santos/SP, com avaliação personalizada para cada pele e cada objetivo.
-        </p>
-        <div className="mt-8 inline-flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border border-brand/30 rounded-full px-6 py-3 bg-white/60">
-          <span className="text-sm font-medium text-ink">Mais de 20 anos de experiência</span>
-          <span className="hidden sm:inline w-px h-4 bg-brand/40"></span>
-          <a href="https://www.instagram.com/elizabethgutesteticista/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-brand hover:text-chrome-dark transition-colors">
-            <Instagram className="w-4 h-4" />
-            @elizabethgutesteticista
-          </a>
+      <section className="relative min-h-[420px] md:min-h-[480px] flex items-end md:items-center print:hidden">
+        <img src={procedimentos[0]?.imagem} srcSet={`${procedimentos[0]?.imagemMobile} 600w, ${procedimentos[0]?.imagem} 960w`} sizes="100vw" alt="Cuidado facial em clínica de estética, imagem ilustrativa" width={960} height={720} loading="eager" decoding="async" className="absolute inset-0 w-full h-full object-cover object-[center_40%]" />
+        <div className="absolute inset-0 catalog-cover-scrim" aria-hidden="true" />
+        <div className="relative w-full max-w-6xl mx-auto px-6 md:px-4 py-10 md:py-14 text-background">
+          <div className="flex items-center gap-2 text-sm mb-5"><Sparkles size={17} /><span>Beleza com cuidado e intenção</span></div>
+          <h1 className="font-serif text-4xl md:text-6xl leading-tight max-w-xl">Catálogo de<br /><span className="italic">procedimentos</span></h1>
+          <p className="text-sm md:text-base leading-relaxed max-w-md mt-5 text-background/90">Cuidados para o rosto, o corpo e o seu bem-estar. Descubra o que combina com o seu momento.</p>
+          <Button asChild variant="outline" className="mt-6 h-12 border-background/40 bg-transparent text-background hover:bg-background hover:text-foreground"><a href="#tratamentos">Explorar tratamentos <ArrowDown /></a></Button>
+          <div className="absolute right-4 bottom-8 hidden lg:flex items-center justify-center w-28 h-28 rounded-full border border-background/50 text-center flex-col"><span className="font-serif text-4xl">20+</span><span className="text-xs">anos de cuidado</span></div>
         </div>
       </section>
 
-      {/* Filtro por categoria */}
-      <div className="sticky top-[68px] md:top-[72px] z-40 bg-nude-soft/95 backdrop-blur-md border-y border-brand/20 py-3 print:hidden">
-        <div className="max-w-6xl mx-auto px-6 md:px-4 flex flex-wrap justify-center gap-2">
-          {filtros.map((f) => (
-            <button
-              key={f}
-              onClick={() => setFiltro(f)}
-              className={`min-h-[44px] px-5 rounded-full text-sm font-medium transition-all ${filtro === f ? 'bg-brand text-white shadow-md' : 'bg-white/70 text-ink/70 hover:text-brand border border-brand/20'}`}
-              aria-pressed={filtro === f}
-            >
-              {f}
-            </button>
-          ))}
+      <div className="bg-secondary text-secondary-foreground border-b border-brand/20 print:hidden">
+        <div className="max-w-6xl mx-auto px-6 md:px-4 py-5 grid grid-cols-2 md:grid-cols-3 gap-4 text-xs md:text-sm">
+          <span className="flex items-center gap-2"><ShieldCheck size={19} className="shrink-0" />Avaliação personalizada</span>
+          <span className="flex items-center gap-2"><Sparkles size={19} className="shrink-0" />Mais de 20 anos de experiência</span>
+          <span className="hidden md:flex items-center gap-2"><MapPin size={19} />Santos · São Paulo</span>
         </div>
       </div>
 
-      {/* Lista de procedimentos */}
-      <section className="max-w-6xl mx-auto px-6 md:px-4 pb-16 space-y-14 md:space-y-20 print:order-3 print:p-0 print:m-0 print:max-w-none print:space-y-0">
-        {visiveis.map((p, i) => (
-          <article key={p.slug} className="animate-on-scroll grid md:grid-cols-2 print:grid-cols-2 gap-6 md:gap-12 print:gap-10 items-center print-sheet">
-            <div className={`${i % 2 === 1 ? 'md:order-2' : ''}`}>
-              <div className="relative">
-                <div className="absolute -top-4 -left-4 w-24 h-24 rounded-full bg-brand/10" aria-hidden="true"></div>
-                <img
-                  src={p.imagem}
-                  alt={p.imagemAlt}
-                  loading="lazy"
-                  decoding="async"
-                  width={960}
-                  height={720}
-                  className="relative w-full aspect-[4/3] object-cover rounded-3xl shadow-lg border border-brand/10"
-                />
-              </div>
-            </div>
-            <div className={`${i % 2 === 1 ? 'md:order-1' : ''} space-y-4`}>
-              <div className="flex flex-wrap gap-2">
-                {p.categorias.map((c) => (
-                  <span key={c} className="text-xs font-medium tracking-wide uppercase text-brand border border-brand/40 rounded-full px-3 py-1">{c}</span>
-                ))}
-              </div>
-              <h2 className="text-2xl md:text-3xl font-serif text-ink">{p.nome}</h2>
-              <p className="text-title-blue/80 leading-relaxed">{p.explicacao}</p>
-              <ul className="space-y-2">
-                {p.beneficios.map((b) => (
-                  <li key={b} className="flex items-start gap-3 text-ink/80">
-                    <span className="mt-2 w-2 h-2 rounded-full bg-brand flex-shrink-0" aria-hidden="true"></span>
-                    {b}
-                  </li>
-                ))}
-              </ul>
-              <p className="text-sm text-ink/70 border-l-2 border-brand pl-4">
-                <span className="font-semibold text-ink">O que esperar: </span>{p.resultado}
-              </p>
-              {(p.duracao || p.sessoes || p.investimento) && (
-                <div className="flex flex-wrap gap-4 text-sm text-ink/70">
-                  {p.duracao && <span><span className="font-semibold text-ink">Duração: </span>{p.duracao}</span>}
-                  {p.sessoes && <span><span className="font-semibold text-ink">Sessões: </span>{p.sessoes}</span>}
-                  {p.investimento && <span><span className="font-semibold text-ink">Investimento: </span>{p.investimento}</span>}
-                </div>
-              )}
-              <a
-                href={whatsappCatalogo(p.nome)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 min-h-[44px] bg-brand text-white px-6 py-3 rounded-full font-semibold hover:bg-chrome-dark transition-all print:hidden"
-              >
-                <MessageCircle className="w-5 h-5" />
-                Quero saber mais
-              </a>
-            </div>
-          </article>
-        ))}
-      </section>
-
-      {/* Como funciona (página 2 na impressão) */}
-      <section className="max-w-6xl mx-auto px-6 md:px-4 py-14 md:py-20 print:order-2 print-sheet print:flex print:flex-col print:justify-center">
-        <h2 className="text-2xl md:text-3xl font-serif text-ink text-center mb-10">Como funciona</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {passos.map((passo) => (
-            <div key={passo.numero} className="animate-on-scroll bg-white/70 rounded-3xl border border-brand/20 p-8 text-center">
-              <span className="inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-brand text-brand font-serif text-xl mb-4">{passo.numero}</span>
-              <p className="text-ink/80 leading-relaxed">{passo.texto}</p>
-            </div>
-          ))}
+      <div id="tratamentos" className="scroll-mt-[72px] print:hidden">
+        <div className="max-w-6xl mx-auto px-6 md:px-4 pt-10 md:pt-14 pb-6 flex items-end justify-between gap-4">
+          <div><p className="text-xs uppercase text-catalog-rose-ink mb-2 flex items-center gap-2"><Flower2 size={16} />Seu momento de cuidado</p><h2 className="font-serif text-3xl md:text-4xl">Encontre seu tratamento</h2></div>
+          <p className="text-xs text-muted-foreground shrink-0 hidden sm:block">{visiveis.length} procedimentos</p>
         </div>
+      </div>
+      <div className="sticky top-[72px] z-30 bg-background border-y border-brand/20 print:hidden">
+        <div className="max-w-6xl mx-auto px-6 md:px-4 flex gap-1 md:gap-4 py-2">
+          {filtros.map(f => { const Icon = categoryIcons[f]; return <Button key={f} onClick={() => setFiltro(f)} variant={filtro === f ? 'secondary' : 'ghost'} aria-pressed={filtro === f} className="h-12 flex-1 md:flex-none px-1.5 md:px-5 gap-1 md:gap-2 text-xs md:text-sm"><Icon className="hidden min-[375px]:block" />{f}</Button>; })}
+        </div>
+      </div>
+
+      <section aria-label="Procedimentos" className="max-w-6xl w-full mx-auto px-6 md:px-4 py-8 md:py-10 grid md:grid-cols-2 gap-6 md:gap-8 print:block print:order-3 print:p-0 print:m-0 print:max-w-none">
+        {visiveis.map(p => <CatalogTreatment key={p.slug} treatment={p} index={procedimentos.indexOf(p)} onSelect={() => openForm(p.nome)} />)}
       </section>
 
-      {/* CTA final (última página na impressão) */}
-      <section className="bg-white/70 border-t border-brand/20 print:order-4 print:break-inside-avoid">
-        <div className="max-w-3xl mx-auto px-6 md:px-4 py-14 md:py-20 text-center space-y-6">
-          <h2 className="text-2xl md:text-3xl font-serif text-ink">Não sabe por onde começar?</h2>
-          <p className="text-title-blue/80 leading-relaxed">
-            Faça uma avaliação e a Elizabeth indica o melhor caminho para a sua pele.
-          </p>
-          <a
-            href={whatsappCatalogo('uma avaliação')}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 min-h-[44px] bg-brand text-white px-8 py-3.5 rounded-full font-semibold hover:bg-chrome-dark transition-all print:hidden"
-          >
-            <MessageCircle className="w-5 h-5" />
-            Agendar avaliação
-          </a>
-          <div className="hidden print:block text-ink/80 space-y-1">
-            <p>WhatsApp: (13) 99784-6585</p>
-            <p>@elizabethgutesteticista | elizabethgut.com.br</p>
+      <section className="bg-secondary text-secondary-foreground print:order-2 print-sheet print:flex print:flex-col print:justify-center">
+        <div className="max-w-6xl mx-auto w-full px-6 md:px-4 py-12 md:py-16 print:p-0">
+          <p className="text-xs uppercase mb-3">Do primeiro encontro à sua evolução</p>
+          <h2 className="text-3xl md:text-4xl font-serif mb-8">Um cuidado que começa em você.</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {passos.map((passo,i) => <div key={passo.title} className="border-t border-brand/40 pt-5"><div className="flex items-center justify-between mb-4"><passo.icon size={30} strokeWidth={1.3} /><span className="font-serif text-3xl text-brand">0{i+1}</span></div><h3 className="text-lg font-medium mb-2">{passo.title}</h3><p className="text-sm leading-relaxed">{passo.texto}</p></div>)}
           </div>
-          <p className="text-xs text-ink/50 pt-4">
-            Os resultados variam de pessoa para pessoa. Todos os procedimentos são indicados após avaliação.
-          </p>
         </div>
       </section>
-
-      {/* Botão de exportar PDF (oculto, só com ?export=1) */}
-      {exportMode && (
-        <button
-          onClick={() => window.print()}
-          className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 bg-ink text-white px-5 py-3 rounded-full text-sm font-semibold shadow-xl hover:bg-brand transition-all print:hidden"
-          aria-label="Exportar catálogo em PDF"
-        >
-          <Printer className="w-4 h-4" />
-          Exportar em PDF
-        </button>
-      )}
-
-      <div className="print:hidden">
-        <Footer />
-      </div>
+      <section className="bg-background print:order-4 print:break-inside-avoid">
+        <div className="max-w-3xl mx-auto px-6 py-12 md:py-16 text-center">
+          <Flower2 className="mx-auto text-brand mb-4" size={36} strokeWidth={1.3} />
+          <h2 className="font-serif text-3xl md:text-4xl mb-4">Seu próximo cuidado começa aqui.</h2>
+          <p className="text-muted-foreground text-sm md:text-base mb-6">Uma conversa, uma avaliação e um plano pensado para você.</p>
+          <Button size="lg" onClick={() => openForm()} className="h-12 print:hidden">Agendar avaliação <ArrowUpRight /></Button>
+          <p className="hidden print:block">WhatsApp: (13) 99784-6585 · @elizabethgutesteticista</p>
+          <p className="text-xs text-muted-foreground mt-8">Imagens ilustrativas. Os resultados variam de pessoa para pessoa. Todos os procedimentos são indicados após avaliação.</p>
+        </div>
+      </section>
+      {exportMode && <Button onClick={() => window.print()} className="fixed bottom-6 right-6 z-50 shadow-xl print:hidden" aria-label="Exportar catálogo em PDF"><Printer />Exportar em PDF</Button>}
+      <div className="print:hidden"><Footer /></div>
+      <WhatsAppFormModal isOpen={selectedProcedure !== null} onClose={() => setSelectedProcedure(null)} initialProcedure={selectedProcedure ?? undefined} />
     </div>
   );
 };
-
 export default Catalogo;

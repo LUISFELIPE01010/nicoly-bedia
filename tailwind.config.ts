@@ -77,6 +77,8 @@ export default {
 				'pastel-lavender': '#E8DFF0',
 			'title-blue': '#5A6E78',
 			'brand': 'hsl(var(--brand))',
+				'catalog-rose': 'hsl(var(--catalog-rose))',
+				'catalog-rose-ink': 'hsl(var(--catalog-rose-ink))',
 			'ink': '#3D3028',
 		},
 			borderRadius: {
