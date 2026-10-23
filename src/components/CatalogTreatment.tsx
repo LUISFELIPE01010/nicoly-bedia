@@ -1,45 +1,32 @@
-import { ArrowUpRight, Check, ChevronDown, Sparkles, Droplets, ScanFace, Zap, Flower2, Heart, Waves, ShieldCheck, Layers, type LucideIcon } from 'lucide-react';
+import { ArrowUpRight, Clock, Repeat, Heart, type LucideIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import type { Procedimento } from '@/data/catalogo';
+import { whatsappCatalogo, type Procedimento } from '@/data/catalogo';
+import { catalogoIcones, categoriaIcones } from '@/data/catalogoIcones';
 
-const symbols: Record<string, LucideIcon> = {
-  'limpeza-de-pele': Droplets, microagulhamento: Layers, 'laser-lavieen': Zap,
-  'ultraformer-mpt': ScanFace, visage: ScanFace, 'peeling-clareador': Droplets,
-  rejuvenescimento: Sparkles, 'estimulo-de-colageno': Layers, hipro: Zap,
-  'drenagem-linfatica': Waves, 'drenagem-pos-operatoria': ShieldCheck,
-  'estetica-corporal': Heart, 'massagem-relaxante': Flower2,
-};
-
-export default function CatalogTreatment({ treatment: p, index, onSelect }: { treatment: Procedimento; index: number; onSelect: () => void }) {
-  const Icon = symbols[p.slug] ?? Sparkles;
+export default function CatalogTreatment({ treatment: p, reverse = false }: { treatment: Procedimento; reverse?: boolean }) {
+  const symbols = catalogoIcones[p.slug];
+  const Icon = symbols?.procedimento ?? Heart;
+  const featured = Boolean(p.destaque);
   return (
-    <article className="catalog-treatment group overflow-hidden rounded-lg bg-card text-card-foreground border border-brand/20 flex flex-col print-sheet print:grid print:grid-cols-2 print:gap-10 print:items-center print:rounded-none print:border-0 print:shadow-none" id={p.slug}>
-      <div className="relative overflow-hidden print:h-auto">
-        <img src={p.imagem} srcSet={p.imagemMobile ? `${p.imagemMobile} 600w, ${p.imagem} 960w` : undefined} sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1280px) 46vw, 560px" alt={p.imagemAlt} width={960} height={720} loading="lazy" decoding="async" className="w-full aspect-[16/10] object-cover transition-transform duration-700 motion-safe:group-hover:scale-105 print:aspect-[4/3]" />
-        <div className="absolute top-4 left-4 flex gap-2 print:hidden">
-          {p.categorias.map(c => <span key={c} className="bg-background/95 text-foreground text-xs px-3 py-1.5 rounded-sm font-medium">{c}</span>)}
+    <article id={p.slug} className={`catalog-web-card group rounded-[28px] border border-foreground/10 bg-card overflow-hidden flex flex-col transition-colors duration-300 hover:border-catalog-gold ${featured ? 'md:col-span-2 lg:grid lg:grid-cols-2' : ''}`}>
+      <div className={`relative m-3 overflow-hidden rounded-[28px] ${featured ? `lg:min-h-[520px] ${reverse ? 'lg:order-2' : ''}` : ''}`}>
+        <img src={p.imagem} srcSet={p.imagemMobile ? `${p.imagemMobile} 600w, ${p.imagem} 960w` : undefined} sizes={featured ? '(max-width: 767px) calc(100vw - 72px), 540px' : '(max-width: 767px) calc(100vw - 72px), 520px'} alt={p.imagemAlt} width={960} height={720} loading="lazy" decoding="async" className={`w-full aspect-[4/3] object-cover object-center transition-transform duration-300 motion-safe:group-hover:scale-[1.03] ${featured ? 'lg:h-full lg:absolute lg:inset-0' : ''}`} />
+        <div className="absolute top-4 left-4 right-16 flex flex-wrap gap-2">
+          {p.categorias.map(c => { const CategoryIcon = categoriaIcones[c]; return <span key={c} className="inline-flex items-center gap-1.5 rounded-full bg-background px-3 py-1.5 text-xs"><CategoryIcon size={15} className="text-catalog-gold-dark" />{c}</span>; })}
         </div>
-        <span className="absolute bottom-4 right-4 bg-background text-brand w-12 h-12 rounded-full flex items-center justify-center border border-brand/30 print:hidden"><Icon size={24} strokeWidth={1.4} aria-hidden="true" /></span>
+        <span className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-background text-catalog-gold-dark"><Icon size={22} strokeWidth={1.5} /></span>
+        {(p.duracao || p.sessoes) && <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2">{p.duracao && <PhotoChip icon={Clock} text={p.duracao} />}{p.sessoes && <PhotoChip icon={Repeat} text={p.sessoes} />}</div>}
       </div>
-      <div className="p-5 md:p-7 flex flex-col flex-1 print:p-0">
-        <div className="flex items-center gap-3 mb-3">
-          <span className="text-xs text-catalog-rose-ink font-medium tabular-nums">{String(index + 1).padStart(2, '0')}</span>
-          <span className="h-px flex-1 bg-brand/25" aria-hidden="true" />
-          <Sparkles size={14} className="text-brand" aria-hidden="true" />
-        </div>
-        <h2 className="font-serif text-2xl md:text-3xl leading-tight mb-3">{p.nome}</h2>
-        <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-5">{p.explicacao}</p>
-        <ul className="space-y-2 mb-5">
-          {p.beneficios.map(b => <li key={b} className="flex gap-2.5 text-sm leading-relaxed"><Check size={16} className="shrink-0 text-catalog-rose-ink mt-0.5" aria-hidden="true" />{b}</li>)}
+      <div className={`p-6 pt-4 flex flex-col flex-1 ${featured ? 'lg:p-9 lg:justify-center' : ''}`}>
+        <h2 className={`leading-tight mb-3 ${featured ? 'text-[34px] lg:text-[40px]' : 'text-[30px]'}`}>{p.nome}</h2>
+        <p className="text-foreground/70 text-sm leading-relaxed mb-6">{p.explicacao}</p>
+        <ul className="space-y-3 mb-6">
+          {p.beneficios.map((benefit, i) => { const BenefitIcon = symbols?.beneficios[i] ?? Heart; return <li key={benefit} className="flex items-center gap-3 text-sm leading-relaxed"><span className="w-8 h-8 shrink-0 rounded-full bg-secondary text-foreground flex items-center justify-center"><BenefitIcon size={16} strokeWidth={1.5} /></span><span>{benefit}</span></li>; })}
         </ul>
-        <details className="border-t border-brand/20 mb-5 print:hidden">
-          <summary className="flex items-center justify-between cursor-pointer py-3 text-sm font-medium list-none">O que esperar <ChevronDown size={16} className="text-brand" /></summary>
-          <p className="text-sm text-muted-foreground pb-3 leading-relaxed">{p.resultado}</p>
-        </details>
-        <p className="hidden print:block text-sm mb-4"><strong>O que esperar: </strong>{p.resultado}</p>
-        {(p.duracao || p.sessoes || p.investimento) && <p className="text-sm text-muted-foreground mb-4">{[p.duracao, p.sessoes, p.investimento].filter(Boolean).join(' · ')}</p>}
-        <Button onClick={onSelect} className="mt-auto w-full h-12 justify-between rounded-md px-4 text-foreground bg-brand hover:bg-brand/80 print:hidden">Quero saber mais <ArrowUpRight size={18} /></Button>
+        <div className="bg-secondary rounded-[20px] p-4 flex gap-3 mb-6"><Icon size={20} className="shrink-0 mt-1 text-foreground" strokeWidth={1.5} /><div><h3 className="text-xl leading-tight mb-1">O que esperar</h3><p className="text-sm leading-relaxed text-foreground/70">{p.resultado}</p></div></div>
+        <Button asChild className="mt-auto h-auto min-h-12 rounded-full px-5 py-3 whitespace-normal text-left justify-between"><a href={whatsappCatalogo(p.nome)} target="_blank" rel="noopener noreferrer">Falar sobre este procedimento <ArrowUpRight size={18} /></a></Button>
       </div>
     </article>
   );
 }
+function PhotoChip({ icon: Icon, text }: { icon: LucideIcon; text: string }) { return <span className="inline-flex items-center gap-1.5 rounded-full bg-background px-3 py-1.5 text-xs"><Icon size={14} />{text}</span>; }

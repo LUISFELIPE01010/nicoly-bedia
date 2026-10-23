@@ -17,6 +17,7 @@ interface WhatsAppFormModalProps {
   isOpen: boolean;
   onClose: () => void;
   initialProcedure?: string;
+  appearance?: 'catalog';
 }
 
 const WHATSAPP_NUMBER = "5513997846585";
@@ -33,7 +34,7 @@ const procedures = [
   "Outro"
 ];
 
-const WhatsAppFormModal = ({ isOpen, onClose, initialProcedure }: WhatsAppFormModalProps) => {
+const WhatsAppFormModal = ({ isOpen, onClose, initialProcedure, appearance }: WhatsAppFormModalProps) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -88,7 +89,7 @@ const WhatsAppFormModal = ({ isOpen, onClose, initialProcedure }: WhatsAppFormMo
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="w-[calc(100%-32px)] sm:max-w-md bg-card rounded-lg p-0 border-none shadow-2xl max-h-[90dvh] overflow-y-auto">
+      <DialogContent className={`w-[calc(100%-32px)] sm:max-w-md bg-card rounded-lg p-0 border-none shadow-2xl max-h-[90dvh] overflow-y-auto ${appearance === 'catalog' ? 'catalog-web catalog-modal' : ''}`}>
         <div className="bg-gradient-to-r from-chrome-gold to-chrome-dark p-6 text-white">
           <DialogHeader>
             <DialogTitle className="text-xl font-bold text-white flex items-center gap-2">

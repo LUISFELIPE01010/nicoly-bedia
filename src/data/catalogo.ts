@@ -38,6 +38,7 @@ export interface Procedimento {
   imagemMobile?: string;
   imagemAlt: string;
   visivel: boolean;
+  destaque?: boolean;
   duracao?: string;
   sessoes?: string;
   investimento?: string;
@@ -70,6 +71,7 @@ export const procedimentos: Procedimento[] = [
   },
   {
     slug: 'laser-lavieen',
+    destaque: true,
     nome: 'Laser Lavieen',
     categorias: ['Facial'],
     explicacao: 'Tecnologia a laser que renova a textura e o viço da pele de forma superficial.',
@@ -82,6 +84,7 @@ export const procedimentos: Procedimento[] = [
   },
   {
     slug: 'ultraformer-mpt',
+    destaque: true,
     nome: 'Ultraformer MPT',
     categorias: ['Facial'],
     explicacao: 'Tecnologia de ultrassom micro e macrofocado que age nas camadas profundas da pele para estimular o colágeno e promover efeito lifting sem cirurgia.',
