@@ -4,3 +4,5 @@
 - [x] Redesenhar catálogo com direção editorial, símbolos e navegação por categorias.
 - [x] Converter imagens exibidas para WebP e servir tamanhos menores no celular.
 - [x] Otimizar e verificar página inicial e catálogo em celulares e desktop.
+- [ ] Refazer somente o catálogo web conforme o briefing, preservando textos e PDF oculto.
+- [ ] Verificar filtros, WhatsApp, contraste e telas de 360px, 768px e 1280px.
