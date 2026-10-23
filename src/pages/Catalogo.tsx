@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Menu, X, MessageCircle, Printer, ArrowDown, ArrowUpRight, Sparkles, ScanFace, Heart, Flower2, ShieldCheck, MapPin, ClipboardCheck, Layers, Check } from 'lucide-react';
 import Footer from '../components/Footer';
 import WhatsAppFormModal from '@/components/WhatsAppFormModal';
@@ -22,8 +22,6 @@ const Catalogo = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [filtro, setFiltro] = useState<'Todos' | Categoria>('Todos');
   const [selectedProcedure, setSelectedProcedure] = useState<string | null>(null);
-  const [searchParams] = useSearchParams();
-  const exportMode = searchParams.get('export') === '1';
   useEffect(() => {
     document.title = 'Catálogo de Procedimentos | Elizabeth Gut Esteticista em Santos/SP';
     const setMeta = (selector: string, attr: string, value: string, content: string) => {
@@ -137,7 +135,7 @@ const Catalogo = () => {
           <p className="text-xs text-muted-foreground mt-8">Imagens ilustrativas. Os resultados variam de pessoa para pessoa. Todos os procedimentos são indicados após avaliação.</p>
         </div>
       </section>
-      {exportMode && <Button onClick={() => window.print()} className="fixed bottom-6 right-6 z-50 shadow-xl print:hidden" aria-label="Exportar catálogo em PDF"><Printer />Exportar em PDF</Button>}
+      <Button onClick={() => window.print()} className="fixed bottom-6 right-6 z-50 shadow-xl print:hidden" aria-label="Exportar catálogo em PDF"><Printer />Exportar em PDF</Button>
       <div className="print:hidden"><Footer /></div>
       <WhatsAppFormModal isOpen={selectedProcedure !== null} onClose={() => setSelectedProcedure(null)} initialProcedure={selectedProcedure ?? undefined} />
     </div>
