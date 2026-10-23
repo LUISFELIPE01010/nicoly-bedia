@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { flushSync } from 'react-dom';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Menu, X, ArrowDown, ArrowUpRight, ShieldCheck, MapPin, ClipboardCheck, Layers, Heart, Award, Instagram } from 'lucide-react';
 import WhatsAppFormModal from '@/components/WhatsAppFormModal';
@@ -17,14 +18,29 @@ const passos = [
 ];
 export default function Catalogo() {
   const [params] = useSearchParams();
+  const [printing, setPrinting] = useState(false);
+  useEffect(() => {
+    const before = () => flushSync(() => setPrinting(true));
+    const after = () => setPrinting(false);
+    window.addEventListener('beforeprint', before);
+    window.addEventListener('afterprint', after);
+    return () => { window.removeEventListener('beforeprint', before); window.removeEventListener('afterprint', after); };
+  }, []);
   if (params.get('export') === '1') return <CatalogoLegacy />;
-  return <><div className="print:hidden"><CatalogoWeb /></div><div className="hidden print:block"><CatalogoLegacy /></div></>;
+  return <><div className="print:hidden"><CatalogoWeb /></div>{printing && <div className="hidden print:block"><CatalogoLegacy /></div>}</>;
 }
 function CatalogoWeb() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [filtro, setFiltro] = useState<'Todos' | Categoria>('Todos');
   const [formOpen, setFormOpen] = useState(false);
   useEffect(() => {
+    document.title = 'Catálogo de Procedimentos | Elizabeth Gut Esteticista em Santos/SP';
+    let meta = document.head.querySelector('meta[name="description"]');
+    if (!meta) { meta = document.createElement('meta'); meta.setAttribute('name', 'description'); document.head.appendChild(meta); }
+    meta.setAttribute('content', 'Conheça os tratamentos faciais, corporais e de bem-estar da esteticista Elizabeth Gut em Santos/SP, com avaliação personalizada.');
+    let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
+    canonical.href = 'https://elizabethgut.com.br/catalogo';
     const id = 'catalog-brand-fonts';
     if (!document.getElementById(id)) {
       const link = document.createElement('link');
@@ -64,7 +80,7 @@ function CatalogoWeb() {
         <section className="max-w-6xl mx-auto px-6 py-14 md:py-20"><div className="rounded-[36px] bg-primary text-primary-foreground px-6 py-12 md:p-16 text-center"><h2 className="text-[38px] md:text-[52px] leading-tight max-w-2xl mx-auto">Seu próximo cuidado começa aqui.</h2><p className="text-primary-foreground/80 mt-5 mb-7">Uma conversa, uma avaliação e um plano pensado para você.</p><Button onClick={openForm} className="rounded-full bg-catalog-gold text-foreground hover:bg-catalog-gold/90 h-12 px-6">Agendar avaliação <ArrowUpRight /></Button><a href="https://www.instagram.com/elizabethgutesteticista/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 mt-6 text-sm text-primary-foreground"><Instagram size={16} />@elizabethgutesteticista</a></div><p className="text-xs text-center text-foreground/70 mt-6 leading-relaxed">Imagens ilustrativas. Os resultados variam de pessoa para pessoa. Todos os procedimentos são indicados após avaliação.</p></section>
       </main>
       <footer className="border-t border-foreground/10"><div className="max-w-6xl mx-auto px-6 py-7 flex flex-wrap justify-between items-center gap-4"><Link to="/" className="catalog-display text-2xl">Elizabeth Gut</Link><p className="text-xs text-foreground/70">Esteticista · Santos/SP</p><Link to="/admin" className="text-xs text-foreground/70">Admin</Link></div></footer>
-      <WhatsAppFormModal isOpen={formOpen} onClose={() => setFormOpen(false)} initialProcedure="Outro" />
+      <WhatsAppFormModal isOpen={formOpen} onClose={() => setFormOpen(false)} initialProcedure="Outro" appearance="catalog" />
     </div>
   );
 }
