@@ -1,6 +1,6 @@
 - [x] Ajustar menu e destaques da página inicial e catálogo.
 - [x] Substituir dourado antigo em botões e cards.
 - [x] Atribuir fotos ilustrativas pertinentes a cada procedimento e verificar catálogo.
-- [ ] Redesenhar catálogo com direção editorial, símbolos e navegação por categorias.
-- [ ] Converter imagens exibidas para WebP e servir tamanhos menores no celular.
-- [ ] Otimizar e verificar página inicial e catálogo em celulares e desktop.
+- [x] Redesenhar catálogo com direção editorial, símbolos e navegação por categorias.
+- [x] Converter imagens exibidas para WebP e servir tamanhos menores no celular.
+- [x] Otimizar e verificar página inicial e catálogo em celulares e desktop.
