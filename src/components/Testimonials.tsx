@@ -1,3 +1,9 @@
+import avatar0 from '@/assets/testimonials/avatar-0.webp.asset.json';
+import avatar1 from '@/assets/testimonials/avatar-1.webp.asset.json';
+import avatar2 from '@/assets/testimonials/avatar-2.webp.asset.json';
+import avatar3 from '@/assets/testimonials/avatar-3.webp.asset.json';
+import avatar4 from '@/assets/testimonials/avatar-4.webp.asset.json';
+import avatar5 from '@/assets/testimonials/avatar-5.webp.asset.json';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -9,37 +15,37 @@ const Testimonials = () => {
       quote: "A Elizabeth é maravilhosa! Fiz o Ultraformer MPT e o resultado foi incrível. Minha pele ficou muito mais firme e rejuvenescida. Super recomendo!",
       name: "Claudia",
       detail: "Ultraformer MPT",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+      image: avatar0.url
     },
     {
       quote: "Faço limpeza de pele regularmente com a Elizabeth e a diferença é absurda. Ela é muito cuidadosa e profissional. Minha pele nunca esteve tão bonita!",
       name: "Renata",
       detail: "Limpeza de Pele",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+      image: avatar1.url
     },
     {
       quote: "O tratamento para olheiras mudou minha vida! Eu sempre tive olheiras muito marcadas e depois do tratamento com a Beth, parece que rejuvenesci anos.",
       name: "Ana Paula",
       detail: "Tratamento Olheiras",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+      image: avatar2.url
     },
     {
       quote: "Fiz o skinbooster e minha pele ficou com um viço incrível! A Elizabeth explica tudo com muita paciência e o resultado é maravilhoso.",
       name: "Mariana",
       detail: "Skinbooster",
-      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+      image: avatar3.url
     },
     {
       quote: "Profissional incrível! Fiz microagulhamento para cicatrizes de acne e os resultados foram surpreendentes. Minha autoestima voltou!",
       name: "Fernanda",
       detail: "Microagulhamento",
-      image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+      image: avatar4.url
     },
     {
       quote: "A radiofrequência com a Elizabeth é sensacional. Minha pele ficou muito mais firme e o contorno do rosto mais definido. Amei!",
       name: "Luciana",
       detail: "Radiofrequência",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+      image: avatar5.url
     }
   ];
 
@@ -65,7 +71,7 @@ const Testimonials = () => {
     <section id="testimonials" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-6 md:px-4">
         <div className="text-center mb-12 animate-on-scroll">
-          <h2 className="text-4xl lg:text-5xl font-bold text-title-blue mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-title-blue mb-6">
             O que minhas clientes dizem
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-chrome-gold to-chrome-dark rounded-full mx-auto mb-4" />
