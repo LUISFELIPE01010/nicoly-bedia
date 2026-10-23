@@ -1,6 +1,16 @@
 import facialImg from '@/assets/catalogo/facial.jpg';
-import tecnologiaImg from '@/assets/catalogo/tecnologia.jpg';
-import posOperatorioImg from '@/assets/catalogo/pos-operatorio.jpg';
+import microagulhamentoImg from '@/assets/catalogo/microagulhamento.jpg';
+import laserImg from '@/assets/catalogo/laser-lavieen.jpg';
+import ultraformerImg from '@/assets/catalogo/ultraformer-mpt.jpg';
+import visageImg from '@/assets/catalogo/visage.jpg';
+import peelingImg from '@/assets/catalogo/peeling-clareador.jpg';
+import rejuvenescimentoImg from '@/assets/catalogo/rejuvenescimento.jpg';
+import colagenoImg from '@/assets/catalogo/estimulo-de-colageno.jpg';
+import hiproImg from '@/assets/catalogo/hipro.jpg';
+import drenagemImg from '@/assets/catalogo/drenagem-linfatica.jpg';
+import posOperatorioImg from '@/assets/catalogo/drenagem-pos-operatoria.jpg';
+import corporalImg from '@/assets/catalogo/estetica-corporal.jpg';
+import massagemImg from '@/assets/catalogo/massagem-relaxante.jpg';
 
 export type Categoria = 'Facial' | 'Corporal' | 'Bem-estar';
 
@@ -38,8 +48,8 @@ export const procedimentos: Procedimento[] = [
     explicacao: 'Microestímulos controlados que ativam a renovação da pele e a produção natural de colágeno.',
     beneficios: ['Melhora de poros e textura', 'Suavização de cicatrizes de acne e linhas finas', 'Pele mais firme e uniforme'],
     resultado: 'Melhora gradual, conforme a resposta da pele e o número de sessões indicado na avaliação.',
-    imagem: '/lovable-uploads/depois-1.jpg',
-    imagemAlt: 'Resultado de microagulhamento na pele do rosto',
+    imagem: microagulhamentoImg,
+    imagemAlt: 'Imagem ilustrativa de microagulhamento facial com caneta de tratamento',
     visivel: true,
   },
   {
@@ -49,8 +59,8 @@ export const procedimentos: Procedimento[] = [
     explicacao: 'Tecnologia a laser que renova a textura e o viço da pele de forma superficial.',
     beneficios: ['Tom mais uniforme e manchas suavizadas', 'Poros mais refinados', 'Glow e viço'],
     resultado: 'Pele com aspecto mais luminoso e uniforme, com melhora progressiva ao longo das sessões.',
-    imagem: tecnologiaImg,
-    imagemAlt: 'Equipamento de laser estético em clínica',
+    imagem: laserImg,
+    imagemAlt: 'Imagem ilustrativa de tratamento facial a laser com proteção ocular',
     visivel: true,
   },
   {
@@ -60,8 +70,8 @@ export const procedimentos: Procedimento[] = [
     explicacao: 'Tecnologia de ultrassom micro e macrofocado que age nas camadas profundas da pele para estimular o colágeno e promover efeito lifting sem cirurgia.',
     beneficios: ['Efeito lifting', 'Redução da flacidez', 'Definição de contornos'],
     resultado: 'Melhora gradual da firmeza, que evolui com o tempo enquanto o colágeno se reorganiza.',
-    imagem: '/lovable-uploads/elizabeth-gut-1.png',
-    imagemAlt: 'Elizabeth Gut em sua clínica com equipamentos de estética',
+    imagem: ultraformerImg,
+    imagemAlt: 'Imagem ilustrativa de ultrassom focado aplicado ao contorno facial',
     visivel: true,
   },
   {
@@ -71,8 +81,8 @@ export const procedimentos: Procedimento[] = [
     explicacao: 'Versão mais leve da tecnologia de ultrassom focado do Ultraformer, indicada para a prevenção da flacidez e para peles maduras que precisam de mais firmeza e estrutura.',
     beneficios: ['Estímulo gradual do colágeno', 'Ação preventiva contra a flacidez', 'Auxilia a fortalecer a pele madura'],
     resultado: 'Pele mais firme e resistente, com melhora gradual ao longo das sessões.',
-    imagem: tecnologiaImg,
-    imagemAlt: 'Tecnologia de ultrassom focado para firmeza da pele',
+    imagem: visageImg,
+    imagemAlt: 'Imagem ilustrativa de cuidado tecnológico para firmeza da pele madura',
     visivel: true,
   },
   {
@@ -82,8 +92,8 @@ export const procedimentos: Procedimento[] = [
     explicacao: 'Aplicação de ácidos que renova as camadas da pele e ajuda a clarear manchas.',
     beneficios: ['Clareamento de manchas', 'Tom mais uniforme', 'Textura renovada'],
     resultado: 'Pele com tom mais uniforme, seguindo o protocolo definido na avaliação e o uso diário de protetor solar.',
-    imagem: '/lovable-uploads/depois-melasma.png',
-    imagemAlt: 'Resultado de peeling clareador em pele com manchas',
+    imagem: peelingImg,
+    imagemAlt: 'Imagem ilustrativa de aplicação de peeling facial com pincel',
     visivel: true,
   },
   {
@@ -93,8 +103,8 @@ export const procedimentos: Procedimento[] = [
     explicacao: 'Protocolos personalizados que combinam técnicas e tecnologias para tratar os sinais do tempo.',
     beneficios: ['Linhas finas suavizadas', 'Pele mais firme e viçosa', 'Plano feito para a sua pele'],
     resultado: 'Aparência mais descansada e renovada, de forma natural.',
-    imagem: '/lovable-uploads/depois-lifting.png',
-    imagemAlt: 'Resultado de protocolo de rejuvenescimento facial',
+    imagem: rejuvenescimentoImg,
+    imagemAlt: 'Imagem ilustrativa de cuidado facial personalizado para pele madura',
     visivel: true,
   },
   {
@@ -104,8 +114,8 @@ export const procedimentos: Procedimento[] = [
     explicacao: 'Tratamentos que estimulam a pele a produzir mais colágeno e elastina.',
     beneficios: ['Mais firmeza e elasticidade', 'Textura mais uniforme', 'Ação preventiva contra a flacidez'],
     resultado: 'Pele mais firme e resistente, com melhora progressiva.',
-    imagem: '/lovable-uploads/d96c0b93-efa5-494a-a668-fb520d37c8b7.jpg',
-    imagemAlt: 'Pele firme e saudável após estímulo de colágeno',
+    imagem: colagenoImg,
+    imagemAlt: 'Imagem ilustrativa de tecnologia facial para estímulo de colágeno',
     visivel: true,
   },
   {
@@ -115,8 +125,8 @@ export const procedimentos: Procedimento[] = [
     explicacao: 'Ultrassom microfocado que atua em diferentes profundidades da pele, no rosto e no corpo, para estimular o colágeno e promover efeito lifting sem cirurgia.',
     beneficios: ['Estímulo da produção de colágeno', 'Redução da flacidez facial e corporal', 'Mais firmeza e elasticidade'],
     resultado: 'Melhora gradual da firmeza e do contorno, que evolui nas semanas seguintes à sessão.',
-    imagem: tecnologiaImg,
-    imagemAlt: 'Equipamento de ultrassom microfocado Hipro',
+    imagem: hiproImg,
+    imagemAlt: 'Imagem ilustrativa de ultrassom focado para firmeza corporal',
     visivel: true,
   },
   {
@@ -126,8 +136,8 @@ export const procedimentos: Procedimento[] = [
     explicacao: 'Técnica manual com movimentos suaves e ritmados que estimulam a circulação linfática.',
     beneficios: ['Redução da retenção de líquidos e do inchaço', 'Sensação de leveza', 'Relaxamento profundo'],
     resultado: 'Corpo mais leve e desinchado, com melhores resultados quando feita com regularidade.',
-    imagem: '/lovable-uploads/7e5bb34e-8a17-42ff-b135-d77451a3aac2.jpg',
-    imagemAlt: 'Elizabeth Gut, esteticista, em atendimento acolhedor',
+    imagem: drenagemImg,
+    imagemAlt: 'Imagem ilustrativa de drenagem linfática manual nas pernas',
     visivel: true,
   },
   {
@@ -138,7 +148,7 @@ export const procedimentos: Procedimento[] = [
     beneficios: ['Auxilia na redução do edema e do inchaço', 'Ajuda a diminuir a sensação de peso e desconforto', 'Acompanhamento durante a recuperação'],
     resultado: 'Uma recuperação mais confortável, seguindo a orientação médica.',
     imagem: posOperatorioImg,
-    imagemAlt: 'Cuidado pós-operatório com curativo em clínica de estética',
+    imagemAlt: 'Imagem ilustrativa de cuidado suave com membro usando malha de compressão',
     visivel: true,
   },
   {
@@ -148,8 +158,8 @@ export const procedimentos: Procedimento[] = [
     explicacao: 'Tratamentos para celulite, gordura localizada, flacidez e estrias.',
     beneficios: ['Melhora do aspecto da celulite', 'Auxilia na redução de gordura localizada', 'Mais firmeza e estrias suavizadas'],
     resultado: 'Evolução gradual, com protocolo personalizado e orientações para manter o resultado.',
-    imagem: tecnologiaImg,
-    imagemAlt: 'Equipamento de estética corporal em clínica',
+    imagem: corporalImg,
+    imagemAlt: 'Imagem ilustrativa de tratamento de estética corporal na região da coxa',
     visivel: true,
   },
   {
@@ -159,8 +169,8 @@ export const procedimentos: Procedimento[] = [
     explicacao: 'Massagem para aliviar a tensão do corpo e proporcionar uma pausa na rotina.',
     beneficios: ['Alívio da tensão muscular', 'Relaxamento e redução do estresse', 'Sensação de leveza'],
     resultado: 'Corpo e mente mais leves já ao final da sessão.',
-    imagem: facialImg,
-    imagemAlt: 'Momento de relaxamento em tratamento de bem-estar',
+    imagem: massagemImg,
+    imagemAlt: 'Imagem ilustrativa de massagem relaxante nos ombros',
     visivel: true,
   },
 ];

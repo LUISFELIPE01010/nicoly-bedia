@@ -11,7 +11,6 @@ const navLinks = [
   { label: 'Sobre Mim', href: '/#about' },
   { label: 'Tratamentos', href: '/#services' },
   { label: 'Catálogo', href: '/catalogo' },
-  { label: 'Depoimentos', href: '/#testimonials' },
   { label: 'Contato', href: '/#contact' },
 ];
 
@@ -180,8 +179,9 @@ const Catalogo = () => {
                   src={p.imagem}
                   alt={p.imagemAlt}
                   loading="lazy"
-                  width={1024}
-                  height={768}
+                  decoding="async"
+                  width={960}
+                  height={720}
                   className="relative w-full aspect-[4/3] object-cover rounded-3xl shadow-lg border border-brand/10"
                 />
               </div>

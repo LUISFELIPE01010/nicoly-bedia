@@ -64,7 +64,7 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 			// Palette for Elizabeth Gut — pastel & golden
-				'chrome-gold': '#C8A96E',
+				'chrome-gold': 'hsl(var(--brand))',
 				'chrome-light': '#E8D9B8',
 				'chrome-dark': '#A8894E',
 				'nude-soft': '#FBF6EF',
@@ -76,7 +76,7 @@ export default {
 				'pastel-peach': '#F5E0D0',
 				'pastel-lavender': '#E8DFF0',
 			'title-blue': '#5A6E78',
-			'brand': '#C09E7E',
+			'brand': 'hsl(var(--brand))',
 			'ink': '#3D3028',
 		},
 			borderRadius: {

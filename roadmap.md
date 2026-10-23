@@ -1,0 +1,3 @@
+- [x] Ajustar menu e destaques da página inicial e catálogo.
+- [x] Substituir dourado antigo em botões e cards.
+- [x] Atribuir fotos ilustrativas pertinentes a cada procedimento e verificar catálogo.
