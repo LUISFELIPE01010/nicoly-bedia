@@ -7,6 +7,12 @@
 @layer base {
   :root {
     --brand: 29.09 34.38% 62.35%;
+    --catalog-rose: 350 26% 92%;
+    --catalog-rose-ink: 346 22% 38%;
+    --catalog-paper: 40 42% 97%;
+    --catalog-ink: 24 20% 20%;
+    --catalog-hero-scrim: linear-gradient(90deg, hsl(24 20% 12% / 0.82), hsl(24 20% 12% / 0.4) 55%, hsl(24 20% 12% / 0.08));
+    --catalog-shadow: 0 12px 36px hsl(24 20% 20% / 0.06);
     --background: 40 30% 96%;
     --foreground: 220 25% 40%;
 
@@ -182,7 +188,36 @@
   }
 }
 
-/* ===== Impressão (Catálogo em PDF A4 retrato) ===== */
+/* ===== Catalog editorial theme ===== */
+.catalog {
+  --background: var(--catalog-paper);
+  --foreground: var(--catalog-ink);
+  --primary: var(--brand);
+  --primary-foreground: var(--catalog-ink);
+  --secondary: var(--catalog-rose);
+  --secondary-foreground: var(--catalog-rose-ink);
+  --accent: var(--catalog-rose);
+  --accent-foreground: var(--catalog-rose-ink);
+  --card: 0 0% 100%;
+  --card-foreground: var(--catalog-ink);
+  --muted-foreground: 24 10% 42%;
+  --ring: var(--brand);
+  color: hsl(var(--foreground));
+}
+.catalog-cover-scrim { background: var(--catalog-hero-scrim); }
+.catalog-treatment { box-shadow: var(--catalog-shadow); }
+.hero-portrait-mask { mask-image: linear-gradient(to right, transparent, black 16%); }
+@media (max-width: 767px) {
+  .catalog-cover-scrim { background: linear-gradient(0deg, hsl(24 20% 12% / 0.85), hsl(24 20% 12% / 0.2)); }
+  section[id] { scroll-margin-top: 80px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hover-lift:hover { transform: none; }
+  .catalog * { transition: none !important; }
+}
+
+/* ===== Impressão (Catálogo em PDF A4 paisagem) ===== */
 @media print {
   @page {
     size: A4 landscape;

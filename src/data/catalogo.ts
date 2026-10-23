@@ -22,6 +22,7 @@ export interface Procedimento {
   beneficios: string[];
   resultado: string;
   imagem: string;
+  imagemMobile?: string;
   imagemAlt: string;
   visivel: boolean;
   duracao?: string;
