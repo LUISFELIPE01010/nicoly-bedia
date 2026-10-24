@@ -24,7 +24,7 @@ export default function CatalogTreatment({ treatment: p, reverse = false }: { tr
           {p.beneficios.map((benefit, i) => { const BenefitIcon = symbols?.beneficios[i] ?? Heart; return <li key={benefit} className="flex items-center gap-3 text-sm leading-relaxed"><span className="w-8 h-8 shrink-0 rounded-full bg-secondary text-foreground flex items-center justify-center"><BenefitIcon size={16} strokeWidth={1.5} /></span><span>{benefit}</span></li>; })}
         </ul>
         <div className="bg-secondary rounded-[20px] p-4 flex gap-3 mb-6"><Icon size={20} className="shrink-0 mt-1 text-foreground" strokeWidth={1.5} /><div><h3 className="text-xl leading-tight mb-1">O que esperar</h3><p className="text-sm leading-relaxed text-foreground/70">{p.resultado}</p></div></div>
-        <Button asChild className="mt-auto h-auto min-h-12 rounded-full px-5 py-3 whitespace-normal text-left justify-between"><a href={whatsappCatalogo(p.nome)} target="_blank" rel="noopener noreferrer">Falar sobre este procedimento <ArrowUpRight size={18} /></a></Button>
+        <Button asChild className="catalog-print-hide mt-auto h-auto min-h-12 rounded-full px-5 py-3 whitespace-normal text-left justify-between"><a href={whatsappCatalogo(p.nome)} target="_blank" rel="noopener noreferrer">Falar sobre este procedimento <ArrowUpRight size={18} /></a></Button>
       </div>
     </article>
   );

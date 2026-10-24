@@ -300,4 +300,17 @@
     transform: none !important;
     transition: none !important;
   }
+  /* Catálogo atual impresso: uma página por bloco/tratamento */
+  .catalog-web { min-height: 0 !important; }
+  .catalog-web > header, .catalog-web > footer, .catalog-web .catalog-print-hide { display: none !important; }
+  .catalog-web section[aria-label="Procedimentos"] { display: block !important; padding: 0 !important; margin: 0 !important; max-width: none !important; min-height: 0 !important; }
+  .catalog-web .catalog-web-card {
+    width: 297mm !important; height: 210mm !important; margin: 0 !important; padding: 14mm 18mm !important;
+    box-sizing: border-box; border: 0 !important; border-radius: 0 !important; box-shadow: none !important;
+    display: grid !important; grid-template-columns: 1fr 1fr; gap: 12mm; align-items: center;
+    overflow: hidden; break-after: page; page-break-after: always; break-inside: avoid;
+  }
+  .catalog-web .catalog-web-card > div:first-child { margin: 0 !important; height: 182mm !important; min-height: 0 !important; order: 0 !important; }
+  .catalog-web .catalog-web-card > div:first-child > img { position: static !important; height: 100% !important; aspect-ratio: auto !important; transform: none !important; }
+  .catalog-web .catalog-web-card > div:last-child { padding: 0 !important; justify-content: center !important; }
 }
