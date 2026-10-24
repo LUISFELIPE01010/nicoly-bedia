@@ -44,7 +44,7 @@ function CatalogoWeb({ exportMode = false }: { exportMode?: boolean }) {
       document.head.appendChild(link);
     }
   }, []);
-  const visiveis = procedimentos.filter(p => p.visivel && (filtro === 'Todos' || p.categorias.includes(filtro)));
+  const visiveis = procedimentos.filter(p => p.visivel && (exportMode || filtro === 'Todos' || p.categorias.includes(filtro)));
   const openForm = () => { setMenuOpen(false); setFormOpen(true); };
   return (
     <div className="catalog-web bg-background text-foreground min-h-screen">
@@ -67,7 +67,7 @@ function CatalogoWeb({ exportMode = false }: { exportMode?: boolean }) {
           <picture className="block order-1 lg:order-2 overflow-hidden rounded-[36px] h-[55vh] min-h-[300px] max-h-[520px] lg:h-[560px] lg:min-h-[520px] lg:max-h-none"><source media="(min-width: 1024px)" srcSet="/lovable-uploads/beth-gut.webp" /><img src="/lovable-uploads/beth-gut-800.webp" alt="Elizabeth Gut, esteticista em Santos" width={1600} height={900} loading="eager" decoding="async" className="h-full w-full object-cover object-[70%_25%] lg:object-[67%_25%]" /></picture>
         </section>
         <div id="tratamentos" className="catalog-print-hide scroll-mt-[150px] max-w-6xl mx-auto px-6 pt-10 pb-6"><h2 className="text-[36px] md:text-[44px] leading-tight">Encontre seu tratamento</h2></div>
-        <div className="catalog-print-hide sticky top-[72px] z-30 bg-background border-y border-foreground/10">
+        <div className={`catalog-print-hide sticky top-[72px] ${exportMode ? 'hidden' : ''}`} z-30 bg-background border-y border-foreground/10">
           <div className="max-w-6xl mx-auto px-6 flex items-center gap-4 py-3"><div className="catalog-filter-scroll flex items-center gap-2 overflow-x-auto min-w-0 flex-1">{filtros.map(f => { const Icon = categoriaIcones[f]; return <Button key={f} onClick={() => setFiltro(f)} variant={filtro === f ? 'default' : 'secondary'} aria-pressed={filtro === f} className="h-11 rounded-full px-5 shrink-0"><Icon />{f}</Button>; })}</div><span role="status" className="text-sm text-foreground/70 shrink-0 hidden md:block">{visiveis.length} procedimentos</span></div>
         </div>
         <section aria-label="Procedimentos" className="max-w-6xl mx-auto px-6 py-8 md:py-10 grid md:grid-cols-2 gap-6 md:gap-8 items-stretch min-h-[650px]">{visiveis.map(p => <CatalogTreatment key={p.slug} treatment={p} reverse={p.slug === 'ultraformer-mpt'} />)}</section>
